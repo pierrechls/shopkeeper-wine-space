@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'Radnika';
+  font-style: normal;
+  font-weight: 500;
+  src: url("../inc/fonts/theme/Radnika-Regular.eot");
+  /* IE9 Compat Modes */
+  src: url("../inc/fonts/theme/Radnika-Regular.eot?#iefix") format("embedded-opentype"), url("../inc/fonts/theme/Radnika-Regular.woff2") format("woff2"), url("../inc/fonts/theme/Radnika-Regular.woff") format("woff");
+  /* Pretty Modern Browsers */ }
+
+@font-face {
+  font-family: 'Radnika';
+  font-style: normal;
+  font-weight: 700;
+  src: url("../inc/fonts/theme/Radnika-Bold.eot");
+  /* IE9 Compat Modes */
+  src: url("../inc/fonts/theme/Radnika-Bold.eot?#iefix") format("embedded-opentype"), url("../inc/fonts/theme/Radnika-Bold.woff2") format("woff2"), url("../inc/fonts/theme/Radnika-Bold.woff") format("woff");
+  /* Pretty Modern Browsers */ }
+
+@font-face {
+  font-family: 'NeueEinstellung';
+  font-style: normal;
+  font-weight: 500;
+  src: url("../inc/fonts/theme/NeueEinstellung-Regular.eot");
+  /* IE9 Compat Modes */
+  src: url("../inc/fonts/theme/NeueEinstellung-Regular.eot?#iefix") format("embedded-opentype"), url("../inc/fonts/theme/NeueEinstellung-Regular.woff2") format("woff2"), url("../inc/fonts/theme/NeueEinstellung-Regular.woff") format("woff");
+  /* Pretty Modern Browsers */ }
+
+@font-face {
+  font-family: 'NeueEinstellung';
+  font-style: normal;
+  font-weight: 700;
+  src: url("../inc/fonts/theme/NeueEinstellung-Bold.eot");
+  /* IE9 Compat Modes */
+  src: url("../inc/fonts/theme/NeueEinstellung-Bold.eot?#iefix") format("embedded-opentype"), url("../inc/fonts/theme/NeueEinstellung-Bold.woff2") format("woff2"), url("../inc/fonts/theme/NeueEinstellung-Bold.woff") format("woff");
+  /* Pretty Modern Browsers */ }
+
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../inc/fonts/open-sans/OpenSans-Light.ttf");
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 500;
+  src: url("../inc/fonts/open-sans/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 700;
+  src: url("../inc/fonts/open-sans/OpenSans-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 800;
+  src: url("../inc/fonts/open-sans/OpenSans-Bold.ttf");
+}
