@@ -212,7 +212,7 @@ header .row {
   text-align: center;
   color: #3b3d4a;
   background: #414141;
-  background-image: url('images/menu-background.jpg');
+  background-image: url('images/header/menu-background.jpg');
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -348,7 +348,7 @@ header .row {
   margin-left: 1rem;
   text-align: center;
   background: #414141;
-  background-image: url('images/menu-background.jpg');
+  background-image: url('images/header/menu-background.jpg');
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center top;
@@ -472,28 +472,38 @@ header .row {
 }
 
 #primary.primary-home .homepage-website-description {
-  background: url('images/menu-website-description.jpg');
-  background-size: cover;
-  background-position: center left;
-  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap:wrap;
+  background-color: #1B1B1B;
 }
 
-#primary.primary-home .homepage-website-description .content-description {
-  padding: 3rem 1rem;
-  width: 60%;
+#primary.primary-home .homepage-website-description-content {
+  flex: 1;
 }
 
-#primary.primary-home .homepage-website-description .content-description p.content-description-title {
+#primary.primary-home .homepage-website-description-content:first-child {
+  padding: 1em 2em;
   color: #FFFFFF;
-  font-size: 1.3rem;
+}
+
+#primary.primary-home .homepage-website-description p.content-description-title {
+  color: #FFFFFF;
+  font-size: 1.5rem;
   font-family: 'Lora';
+  margin-bottom: 3rem;
   font-weight: 600;
 }
 
-#primary.primary-home .homepage-website-description .content-description p.content-description-content {
+#primary.primary-home .homepage-website-description p.content-description-content {
   font-size: 1rem;
   color: #FFFFFF;
   font-family: 'Lora';
+}
+
+#primary.primary-home .homepage-website-description img {
+  float: right;
 }
 
 /***********************/

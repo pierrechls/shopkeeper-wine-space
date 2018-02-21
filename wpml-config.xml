@@ -1,8 +1,0 @@
-<wpml-config>
-  <admin-texts>
-    <key name="shopkeeper_theme_options">
-      <key name="top_bar_text"/>
-      <key name="footer_copyright_text"/>
-    </key>
-  </admin-texts>
-</wpml-config>

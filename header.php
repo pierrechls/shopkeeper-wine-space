@@ -46,7 +46,7 @@
 
 			<div class="ev-menu">
 				<div class="ev-menu-header">
-					<a href="<?php echo get_site_url(); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo.png" alt="Logo <?php echo str_replace(' ', '-', strtolower(bloginfo('name'))); ?>" /></a>
+					<a href="<?php echo get_site_url(); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/header/logo.png" alt="Logo <?php echo str_replace(' ', '-', strtolower(bloginfo('name'))); ?>" /></a>
 					<p class="website-slogan"><?php bloginfo('description'); ?></p>
 				</div>
 				<div class="ev-menu-content">
