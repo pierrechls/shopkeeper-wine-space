@@ -621,3 +621,60 @@ header .row {
 .dots__item--active {
   background: #BAA571;
 }
+
+/***********************/
+/*    FOOTER STYLE     */
+/***********************/
+
+#site-footer.ev {
+  padding: 0;
+}
+
+.ev-footer {
+
+}
+
+.ev-footer .ev-footer-values {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap:wrap;
+  padding: 4rem 10rem;
+  text-align:center;
+  background-image: url('images/footer/values-background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.ev-footer .ev-footer-values-value {
+  flex: 3;
+  color: #FFFFFF;
+  padding: 0 2rem;
+}
+
+.ev-footer .ev-footer-values-value p {
+  color: #BAA571;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.ev-footer .ev-footer-values-value img {
+  width: 7rem;
+  height: 7rem;
+}
+
+@media screen and (max-width: 750px) {
+  #primary.primary-home .homepage-website-description {
+    display: block;
+  }
+  #primary.primary-home .homepage-website-description-content {
+    text-align: center;
+  }
+  #primary.primary-home .homepage-website-description-content:nth-child(2) {
+      display: none;
+  }
+  .ev-footer .ev-footer-values {
+    display: block;
+  }
+}
