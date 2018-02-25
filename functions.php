@@ -17,7 +17,7 @@ function theme_enqueue_styles() {
 
 function load_siema_library() {
     wp_enqueue_script(
-        'custom-script',
+        'siema-library',
         get_stylesheet_directory_uri() . '/inc/js/siema/siema.min.js',
         array( 'jquery' )
     );
