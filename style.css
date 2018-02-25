@@ -498,14 +498,14 @@ header .row {
 
 #primary.primary-home .homepage-website-description p.content-description-title {
   color: #FFFFFF;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-family: 'Lora';
   margin-bottom: 3rem;
   font-weight: 600;
 }
 
 #primary.primary-home .homepage-website-description p.content-description-content {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #FFFFFF;
   font-family: 'Lora';
 }
@@ -672,9 +672,123 @@ header .row {
   height: 7rem;
 }
 
+.ev-footer .ev-footer-cave-informations {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap:wrap;
+  padding: 5rem 0;
+  background: #FFFFFF;
+}
+
+.ev-footer .ev-footer-cave-informations .ev-footer-cave-informations-infos,
+.ev-footer .ev-footer-cave-informations .ev-footer-cave-informations-image {
+  flex: 1 auto;
+  padding: 0 2rem;
+}
+
+.ev-footer .ev-footer-cave-informations .ev-footer-cave-informations-infos {
+    padding: 0 2rem 0 5rem;
+}
+
+.ev-footer-cave-informations-image {
+  width: 40%;
+}
+
+.ev-footer-cave-informations-image img {
+  width: 100%;
+  height: auto;
+  max-width: 40rem;
+  margin: 0 2rem 0 0;
+  text-align: center;
+  float: right;
+}
+
+.ev-footer-cave-informations-infos h6 {
+  font-family: 'Lora';
+  font-size: 1.7rem;
+  margin-bottom: 2rem;
+}
+
+.ev-footer-cave-informations-infos h6 span {
+  font-weight: 100;
+}
+
+.ev-footer-cave-informations-infos .cave-info p:first-child {
+  color: #000;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0;
+  opacity: 1;
+}
+
+.ev-footer-cave-informations-infos .cave-info p,
+.ev-footer-cave-informations-infos .cave-info address {
+  color: #000;
+  font-size: 1.3rem;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+.ev-footer-cave-informations-infos .cave-info address {
+  margin-bottom: 0;
+}
+
+.ev-footer-cave-informations-infos .cave-info p a.address-link {
+  background: #BAA571;
+  padding: 0.5rem 1.5rem;
+  color: #FFFFFF !important;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  margin: 0.5rem auto;
+  display: inline-block;
+  font-family: 'OpenSans';
+  font-weight: 600;
+  border-radius: 0.5rem;
+}
+
+.ev-footer-legal-informations {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+
+.ev-footer-legal-informations .ev-footer-legal-info-image,
+.ev-footer-legal-informations .ev-footer-legal-info-text {
+  flex: 1 auto;
+}
+
+.ev-footer-legal-informations .ev-footer-legal-info-image {
+  padding: 0;
+}
+
+.ev-footer-legal-informations .ev-footer-legal-info-image img {
+  margin: 0 auto;
+  display: block;
+}
+
+.ev-footer-legal-informations .ev-footer-legal-info-text {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.ev-footer-legal-informations .ev-footer-legal-info-text p {
+  font-size: 1rem;
+  color: #000;
+  padding: 0;
+  margin: 0;
+}
+
+.ev-footer-legal-informations .ev-footer-legal-info-text p:first-child {
+  font-weight: 600;
+}
+
 @media screen and (max-width: 750px) {
   #primary.primary-home .homepage-website-description {
     display: block;
+    padding: 2rem 0;
   }
   #primary.primary-home .homepage-website-description-content {
     text-align: center;
@@ -682,7 +796,28 @@ header .row {
   #primary.primary-home .homepage-website-description-content:nth-child(2) {
       display: none;
   }
-  .ev-footer .ev-footer-values {
+  .ev-footer .ev-footer-values,
+  .ev-footer .ev-footer-cave-informations,
+  .ev-footer-legal-informations {
     display: block;
+  }
+  .ev-footer .ev-footer-cave-informations .ev-footer-cave-informations-infos {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .ev-footer-cave-informations-image {
+    width: 100%;
+  }
+  .ev-footer-cave-informations-image img {
+    margin: 0 auto;
+    display: block;
+    float: none;
+  }
+  .ev-footer-legal-informations {
+    text-align: center;
+  }
+
+  .ev-footer-legal-informations .ev-footer-legal-info-image img {
+    margin-bottom: 1rem;
   }
 }

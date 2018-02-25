@@ -35,6 +35,39 @@
 															<p>Paiements sécurisés</p>
 														</div>
 													</div>
+													<div class="ev-footer-cave-informations">
+													  <div class="ev-footer-cave-informations-infos" itemscope itemtype="http://schema.org/Person">
+															<h6>Découvrez notre cave <span>à <span itemprop="name">Saint Chinian</span></span></h6>
+															<div class="cave-info" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+																<p>Adresse :</p>
+																<p class="address">
+																	<span itemprop="streetAddress">8 Avenue de Béziers</span><br>
+																	<span itemprop="postalCode">34600</span>, <span itemprop="addressLocality">Saint-Chinian</span>
+																</address>
+																<p><a class="address-link"target="_blank" href="https://www.google.com/maps/dir//ESPACE+VIN+DE+SAINT+CHINIAN,+8+Avenue+de+B%C3%A9ziers,+34600+Saint-Chinian,+France/@43.420462,2.9459483,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x12b1a2c59320f399:0xd606b10b6439f9d0!2m2!1d2.948137!2d43.420462?hl=fr-FR">Itinéraire</a></p>
+															</div>
+															<div class="cave-info">
+																<p>Horaires d'ouverture :</p>
+																<p>Du lundi au dimanche de 9h à 12h15 et de 14h à 19h</p>
+															</div>
+															<div class="cave-info">
+																<p>Téléphone :</p>
+																<p><span itemprop="telephone"><a href="tel:+33467382318">04 67 38 23 18</a></span></p>
+															</div>
+														</div>
+														<div class="ev-footer-cave-informations-image">
+															<img src="<?php echo get_stylesheet_directory_uri() . '/images/footer/shop-photo.png' ?>"/>
+														</div>
+													</div>
+													<div class="ev-footer-legal-informations">
+														<div class="ev-footer-legal-info-image">
+															<img src="<?php echo get_stylesheet_directory_uri() . '/images/footer/marianne-logo.png' ?>"/>
+														</div>
+														<div class="ev-footer-legal-info-text">
+															<p>Interdiction de vente de boissons alcooliques aux mineurs de moins de 18 ans.</p>
+															<p>La preuve de la majorité de l'acheteur est exigée au moment de la vente en ligne. L’abus d’alcool est dangereux pour la santé. A consommer avec modération.</p>
+														</div>
+													</div>
 											</div>
 
                     	 <?php if ( is_active_sidebar( 'footer-widget-area' ) ) : ?>
