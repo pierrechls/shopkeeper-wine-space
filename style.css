@@ -353,7 +353,7 @@ header .row {
   padding: 1rem 2rem;
   top: -100% !important;
   left: 30rem !important;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   text-align: center;
   background: #414141;
   background-image: url('images/header/menu-background.jpg');
