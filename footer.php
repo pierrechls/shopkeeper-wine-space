@@ -23,15 +23,15 @@
 											<div class="ev-footer">
 													<div class="ev-footer-values">
 													  <div class="ev-footer-values-value">
-															<img src="<?php echo get_stylesheet_directory_uri() . '/images/footer/advice.png' ?>"/>
+															<img src="<?php echo get_stylesheet_directory_uri() . '/images/footer/advice.svg' ?>"/>
 															<p>Sélection de vins et conseils</p>
 														</div>
 														<div class="ev-footer-values-value">
-															<img src="<?php echo get_stylesheet_directory_uri() . '/images/footer/delivery.png' ?>"/>
+															<img src="<?php echo get_stylesheet_directory_uri() . '/images/footer/delivery.svg' ?>"/>
 															<p>Livraison rapide et bouteilles protégées</p>
 														</div>
 														<div class="ev-footer-values-value">
-															<img src="<?php echo get_stylesheet_directory_uri() . '/images/footer/payment.png' ?>"/>
+															<img src="<?php echo get_stylesheet_directory_uri() . '/images/footer/payment.svg' ?>"/>
 															<p>Paiements sécurisés</p>
 														</div>
 													</div>
