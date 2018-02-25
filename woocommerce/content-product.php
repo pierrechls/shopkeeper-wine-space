@@ -115,57 +115,97 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 		</div><!--.product_thumbnail_wrapper-->
 
-		<h3><a class="product-title-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-		<?php do_action( 'woocommerce_shop_loop_item_title' ); ?>
-
-        <?php if ( (isset($shopkeeper_theme_options['ratings_catalog_page'])) && ($shopkeeper_theme_options['ratings_catalog_page'] == "1" ) ) : ?>
-        <div class="archive-product-rating">
-			<?php do_action( 'woocommerce_after_shop_loop_item_title_loop_rating' ); ?>
-		</div>
-        <?php endif; ?>
-
-		<div class="product_after_shop_loop <?php echo ( GETBOWTIED_GERMAN_MARKET_IS_ACTIVE )  ? 'german-market-active' : ''; ?> <?php echo ( GETBOWTIED_WOOCOMMERCE_GERMANIZED_IS_ACTIVE )  ? 'germanized-active' : ''; ?>">
-
-			<div class="product_after_shop_loop_switcher">
-
-				<?php if( !GETBOWTIED_GERMAN_MARKET_IS_ACTIVE ) { ?>
-					<div class='product_after_shop_loop_price'>
-						<?php do_action( 'woocommerce_after_shop_loop_item_title_loop_price' ); ?>
-					</div>
-				<?php } ?>
-
-				<?php if( GETBOWTIED_GERMAN_MARKET_IS_ACTIVE ) : ?>
-
-					<div class="german-market-active">
-
-						<?php add_action( 'woocommerce_german_market_info', array( 'WGM_Template', 'woocommerce_de_price_with_tax_hint_single' ), 7 ); ?>
-						<?php add_filter( 'woocommerce_german_market_info', '__return_true' ); ?>
-
-						<div class='product_german_market_info'>
-						<?php do_action( 'woocommerce_german_market_info' ); ?>
-						</div>
-
-					</div>
-
-				<?php endif ;?>
-
-				<?php if ( (isset($shopkeeper_theme_options['catalog_mode'])) && ($shopkeeper_theme_options['catalog_mode'] == 0) ) : ?>
-
-				<div class="product_after_shop_loop_buttons">
-
-					<?php if( GETBOWTIED_WOOCOMMERCE_GERMANIZED_IS_ACTIVE ) : ?>
-						<div class="germanized-active">
-					    	<?php do_action( 'woocommerce_germanized_unit_price' ); ?>
-				    	</div>
-					<?php endif; ?>
-
-					<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
-				</div>
-
-				<?php endif; ?>
-
+		<h3><a class="product-title-link ev-loop-product-title-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+		<?php
+			$domaineId = wpcf_pr_post_get_belongs(get_the_ID(), 'domaine');
+			$millesime = types_render_field('product-millesime');
+			if (!empty($domaineId) || $millesime != '') {
+		?>
+			<div class="ev-loop-product-domaine-and-cuvee">
+				<?php if (!empty($domaineId)) { ?> <p><?php echo get_the_title($domaineId); ?></p> <?php } ?>
+				<?php if ($millesime != '') { echo $millesime; } ?>
 			</div>
+		<?php
+			}
+		?>
 
+		<div class="ev-loop-price-add-to-cart">
+			<div class="ev-loop-price">
+				<p class="ev-price">
+					<?php
+						if($product->get_sale_price() > 0 ){
+					?>
+							<span class="regular-price"><?php echo number_format($product->get_regular_price(), 2); ?> €</span>
+							<span class="product-price"><?php echo number_format($product->get_price(), 2); ?> €</span>
+					<?php
+						} else {
+					?>
+							<span class="product-price"><?php echo number_format($product->get_price(), 2); ?> €</span>
+					<?php
+						}
+					?>
+				</p>
+			</div>
+			<div class="ev-loop-add-to-cart">
+				<div class="actions <?php if ( !$product->is_in_stock() ) { echo 'not-is-stock'; } ?>">
+					<div class="add-product p-action">
+						<?php if ( $product->is_in_stock() ) { ?>
+							<div id="ev-add-to-card-product-<?php echo $product->get_id(); ?>" class="ev-loop-add-to-card-product">
+									<?php woocommerce_quantity_input(); ?>
+
+									<?php echo apply_filters( 'woocommerce_loop_add_to_cart_link',
+										sprintf( "<a id=\"ev-a-link-add-cart-%s\" href=\"%s\" rel=\"nofollow\" data-product_id=\"%s\" data-product_sku=\"%s\" data-quantity=\"%s\" class=\"%s ev-link-add-cart product_type_%s %s\"><span class='ev-cart-icon'>%s</span></a>",
+											esc_attr( $product->get_id() ),
+											esc_url( $product->add_to_cart_url() ),
+											esc_attr( $product->get_id() ),
+											esc_attr( $product->get_sku() ),
+											esc_attr( isset( $quantity ) ? $quantity : 1 ),
+											$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
+											esc_attr( $product->product_type ),
+											'ajax_add_to_cart',
+											esc_html('')
+										), $product ); ?>
+							</div>
+							<script type="text/javascript">
+
+									var productForm = document.getElementById('ev-add-to-card-product-<?php echo $product->get_id(); ?>')
+									var linkAddProduct = productForm.querySelector('a.ev-link-add-cart')
+									var inputQuantityProduct = productForm.querySelector('.quantity.custom input.custom-qty')
+									var minButtonProduct = productForm.querySelector('.quantity.custom a.minus-btn')
+									var maxButtonProduct = productForm.querySelector('.quantity.custom a.plus-btn')
+
+									inputQuantityProduct.addEventListener('change', function() {
+										var input = document.querySelector('#ev-add-to-card-product-<?php echo $product->get_id(); ?> .quantity.custom input.custom-qty')
+										var link = document.getElementById('ev-a-link-add-cart-<?php echo $product->get_id(); ?>')
+										var quantity = parseInt(input.value) == 0 || !Number.isInteger(parseInt(input.value)) ? 1 : parseInt(input.value)
+										input.value = quantity
+										link.setAttribute('data-quantity', quantity)
+							    })
+
+							    minButtonProduct.addEventListener('click', function() {
+										var input = document.querySelector('#ev-add-to-card-product-<?php echo $product->get_id(); ?> .quantity.custom input.custom-qty')
+										var link = document.getElementById('ev-a-link-add-cart-<?php echo $product->get_id(); ?>')
+										var quantity = parseInt(input.value) > 1 ? parseInt(input.value) - 1 : parseInt(input.value)
+										link.setAttribute('data-quantity', quantity)
+							    })
+
+							    maxButtonProduct.addEventListener('click', function() {
+										var input = document.querySelector('#ev-add-to-card-product-<?php echo $product->get_id(); ?> .quantity.custom input.custom-qty')
+										var link = document.getElementById('ev-a-link-add-cart-<?php echo $product->get_id(); ?>')
+										var quantity = parseInt(input.value) + 1
+										link.setAttribute('data-quantity', quantity)
+							    })
+
+							</script>
+						<?php } else { ?>
+							<p>
+								<a href="<?php echo esc_url( add_query_arg( 'cat', $term->term_id, get_permalink( $products->post->ID )) ); ?>">
+									<i class="fa fa-eye" aria-hidden="true"></i>Voir
+								</a>
+							</p>
+						<?php }?>
+					</div>
+				</div>
+			</div>
 		</div>
-
 </li>

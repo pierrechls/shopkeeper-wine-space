@@ -4,8 +4,8 @@ Theme URI: http://espace-vin.com/
 Description: Wine Space theme, extented Shopkeeper.
 Author: Pierre Charles
 Author URI: http://www.pierre-charles.com/
-Template: shopkeeper
-Version: 4.9.2
+Template: wine-space-shopkeeper
+Version: 1.0.0
 */
 
 @import url('../shopkeeper/style.css');
@@ -820,4 +820,129 @@ header .row {
   .ev-footer-legal-informations .ev-footer-legal-info-image img {
     margin-bottom: 1rem;
   }
+}
+
+/******************************/
+/* WOOCOMMERCE PRODUCTS TITLE */
+/******************************/
+
+ul.products li h3 {
+  line-height: 1.5;
+  margin: 0;
+  padding: 1.7rem 3.5rem 0 0;
+  display: inline-block;
+  -webkit-transition: color .3s ease;
+  -moz-transition: color .3s ease;
+  -o-transition: color .3s ease;
+  -ms-transition: color .3s ease;
+  transition: color .3s ease;
+}
+
+ul.products li h3 a.ev-loop-product-title-link {
+  font-weight: 600;
+  color: #000000;
+  font-size: 1.2rem !important;
+  display: block;
+}
+
+ul.products li .ev-loop-product-domaine-and-cuvee p {
+  color: #000000;
+  margin: 0 auto;
+  font-size: 1.3rem;
+}
+
+ul.products li .ev-loop-price-add-to-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap:wrap;
+}
+
+ul.products li .ev-loop-price-add-to-cart .ev-loop-price,
+ul.products li .ev-loop-price-add-to-cart .ev-loop-add-to-cart {
+  flex: 1 auto;
+}
+
+ul.products li .ev-loop-price-add-to-cart .ev-loop-price {
+  margin: 1rem auto 0 auto;
+}
+
+ul.products li .ev-loop-price-add-to-cart .ev-loop-price p {
+  color: #000000;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+ul.products li .ev-loop-price-add-to-cart .ev-loop-price p.ev-price{
+  color: #000000;
+}
+
+ul.products li:hover .ev-loop-product-domaine-and-cuvee p,
+ul.products li:hover .ev-loop-price-add-to-cart .ev-loop-price p,
+ul.products li:hover .ev-loop-price-add-to-cart .ev-loop-price p.ev-price {
+  color: #FFFFFF;
+}
+
+ul.products li .ev-loop-price-add-to-cart .ev-loop-price p.ev-price span.regular-price {
+  text-decoration: line-through;
+  font-weight: 100;
+  opacity: 0.6;
+}
+
+ul.products li .ev-loop-add-to-card-product {
+  display: none;
+  align-items: center;
+  text-align: right;
+  justify-content: right;
+  margin-left: 1rem;
+}
+
+ul.products li:hover .ev-loop-add-to-card-product {
+  display: inherit;
+}
+
+ul.products li .ev-loop-add-to-card-product a.ev-link-add-cart,
+ul.products li .ev-loop-add-to-card-product .quantity.custom {
+  flex: 1 auto;
+}
+
+ul.products li .ev-loop-add-to-card-product .quantity.custom {
+  background: #FFFFFF;
+  padding: 0;
+  text-align: center;
+  border-radius: 2rem;
+  flex: 2;
+  display: inline-block;
+}
+
+ul.products li .ev-loop-add-to-card-product .quantity.custom a.minus-btn,
+ul.products li .ev-loop-add-to-card-product .quantity.custom a.plus-btn {
+  font-size: 2rem;
+  line-height: 1 !important;
+  margin: 0;
+  color: #000000;
+}
+
+ul.products li .ev-loop-add-to-card-product .quantity.custom input.input-text.custom-qty {
+  width: 3rem;
+}
+
+ul.products li .ev-loop-add-to-card-product .quantity.custom a.minus-btn i.spk-icon.spk-icon-minus:before,
+ul.products li .ev-loop-add-to-card-product .quantity.custom a.plus-btn i.spk-icon.spk-icon-plus:before {
+  vertical-align: middle;
+}
+
+
+ul.products li .ev-loop-add-to-card-product a.ev-link-add-cart {
+  margin-right: 1rem;
+  display: inline-block;
+}
+
+ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_cart span.ev-cart-icon {
+  display: block;
+  background: url('images/cart/cart.svg');
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
