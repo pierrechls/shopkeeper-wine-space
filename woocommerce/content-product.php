@@ -174,6 +174,16 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 									var minButtonProduct = productForm.querySelector('.quantity.custom a.minus-btn')
 									var maxButtonProduct = productForm.querySelector('.quantity.custom a.plus-btn')
 
+									linkAddProduct.addEventListener('click', function() {
+											setTimeout(function(){
+													var form = document.getElementById('ev-add-to-card-product-<?php echo $product->get_id(); ?>')
+													form.innerHTML = '<div class="ev-spinner-loader"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>';
+													setTimeout(function(){
+															form.innerHTML = '<p class="product-add-see-cart"><a href="<?php echo get_permalink( wc_get_page_id( 'cart' ) ); ?>">Voir panier</a></p>';
+													}, 2 * 1000)
+											}, 0.1 * 1000)
+							    })
+
 									inputQuantityProduct.addEventListener('change', function() {
 										var input = document.querySelector('#ev-add-to-card-product-<?php echo $product->get_id(); ?> .quantity.custom input.custom-qty')
 										var link = document.getElementById('ev-a-link-add-cart-<?php echo $product->get_id(); ?>')
@@ -198,9 +208,9 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 							</script>
 						<?php } else { ?>
-							<p>
-								<a href="<?php echo esc_url( add_query_arg( 'cat', $term->term_id, get_permalink( $products->post->ID )) ); ?>">
-									<i class="fa fa-eye" aria-hidden="true"></i>Voir
+							<p class="product-not-in-stock-see-text">
+								<a class="product-not-in-stock-see-link" href="<?php echo esc_url( add_query_arg( 'cat', $term->term_id, get_permalink( $products->post->ID )) ); ?>">
+									Voir
 								</a>
 							</p>
 						<?php }?>
