@@ -863,6 +863,10 @@ ul.products li .ev-loop-price-add-to-cart .ev-loop-add-to-cart {
   flex: 1 auto;
 }
 
+ul.products li .ev-loop-price-add-to-cart .ev-loop-add-to-cart .actions {
+  float: right;
+}
+
 ul.products li .ev-loop-price-add-to-cart .ev-loop-price {
   margin: 1rem auto 0 auto;
 }
@@ -897,6 +901,7 @@ ul.products li .ev-loop-add-to-card-product {
   margin-left: 1rem;
 }
 
+
 ul.products li:hover .ev-loop-add-to-card-product {
   display: inherit;
 }
@@ -904,6 +909,7 @@ ul.products li:hover .ev-loop-add-to-card-product {
 ul.products li .ev-loop-add-to-card-product a.ev-link-add-cart,
 ul.products li .ev-loop-add-to-card-product .quantity.custom {
   flex: 1 auto;
+  float: left;
 }
 
 ul.products li .ev-loop-add-to-card-product .quantity.custom {
@@ -911,7 +917,9 @@ ul.products li .ev-loop-add-to-card-product .quantity.custom {
   padding: 0;
   text-align: center;
   border-radius: 2rem;
-  flex: 2;
+  flex: 1;
+  float: left;
+  margin: 0 1.3rem 0 auto;
   display: inline-block;
 }
 
@@ -924,7 +932,7 @@ ul.products li .ev-loop-add-to-card-product .quantity.custom a.plus-btn {
 }
 
 ul.products li .ev-loop-add-to-card-product .quantity.custom input.input-text.custom-qty {
-  width: 3rem;
+  width: 2rem;
 }
 
 ul.products li .ev-loop-add-to-card-product .quantity.custom a.minus-btn i.spk-icon.spk-icon-minus:before,
@@ -932,10 +940,10 @@ ul.products li .ev-loop-add-to-card-product .quantity.custom a.plus-btn i.spk-ic
   vertical-align: middle;
 }
 
-
 ul.products li .ev-loop-add-to-card-product a.ev-link-add-cart {
-  margin-right: 1rem;
+  margin-right: 0rem;
   display: inline-block;
+  float: left;
 }
 
 ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_cart span.ev-cart-icon {
