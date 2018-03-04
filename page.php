@@ -57,27 +57,64 @@
 
 <?php get_header(); ?>
 
+	<style type="text/css">
+
+			#page_wrapper, .content-area {
+				padding: 0;
+				margin: 0;
+			}
+
+			#page_wrapper.sticky_header .content-area, #page_wrapper.transparent_header .content-area {
+				margin: 0;
+			}
+
+	</style>
+
 	<div id="primary" class="content-area">
 
         <div id="content" class="site-content" role="main">
 
-       		<header class="entry-header <?php if ($page_header_src != "") : ?>with_featured_img<?php endif; ?>" <?php if ($page_header_src != "") : ?>style="background-image:url(<?php echo esc_url($page_header_src); ?>)"<?php endif; ?>>
+						<div class="slider-ev-home-header-box-shadow"></div>
+						<div class="slider-ev-home">
+							<div class="slider-ev-siema">
 
-                <div class="page_header_overlay"></div>
+								<?php
+									$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+									$thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
+									$categoryImage = wp_get_attachment_url( $thumbnail_id );
+								?>
 
-                <div class="row">
-                    <div class="large-10 large-centered columns without-sidebar">
+								<div class="slider-ev-siema-slide-background" style="background-image: url('<?php if( $categoryImage != '' ) { echo $categoryImage; } else { echo get_stylesheet_directory_uri() . '/images/products/products-background.png'; } ?>');">
+										<img src="<?php echo get_stylesheet_directory_uri() . '/images/products/slider-image.png'; ?>" alt="espace-vin-slider-image" />
+										<div class="slider-ev-siema-slide-content">
+											<div class="slider-ev-siema-slide-content-center">
+												<h1 class="title-content-page-slider"><?php the_title(); ?></h1>
+												<!--<div class="description-content-page-slider"> HERE THE PAGE DESCRIPTION </div>-->
+											</div>
+										</div>
+								</div>
 
-                        <?php if ( (isset($page_title_option)) && ($page_title_option == "on") ) : ?>
-                        <h1 class="page-title"><?php the_title(); ?></h1>
-                        <?php endif; ?>
+							</div>
+						</div>
 
-                        <?php if($post->post_excerpt) : ?>
-                                <div class="page-description"><?php the_excerpt(); ?></div>
-                        <?php endif; ?>
+						<script type="text/javascript">
 
-                    </div>
-                </div>
+							const siemaWithDots = new Siema({
+								selector: '.slider-ev-siema',
+								duration: 200,
+								easing: 'ease-out',
+								perPage: 1,
+								startIndex: 0,
+								draggable: false,
+								multipleDrag: false,
+								loop: false,
+								onInit: function(){},
+								onChange: function(){}
+							});
+
+						</script>
+
+       		<header style="margin-top: 5rem;">
 
 
             <?php while ( have_posts() ) : the_post(); ?>
