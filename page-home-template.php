@@ -38,12 +38,19 @@
 									<?php
 										while ( have_rows('slider') ) : the_row();
 									?>
-										<div>
-												<img src="<?php the_sub_field('image'); ?>" alt="Siema image" />
-												<p class="title-content-slider">
-													<?php the_sub_field('content'); ?></br>
-													<a href="<?php the_sub_field('link-url'); ?>"><?php the_sub_field('link-text'); ?></a>
-												</p>
+										<?php $backgroudSliderImage = get_sub_field('image');?>
+										<div class="slider-ev-siema-slide-background" style="background-image: url(<?php if( $backgroudSliderImage ) { echo $backgroudSliderImage; } else { echo get_stylesheet_directory_uri() . '/images/products/products-background.png'; } ?>);">
+												<img src="<?php echo get_stylesheet_directory_uri() . '/images/products/slider-image.png'; ?>" alt="espace-vin-slider-image" />
+												<div class="slider-ev-siema-slide-content">
+													<div class="slider-ev-siema-slide-content-center">
+														<div class="description-content-page-slider">
+															<p class="title-content-slider">
+																<?php the_sub_field('content'); ?></br>
+																<a href="<?php the_sub_field('link-url'); ?>"><?php the_sub_field('link-text'); ?></a>
+															</p>
+														</div>
+													</div>
+												</div>
 										</div>
 									<?php
 										endwhile;
@@ -81,7 +88,7 @@
 										}
 									}
 
-								const mySiemaWithDots = new SiemaWithDots({
+								const siemaWithDots = new SiemaWithDots({
 									selector: '.slider-ev-siema',
 									duration: 200,
 									easing: 'ease-out',
