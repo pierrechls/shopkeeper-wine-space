@@ -6,9 +6,9 @@
 
 				$isWooCommercePage = false;
 
-        if (function_exists ( 'is_woocommerce' ) && is_woocommerce()) {
-            $isWooCommercePage = true;
-        }
+        // if (function_exists ( 'is_woocommerce' ) && is_woocommerce()) {
+        //     $isWooCommercePage = true;
+        // }
 
         $woocommerce_keys = array ('woocommerce_shop_page_id',
                                    'woocommerce_terms_page_id',
@@ -57,22 +57,23 @@
 
 <?php get_header(); ?>
 
-	<style type="text/css">
-
-			#page_wrapper, .content-area {
-				padding: 0;
-				margin: 0;
-			}
-
-			#page_wrapper.sticky_header .content-area, #page_wrapper.transparent_header .content-area {
-				margin: 0;
-			}
-
-	</style>
-
 	<div id="primary" class="content-area">
 
         <div id="content" class="site-content" role="main">
+					<?php if (!$isWooCommercePage) { ?>
+
+						<style type="text/css">
+
+								#page_wrapper, .content-area {
+									padding: 0;
+									margin: 0;
+								}
+
+								#page_wrapper.sticky_header .content-area, #page_wrapper.transparent_header .content-area {
+									margin: 0;
+								}
+
+						</style>
 
 						<div class="slider-ev-home-header-box-shadow"></div>
 						<div class="slider-ev-home">
@@ -114,7 +115,28 @@
 
 						</script>
 
-       		<header style="margin-top: 5rem;">
+				<?php } else { ?>
+
+					<header class="entry-header <?php if ($page_header_src != "") : ?>with_featured_img<?php endif; ?>" <?php if ($page_header_src != "") : ?>style="background-image:url(<?php echo esc_url($page_header_src); ?>)"<?php endif; ?>>
+
+                <div class="page_header_overlay"></div>
+
+                <div class="row">
+                    <div class="large-10 large-centered columns without-sidebar">
+
+                        <?php if ( (isset($page_title_option)) && ($page_title_option == "on") ) : ?>
+                        <h1 class="page-title"><?php the_title(); ?></h1>
+                        <?php endif; ?>
+
+                        <?php if($post->post_excerpt) : ?>
+                                <div class="page-description"><?php the_excerpt(); ?></div>
+                        <?php endif; ?>
+
+                    </div>
+                </div>
+
+          </header>
+				<?php } ?>
 
 
             <?php while ( have_posts() ) : the_post(); ?>
