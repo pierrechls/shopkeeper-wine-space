@@ -8,9 +8,9 @@
 
   $isWooCommercePage = false;
 
-  if (function_exists ( 'is_woocommerce' ) && is_woocommerce()) {
-      $isWooCommercePage = true;
-  }
+  // if (function_exists ( 'is_woocommerce' ) && is_woocommerce()) {
+  //     $isWooCommercePage = true;
+  // }
 
   $woocommerce_keys = array ('woocommerce_shop_page_id',
                              'woocommerce_terms_page_id',
