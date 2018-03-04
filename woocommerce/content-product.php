@@ -46,7 +46,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 ?>
 
 
-<li class="column <?php if ( $animateCounter ) echo ' delay-' . $animateCounter; ?><?php if ( (isset($shopkeeper_theme_options['catalog_mode'])) && ($shopkeeper_theme_options['catalog_mode'] == 1) ) echo ' display_buttons'; ?><?php if ( !$shopkeeper_theme_options['add_to_cart_display']) echo ' display_buttons'; ?>">
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Product" class="column <?php if ( $animateCounter ) echo ' delay-' . $animateCounter; ?><?php if ( (isset($shopkeeper_theme_options['catalog_mode'])) && ($shopkeeper_theme_options['catalog_mode'] == 1) ) echo ' display_buttons'; ?><?php if ( !$shopkeeper_theme_options['add_to_cart_display']) echo ' display_buttons'; ?>">
 
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 
@@ -85,13 +85,15 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		<div class="product_thumbnail_wrapper <?php if ( !$product->is_in_stock() ) : ?>outofstock<?php endif; ?>">
 
 			<div class="product_thumbnail <?php echo $class; ?>">
-				<a href="<?php the_permalink(); ?>">
+				<a href="<?php the_permalink(); ?>" itemprop="url">
 					<span class="product_thumbnail_background" style="<?php echo $style; ?>"></span>
 					<?php
 						if ( has_post_thumbnail( $product->get_id() ) ) {
-							echo get_the_post_thumbnail( $product->get_id(), 'medium');
+							echo get_the_post_thumbnail( $product->get_id(), 'medium', array( 'itemprop' => 'image' ));
 						} else {
-							echo apply_filters( 'woocommerce_single_product_image_html', sprintf( '<img src="%s" alt="Placeholder" />', wc_placeholder_img_src() ), $product->get_id() );
+							?>
+								<img  itemprop="image" width="104" height="300" src="<?php echo get_stylesheet_directory_uri() . '/images/products/default-bottle.svg'; ?>" class="attachment-medium size-medium wp-post-image"  alt="default-bottle-image" srcset="<?php echo get_stylesheet_directory_uri() . '/images/products/default-bottle.svg'; ?>" sizes="(max-width: 104px) 100vw, 104px" style="opacity: 1;" />
+							<?php
 						}
 					?>
 				</a>
@@ -115,7 +117,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 		</div><!--.product_thumbnail_wrapper-->
 
-		<h3><a class="product-title-link ev-loop-product-title-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+		<h3 itemprop="name"><a class="product-title-link ev-loop-product-title-link" itemprop="url" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 		<?php
 			$domaineId = wpcf_pr_post_get_belongs(get_the_ID(), 'domaine');
 			$millesime = types_render_field('product-millesime');
@@ -130,17 +132,17 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		?>
 
 		<div class="ev-loop-price-add-to-cart">
-			<div class="ev-loop-price">
+			<div class="ev-loop-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 				<p class="ev-price">
 					<?php
 						if($product->get_sale_price() > 0 ){
 					?>
 							<span class="regular-price"><?php echo number_format($product->get_regular_price(), 2); ?> €</span>
-							<span class="product-price"><?php echo number_format($product->get_price(), 2); ?> €</span>
+							<span itemprop="price" class="product-price"><?php echo number_format($product->get_price(), 2); ?> €</span>
 					<?php
 						} else {
 					?>
-							<span class="product-price"><?php echo number_format($product->get_price(), 2); ?> €</span>
+							<span itemprop="price" class="product-price"><?php echo number_format($product->get_price(), 2); ?> €</span>
 					<?php
 						}
 					?>
