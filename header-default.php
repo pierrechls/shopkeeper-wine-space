@@ -42,6 +42,11 @@
 
             <div class="site-header-wrapper" style="max-width:<?php echo esc_html($header_max_width_style); ?>">
 
+                <div class="ev-menu-left-part">
+                  <a class="offcanvas-menu-button hide-for-large" href="<?php echo get_site_url(); ?>"><img class="ev-logo-icon" src="<?php bloginfo('stylesheet_directory'); ?>/images/header/logo-icon.png" alt="Logo <?php echo str_replace(' ', '-', strtolower(bloginfo('name'))); ?>" /></a>
+                  <a class="offcanvas-menu-button hide-for-large" href="#" style="margin-left: 2rem;" id="toggle-menu-open"><img class="open-menu-icon" src="<?php bloginfo('stylesheet_directory'); ?>/images/header/menu-open.svg" alt="open-menu" /></a>
+                </div>
+
                 <?php
 				$site_tools_padding_class = "";
 				if ( (isset($shopkeeper_theme_options['main_header_off_canvas'])) && ($shopkeeper_theme_options['main_header_off_canvas'] == "1") ) {
@@ -58,6 +63,18 @@
 
                 <div class="site-tools <?php echo esc_html($site_tools_padding_class); ?> <?php if ( (isset($header_alignment)) ) echo esc_html($header_alignment); ?>">
                     <ul>
+
+                        <li class="offcanvas-menu-button <?php if ( (isset($shopkeeper_theme_options['main_header_off_canvas'])) && ($shopkeeper_theme_options['main_header_off_canvas'] == "0") ) : ?>hide-for-large<?php endif; ?>">
+                            <a class="tools_button" data-toggle="offCanvasRight1">
+                                <span class="tools_button_icon">
+                                    <?php if ( (isset($shopkeeper_theme_options['main_header_off_canvas_icon'])) && ($shopkeeper_theme_options['main_header_off_canvas_icon'] != "") ) : ?>
+                                    <img src="<?php echo esc_url($shopkeeper_theme_options['main_header_off_canvas_icon']); ?>">
+                                    <?php else : ?>
+                                    <i class="spk-icon spk-icon-menu"></i>
+                                    <?php endif; ?>
+                                </span>
+                            </a>
+                        </li>
 
                         <?php if (class_exists('YITH_WCWL')) : ?>
                         <?php if ( (isset($shopkeeper_theme_options['main_header_wishlist'])) && ($shopkeeper_theme_options['main_header_wishlist'] == "1") ) : ?>
@@ -124,7 +141,6 @@
                             </a>
                         </li>
                         <?php endif; ?>
-
                     </ul>
                 </div>
 

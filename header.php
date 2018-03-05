@@ -170,6 +170,19 @@
 			}*/
 
 			?>
+						<div id="ev-menu-toggle">
+							<a href="#" style="margin-left: 2rem;" id="toggle-menu-close"><img class="close-menu-icon" src="<?php bloginfo('stylesheet_directory'); ?>/images/header/menu-close.svg" alt="close-menu" /></a>
+
+							<?php
+									wp_nav_menu(array(
+											'theme_location'  => 'main-navigation',
+											'fallback_cb'     => false,
+											'container'       => false,
+											'items_wrap'      => '<ul class="ev-accordion %1$s">%3$s</ul>',
+											'walker' 		  => new rc_scm_walker
+									));
+							?>
+						</div>
 
             <div id="page_wrapper" class="<?php echo $header_sticky_class; ?> <?php echo $header_transparency_class; ?> <?php echo $transparency_scheme; ?>">
 
