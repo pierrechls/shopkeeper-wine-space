@@ -24,6 +24,15 @@ function load_siema_library() {
 }
 add_action( 'wp_enqueue_scripts', 'load_siema_library' );
 
+function load_toggle_menu() {
+    wp_enqueue_script(
+        'ev-toggle-menu',
+        get_stylesheet_directory_uri() . '/inc/js/menu/toggle-menu.js',
+        array( 'jquery' )
+    );
+}
+add_action( 'wp_enqueue_scripts', 'load_toggle_menu' );
+
 class Social_Icons_Walker_Nav_Menu extends Walker_Nav_Menu {
   function start_el ( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
     global $wp_query;
