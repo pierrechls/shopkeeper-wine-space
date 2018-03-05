@@ -42,6 +42,10 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 					margin: 0;
 				}
 
+				#primary > .row, .tob_bar_shop > .row {
+					padding: 1rem 2rem;
+				}
+
 		</style>
 
    	<div id="primary" class="content-area shop-page<?php echo $shop_has_sidebar ? ' shop-has-sidebar':'';?>">
@@ -87,22 +91,6 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 			</script>
 
 		<div  class="shop_header <?php if ($category_header_src != "" || (is_shop() && $page_header_src != "")) : ?>with_featured_img<?php endif; ?> <?php echo $category_header_with_parallax; ?>">
-
-			<?php if ($category_header_src != "") : ?>
-
-			   <div <?php echo $category_header_parallax_ratio; ?>
-					 class="shop_header_bkg <?php echo $category_header_parallax_class; ?>" style="background-image:url(<?php echo esc_url($category_header_src); ?>)">
-			   </div>
-
-			<?php endif ?>
-
-            <?php if ( is_shop() && $page_header_src != "" ) : ?>
-
-               <div <?php echo $category_header_parallax_ratio; ?>
-                     class="shop_header_bkg <?php echo $category_header_parallax_class; ?>" style="background-image:url(<?php echo esc_url($page_header_src); ?>)">
-               </div>
-
-            <?php endif ?>
 
             <div class="row">
                 <div class="large-12 large-centered columns">
