@@ -230,7 +230,7 @@ header .row .columns .site-header-wrapper .ev-menu-left-part a img {
 
 #ev-menu-toggle {
   position: absolute;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background: #FFF;
   z-index: 9999999;
@@ -244,8 +244,38 @@ header .row .columns .site-header-wrapper .ev-menu-left-part a img {
   transform: none;
 }
 
+#ev-menu-toggle a#toggle-menu-close {
+  margin: 2rem;
+  display: block;
+}
+
+#ev-menu-toggle a#toggle-menu-close img.close-menu-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
 #ev-menu-toggle .ev-accordion {
   margin: 0 auto;
+}
+
+#ev-menu-toggle .ev-menu-toogle-menu-element {
+  margin: 2rem auto;
+}
+
+#ev-menu-toggle .ev-menu-toogle-menu-element.ev-menu-social ul {
+  list-style: none;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#ev-menu-toggle .ev-menu-toogle-menu-element.ev-menu-social ul li {
+  display: inline-block;
+  margin: 0 2rem;
+  text-align: center;
+}
+#ev-menu-toggle .ev-menu-toogle-menu-element.ev-menu-social ul li a {
+  color: #000;
 }
 
 #ev-menu-toggle .ev-accordion > li {
@@ -262,30 +292,35 @@ header .row .columns .site-header-wrapper .ev-menu-left-part a img {
     display: block;
     opacity: 1 !important;
     margin: 0 auto;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 #ev-menu-toggle .ev-accordion > li a {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   display: inline-block;
   color: #000000;
 }
 
-#ev-menu-toggle .ev-accordion > li a:after {
+#ev-menu-toggle .ev-accordion > li.menu-item-has-children a:after {
   content: '\003e';
   color: #777;
   font-weight: bold;
   float: right;
-  margin-left: 1rem;
-  position: relative;
+  margin-right: 1rem;
+  position: absolute;
   display: block;
   transition: 0.4s;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  width: 1rem;
+  height: 2rem;
 }
 
-#ev-menu-toggle .ev-accordion > li:has(ul) a:after {
-  content: '';
-}
-
-#ev-menu-toggle .ev-accordion > li.active a:after {
+#ev-menu-toggle .ev-accordion > li.menu-item-has-children.active a:after {
   transform: rotate(90deg);
 }
 
