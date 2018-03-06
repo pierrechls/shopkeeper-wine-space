@@ -33,7 +33,7 @@
 
 ?>
 
-<header id="masthead" class="site-header <?php if(!$isWooCommercePage) { echo 'default-ev-header'; } ?>" role="banner">
+<header id="masthead" class="site-header default-ev-header" role="banner">
 
     <?php if ( (isset($shopkeeper_theme_options['header_width'])) && ($shopkeeper_theme_options['header_width'] == "custom") ) : ?>
     <div class="row">
@@ -63,18 +63,6 @@
 
                 <div class="site-tools <?php echo esc_html($site_tools_padding_class); ?> <?php if ( (isset($header_alignment)) ) echo esc_html($header_alignment); ?>">
                     <ul>
-
-                        <li class="offcanvas-menu-button <?php if ( (isset($shopkeeper_theme_options['main_header_off_canvas'])) && ($shopkeeper_theme_options['main_header_off_canvas'] == "0") ) : ?>hide-for-large<?php endif; ?>">
-                            <a class="tools_button" data-toggle="offCanvasRight1">
-                                <span class="tools_button_icon">
-                                    <?php if ( (isset($shopkeeper_theme_options['main_header_off_canvas_icon'])) && ($shopkeeper_theme_options['main_header_off_canvas_icon'] != "") ) : ?>
-                                    <img src="<?php echo esc_url($shopkeeper_theme_options['main_header_off_canvas_icon']); ?>">
-                                    <?php else : ?>
-                                    <i class="spk-icon spk-icon-menu"></i>
-                                    <?php endif; ?>
-                                </span>
-                            </a>
-                        </li>
 
                         <?php if (class_exists('YITH_WCWL')) : ?>
                         <?php if ( (isset($shopkeeper_theme_options['main_header_wishlist'])) && ($shopkeeper_theme_options['main_header_wishlist'] == "1") ) : ?>
