@@ -710,6 +710,25 @@ header .row .columns .site-header-wrapper .ev-menu-left-part a img {
   justify-content: center;
 }
 
+.slider-ev-home .ev-breadcrumb {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #FFF !important;
+  text-align: left;
+  padding: 0 2rem 0.5rem 2rem;
+}
+
+.slider-ev-home .ev-breadcrumb nav, .slider-ev-home .ev-breadcrumb nav a, .slider-ev-home .ev-breadcrumb nav a:hover {
+  color: #FFFFFF;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: inline-block !important;
+  text-shadow: 0px 0px 1.5rem rgba(0, 0, 0, 1);
+}
+
 .slider-ev-home .slider-ev-siema-slide-content .description-content-page-slider {
   font-family: 'OpenSans';
   font-size: 1.2rem;

@@ -46,6 +46,21 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 					padding: 1rem 2rem;
 				}
 
+				.woocommerce .woocommerce-result-count,
+				.woocommerce-page .woocommerce-result-count,
+				p.woocommerce-result-count,
+				.select2-container .select2-choice > .select2-chosen {
+					font-size: 1.2rem;
+				}
+
+				.select2-result.select2-highlighted {
+					background: #BAA571;
+				}
+
+				.tob_bar_shop {
+					margin-top: 2rem;
+				}
+
 		</style>
 
    	<div id="primary" class="content-area shop-page<?php echo $shop_has_sidebar ? ' shop-has-sidebar':'';?>">
@@ -69,8 +84,8 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 								</div>
 							</div>
 					</div>
-
 				</div>
+				<div class="ev-breadcrumb"><?php do_action('woocommerce_before_main_content_breadcrumb'); ?></div>
 			</div>
 
 			<script type="text/javascript">
@@ -90,69 +105,9 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 
 			</script>
 
-		<div  class="shop_header <?php if ($category_header_src != "" || (is_shop() && $page_header_src != "")) : ?>with_featured_img<?php endif; ?> <?php echo $category_header_with_parallax; ?>">
-
-            <div class="row">
-                <div class="large-12 large-centered columns">
-
-
-                    <?php
-                    // Find the category + category parent, if applicable
-                    $term 			= get_queried_object();
-                    $parent_id 		= empty( $term->term_id ) ? 0 : $term->term_id;
-                    $categories 	= get_terms('product_cat', array('hide_empty' => 0, 'parent' => $parent_id));
-                    ?>
-
-                    <?php
-
-                    $show_categories = FALSE;
-
-                    if ( is_shop() && (get_option('woocommerce_shop_page_display') == 'both') ) $show_categories = TRUE;
-                    if ( is_product_category() && (get_option('woocommerce_category_archive_display') == 'both') ) $show_categories = TRUE;
-
-                    if ( is_product_category() && (get_woocommerce_term_meta($parent_id, 'display_type', true) == 'products') ) $show_categories = FALSE;
-                    if ( is_product_category() && (get_woocommerce_term_meta($parent_id, 'display_type', true) == 'subcategories' ) ) $show_categories = FALSE;
-                    if ( is_product_category() && (get_woocommerce_term_meta($parent_id, 'display_type', true) == 'both') ) $show_categories = TRUE;
-
-                    if ( isset($_GET["s"]) && $_GET["s"] != '' ) $show_categories = FALSE;
-
-                    //echo "Shop Page Display: " . get_option('woocommerce_shop_page_display') . "<br />";
-                    //echo "Default Category Display: " . get_option('woocommerce_category_archive_display') . "<br />";
-                    //echo "Display type (edit product category): " . get_woocommerce_term_meta($term->term_id, 'display_type', true) . "<br />";
-
-                    ?>
-
-                    <?php if ($show_categories == TRUE) : ?>
-                        <?php if ($categories) : ?>
-
-                         <ul class="list_shop_categories list-centered">
-
-                               <?php $cat_counter = 0; ?>
-
-                               <?php foreach($categories as $category) : ?>
-
-                                    <li class="category_item">
-                                        <a href="<?php echo get_term_link( $category->slug, 'product_cat' ); ?>" class="category_item_link">
-                                            <span class="category_name"><?php echo esc_html($category->name); ?></span>
-                                        </a>
-                                    </li>
-
-                               <?php endforeach; ?>
-
-                           </ul><!-- .list_shop_categories-->
-
-                        <?php endif; ?>
-                    <?php endif; ?>
-
-
-                </div><!--.large-12-->
-            </div><!-- .row-->
-
-        </div><!--  .shop_header-->
-
         <div class="tob_bar_shop">
             <div class="row">
-                <div class="small-5 medium-7 large-6 xlarge-8 columns text-left">
+                <div class="small-12 medium-12 large-6 xlarge-6 columns text-left">
                     <?php if (is_active_sidebar( 'catalog-widget-area')) : ?>
                         <div id="button_offcanvas_sidebar_left"  data-toggle="offCanvasLeft1">
                         <span class="filters-text">
@@ -161,9 +116,8 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
                         </span>
                         </div>
                     <?php endif; ?>
-                    <?php do_action('woocommerce_before_main_content_breadcrumb'); ?>
                 </div>
-                <div class="small-7 medium-5 large-6 xlarge-4 columns text-right">
+                <div class="small-12 medium-12 large-6 xlarge-6 columns text-right">
                     <div class="catalog-ordering">
                         <?php if ( have_posts() ) : ?>
                             <?php do_action( 'woocommerce_before_shop_loop_catalog_ordering' ); ?>
