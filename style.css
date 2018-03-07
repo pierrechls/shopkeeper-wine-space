@@ -1245,7 +1245,6 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
 /*     FILTER OFF CANVAS      */
 /******************************/
 
-
 .off-canvas.position-left {
   width: 30rem !important;
   z-index: 9999999999999;
@@ -1279,4 +1278,35 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
   .off-canvas.position-left {
     width: 100% !important;
   }
+}
+
+/******************************/
+/*          MINI CART         */
+/******************************/
+
+.shopkeeper-mini-cart li.mini_cart_item a,
+.shopkeeper-mini-cart li.mini_cart_item span.quantity,
+.shopkeeper-mini-cart li.mini_cart_item span.quantity span.woocommerce-Price-amount.amount {
+  font-size: 1.3rem !important;
+  color: #FFFFFF !important;
+}
+
+
+.shopkeeper-mini-cart li.mini_cart_item a.remove {
+  font-size: 2rem !important;
+  color: #FFFFFF !important;
+}
+
+.shopkeeper-mini-cart p.total {
+  font-size: 1.5rem !important;
+  color: #FFFFFF !important;
+}
+.shopkeeper-mini-cart span.woocommerce-Price-amount.amount {
+  font-size: 2.4rem !important;
+  color: #FFFFFF !important;
+}
+
+.shopkeeper-mini-cart p.buttons a {
+  font-size: 1.3rem !important;
+  padding: 1rem !important;
 }
