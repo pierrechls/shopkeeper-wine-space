@@ -33,7 +33,69 @@
 
 ?>
 
-<header id="masthead" class="site-header default-ev-header" role="banner">
+<!-- STYLE FOR WooCommerce pages -->
+
+<?php
+  if ($isWooCommercePage) {
+?>
+    <style type="text/css">
+
+      #page_wrapper.sticky_header .content-area,
+      #page_wrapper.transparent_header .content-area,
+      #page_wrapper .content-area,
+      #primary {
+        margin: 0rem auto;
+        padding: 15rem 0 3rem 0;
+      }
+
+      .ev-flash-message-actived #page_wrapper.sticky_header .content-area,
+      .ev-flash-message-actived #page_wrapper.transparent_header .content-area,
+      .ev-flash-message-actived #page_wrapper .content-area,
+      .ev-flash-message-actived #primary {
+        margin: 5rem auto;
+      }
+
+      @media only screen and (max-width: 1200px) {
+        .woocommerce-cart .entry-content .woocommerce > form,
+        .woocommerce-cart .entry-content .woocommerce .cart-collaterals {
+          width: 100%;
+          margin-bottom: 50px;
+        }
+      }
+
+      #primary .row {
+        padding: 0 1rem !important;
+      }
+
+      .woocommerce #content input.button, .woocommerce #respond input#submit, .woocommerce a.button,
+      .woocommerce button.button, .woocommerce input.button, .woocommerce-page #content input.button,
+      .woocommerce-page #respond input#submit, .woocommerce-page a.button, .woocommerce-page button.button,
+      .woocommerce-page input.button, .woocommerce #content input.button.alt, .woocommerce #respond input#submit.alt,
+      .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce-page #content input.button.alt,
+      .woocommerce-page #respond input#submit.alt, .woocommerce-page a.button.alt, .woocommerce-page button.button.alt, .woocommerce-page input.button.alt {
+        font-size: 1.4rem !important;
+      }
+
+      .woocommerce form .form-row input.input-text,
+      .woocommerce form .form-row textarea,
+      p label {
+        font-size: 1.2rem !important;
+      }
+
+      #billing_country_field .select2-selection__rendered, #billing_country_field .select2-selection__placeholder, #billing_state_field .select2-selection__rendered, #billing_state_field .select2-selection__placeholder, #calc_shipping_country_field .select2-selection__rendered, #calc_shipping_country_field .select2-selection__placeholder, #calc_shipping_state_field .select2-selection__rendered, #calc_shipping_state_field .select2-selection__placeholder, #shipping_country_field .select2-selection__rendered, #shipping_country_field .select2-selection__placeholder, #shipping_state_field .select2-selection__rendered, #shipping_state_field .select2-selection__placeholder, .woocommerce-widget-layered-nav-dropdown .select2-selection__rendered, .woocommerce-widget-layered-nav-dropdown .select2-selection__placeholder {
+        font-size: 1.2rem !important;
+      }
+
+      label.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox {
+        font-size: 1.2rem !important;
+      }
+
+    </style>
+<?php
+  }
+?>
+
+<header id="masthead" class="site-header default-ev-header <?php if($isWooCommercePage) { echo 'default-ev-header-woocommerce'; } ?>" role="banner">
 
     <?php if ( (isset($shopkeeper_theme_options['header_width'])) && ($shopkeeper_theme_options['header_width'] == "custom") ) : ?>
     <div class="row">
