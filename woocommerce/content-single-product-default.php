@@ -165,8 +165,8 @@
   </script>
 
 	<?php if ( !post_password_required() ) : ?>
-    <div class="ev-single-product">
-  		<div  id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div itemscope itemtype="http://schema.org/Product" class="ev-single-product">
+  		<div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
   			<div class="row">
   		        <div class="">
   					<div class="product_content_wrapper">
@@ -193,7 +193,7 @@
 
                     <div class="ev-single-product-title-domaine">
                       <div class="ev-single-product-title">
-                        <h1><?php the_title(); ?></h1>
+                        <h1 itemprop="name"><?php the_title(); ?></h1>
                       </div>
                       <div class="ev-single-product-domaine">
                         <?php
@@ -224,8 +224,8 @@
                     <?php
                       }
                     ?>
-                    <div class="ev-single-product-price">
-                      <p>Prix :</p>
+                    <div class="ev-single-product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <p itemprop="price">Prix :</p>
                       <?php do_action( 'woocommerce_single_product_summary_single_price' ); ?>
                     </div>
                     <div class="ev-single-product-add-to-cart">
