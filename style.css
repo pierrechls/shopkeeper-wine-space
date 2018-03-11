@@ -1310,3 +1310,277 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
   font-size: 1.3rem !important;
   padding: 1rem !important;
 }
+
+/******************************/
+/*       SINGLE PRODUCT       */
+/******************************/
+
+.ev-single-product-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  min-height: 30rem;
+  position: relative;
+}
+
+.ev-single-product-content .ev-single-product-image {
+  position: relative;
+  width: 30%;
+}
+
+.ev-single-product-content .ev-single-product-image .product_thumbnail  {
+  position: relative;
+  margin-top: -15rem;
+}
+
+.ev-single-product-content .ev-single-product-image .product_thumbnail img {
+  margin: 0 auto;
+  display: block;
+  max-height: 65rem;
+  min-height: 60rem;
+  width: auto;
+}
+
+.ev-single-product-content .ev-single-product-text {
+    width: 70%;
+}
+
+.ev-single-product-content .ev-single-product-text > div {
+    display: block;
+    margin: 0rem auto;
+    width: 100%;
+    color: rgba(0,0,0,0.6);
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-title-domaine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-title-domaine h1 {
+  font-family: 'Lora';
+  font-size: 2.5rem;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-title-domaine p a {
+  font-family: 'Lora';
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  color: #000000;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-title-domaine p a i.ev-arrow-right {
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 2px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-millesime p {
+  display: inline-block;
+  margin-right: 1rem;
+  font-family: 'OpenSans';
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-price p,
+.ev-single-product-content .ev-single-product-text .ev-single-product-price p.price {
+  display: inline-block;
+  margin-right: 1rem;
+  font-family: 'OpenSans';
+  font-weight: 800;
+  font-size: 2rem;
+  color: #BAA571;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-add-to-cart {
+  font-family: 'OpenSans';
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-add-to-cart p.stock.in-stock {
+  font-size: 1.2rem;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-add-to-cart form {
+  vertical-align: top;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-add-to-cart form > div.quantity.custom {
+  display: block;
+  margin: 0 2rem auto 0;
+  padding: 0;
+  height: auto;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-add-to-cart form > div.quantity.custom a.plus-btn,
+.ev-single-product-content .ev-single-product-text .ev-single-product-add-to-cart form > div.quantity.custom a.minus-btn,
+.ev-single-product-content .ev-single-product-text .ev-single-product-add-to-cart form > div.quantity.custom a.plus-btn i,
+.ev-single-product-content .ev-single-product-text .ev-single-product-add-to-cart form > div.quantity.custom a.minus-btn i {
+  line-height: inherit !important;
+  font-size: 2.5rem;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-add-to-cart form > div.quantity.custom input.custom-qty {
+  width: 4rem;
+  vertical-align: text-bottom;
+  line-height: inherit !important;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-add-to-cart form button.single_add_to_cart_button {
+  border-radius: 5px !important;
+  font-size: 1rem !important;
+  line-height: 1 !important;
+  width: auto;
+  padding: 1rem 2rem!important;
+  min-width: 0;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-informations {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-informations > .ev-product-info-block {
+  flex: 1;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-informations > .ev-product-info-block .ev-product-info-element p {
+    font-size: 1.4rem;
+    font-family: 'OpenSans';
+    color: rgba(0,0,0,0.6);
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-informations > .ev-product-info-block .ev-product-info-element p:first-child {
+    font-weight: 800;
+    margin: 0 auto;
+    color: #000;
+}
+
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-wine-waiter-review {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3rem auto 2rem;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-wine-waiter-review .wine-waiter-picture {
+  width: 10rem;
+  height: 10rem;
+  margin-right: 2rem;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-wine-waiter-review .wine-waiter-picture img {
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid #FFFFFF;
+  border-radius: 50%;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-wine-waiter-review .wine-waiter-review {
+  flex: 2;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-wine-waiter-review .wine-waiter-review p {
+  font-size: 1.3rem;
+  font-family: 'OpenSans';
+  display: block;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-wine-waiter-review .wine-waiter-review p:first-child {
+  font-weight: 800;
+}
+
+.ev-single-product-content-article {
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  font-family: 'OpenSans' !important;
+}
+
+@media screen and (max-width: 830px) {
+  .ev-single-product-content .ev-single-product-image .product_thumbnail img {
+    max-height: 45rem;
+    min-height: 40rem;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .ev-single-product-content {
+    display: block;
+  }
+  .ev-single-product-content .ev-single-product-image {
+    width: 100%;
+  }
+  .ev-single-product-content .ev-single-product-image .product_thumbnail {
+      margin-top: -2rem;
+  }
+  .ev-single-product-content .ev-single-product-image .product_thumbnail img {
+    max-height: 25rem;
+    min-height: 20rem;
+  }
+
+  .ev-single-product-content .ev-single-product-text {
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .ev-single-product form.cart, .ev-single-product .woocommerce-variation-add-to-cart,
+  .ev-single-product .product:not(.product-type-grouped) form.cart:not(.variations_form), .woocommerce-variation-add-to-cart {
+    background: none !important;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+  .ev-single-product-title-domaine {
+    display: block;
+    text-align: center;
+  }
+
+  .ev-single-product-content .ev-single-product-text .ev-single-product-title-domaine {
+    display: block;
+  }
+
+  .ev-single-product-content .ev-single-product-text > div {
+    margin: 2rem auto;
+    text-align: center;
+  }
+
+  .ev-single-product-content .ev-single-product-text .ev-single-product-add-to-cart form {
+    display: block;
+  }
+
+  .ev-single-product-content .ev-single-product-text .ev-single-product-add-to-cart form > div.quantity.custom {
+    float: none;
+    margin: 2rem 0 1rem 0;
+  }
+  .ev-single-product-content .ev-single-product-text .ev-single-product-add-to-cart form button.single_add_to_cart_button {
+    float: none;
+  }
+
+  .ev-single-product-content .ev-single-product-text .ev-single-product-wine-waiter-review {
+    display: block;
+    margin: 2rem auto;
+  }
+
+  .ev-single-product-content .ev-single-product-text .ev-single-product-wine-waiter-review .wine-waiter-picture {
+    margin: 3rem auto 1rem auto;
+  }
+
+  .ev-single-product-content .ev-single-product-text .ev-single-product-informations {
+    display: block;
+  }
+}
