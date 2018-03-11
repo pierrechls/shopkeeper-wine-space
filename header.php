@@ -161,6 +161,15 @@
 
         <div class="st-content">
 
+					<?php
+						$flashMessageActived = get_field('wine-space-settings-flash-message-active', 'option');
+						if ($flashMessageActived) {
+					?>
+							<p class="ev-website-flash-message-info-alert"><?php the_field('wine-space-settings-flash-message-content', 'option'); ?></p>
+					<?php
+						}
+					?>
+
             <?php
 
 			$header_sticky_class = "";

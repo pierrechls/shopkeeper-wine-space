@@ -1584,3 +1584,31 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
     display: block;
   }
 }
+
+
+/******************************/
+/*       FLASH MESSAGE        */
+/******************************/
+
+.st-content {
+  position: relative;
+}
+
+.top-headers-wrapper {
+  position: fixed !important;
+}
+
+.ev-website-flash-message-info-alert {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: #BAA571;
+  z-index: 9999;
+  color: #000000;
+  padding: 1rem;
+  text-align: center;
+  font-family: 'OpenSans';
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
