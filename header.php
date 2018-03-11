@@ -159,13 +159,16 @@
 				</div>
 			</div>
 
-        <div class="st-content">
+				<?php
+					$flashMessageActived = get_field('wine-space-settings-flash-message-active', 'option');
+				?>
+
+        <div class="st-content <?php if($flashMessageActived) { echo 'ev-flash-message-actived'; } ?>">
 
 					<?php
-						$flashMessageActived = get_field('wine-space-settings-flash-message-active', 'option');
 						if ($flashMessageActived) {
 					?>
-							<p class="ev-website-flash-message-info-alert"><?php the_field('wine-space-settings-flash-message-content', 'option'); ?></p>
+							<div class="ev-website-flash-message-info-alert"><?php the_field('wine-space-settings-flash-message-content', 'option'); ?></div>
 					<?php
 						}
 					?>
