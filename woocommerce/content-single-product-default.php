@@ -80,7 +80,12 @@
     font-size: 2rem !important;
     color: #BAA571;
     font-family: 'Lora';
+		font-weight: 800;
   }
+
+	.ev-single-product-container .related.products h2	span {
+		font-weight: 800;
+	}
 
   .ev-single-product-container ul.products-grid {
     margin-bottom: 0;
@@ -334,5 +339,17 @@
 	<?php endif; ?>
 
 
+	<script type="text/javascript">
+
+		document.addEventListener('DOMContentLoaded', function () {
+			var buttonAddToCard = document.querySelector('.ev-single-product-add-to-cart form.cart button.single_add_to_cart_button');
+			var img = document.createElement('img');
+			img.src = '<?php echo get_stylesheet_directory_uri() . '/images/cart/cart.svg'; ?>';
+
+			buttonAddToCard.prepend(img);
+			console.log(buttonAddToCard);
+		}, false);
+
+	</script>
 
 </div>

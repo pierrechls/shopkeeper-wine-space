@@ -38,6 +38,18 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 					margin: 0;
 				}
 
+				@media only screen and (max-width: 40.063em) {
+					#page_wrapper {
+							padding-top: 50px;
+					}
+				}
+
+				@media only screen and (max-width: 63.9375em) and (min-width: 40.063em) {
+					#page_wrapper {
+							padding-top: 63px;
+					}
+				}
+
 				#page_wrapper.sticky_header .content-area, #page_wrapper.transparent_header .content-area {
 					margin: 0;
 				}
