@@ -1,5 +1,17 @@
 <?php
 
+function replaceDefaultWocommerceString( $translatedText, $text, $domain ) {
+
+	switch ( $translatedText ) {
+		case 'Produits apparentés' :
+    case 'Related Products' :
+			$translatedText = 'Nos vins sélectionnés pour vous !';
+			break;
+	}
+	return $translatedText;
+}
+add_filter( 'gettext', 'replaceDefaultWocommerceString', 20, 3 );
+
 if( function_exists('acf_add_options_page') ) {
 
   acf_add_options_page(array(
@@ -103,6 +115,7 @@ class Social_Icons_Walker_Nav_Menu extends Walker_Nav_Menu {
 
   }
 }
+
 
 function wpex_add_custom_fonts() {
 	return array( 'OpenSans' ); // You can add more then 1 font to the array!
