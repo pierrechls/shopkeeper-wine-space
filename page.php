@@ -73,6 +73,18 @@
 									margin: 0;
 								}
 
+								@media only screen and (max-width: 40.063em) {
+									#page_wrapper {
+											padding-top: 50px;
+									}
+								}
+
+								@media only screen and (max-width: 63.9375em) and (min-width: 40.063em) {
+									#page_wrapper {
+									    padding-top: 63px;
+									}
+								}
+
 						</style>
 
 						<div class="slider-ev-home-header-box-shadow"></div>
