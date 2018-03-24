@@ -45,7 +45,16 @@
       #page_wrapper .content-area,
       #primary {
         margin: 0rem auto;
-        padding: 15rem 0 3rem 0;
+        padding: 7rem 0 3rem 0;
+      }
+
+      @media only screen and (max-width: 1024px) {
+          #page_wrapper.sticky_header .content-area,
+          #page_wrapper.transparent_header .content-area,
+          #page_wrapper .content-area,
+          #primary {
+            padding: 2rem 0 3rem 0;
+          }
       }
 
       .ev-flash-message-actived #page_wrapper.sticky_header .content-area,
