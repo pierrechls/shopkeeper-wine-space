@@ -115,6 +115,7 @@ get_header(); ?>
 				</div>
 
 			</div>
+			<div class="ev-breadcrumb"><?php custom_breadcrumbs(); ?></div>
 		</div>
 
 		<script type="text/javascript">
