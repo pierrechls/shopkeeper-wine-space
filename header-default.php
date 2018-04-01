@@ -40,6 +40,14 @@
 ?>
     <style type="text/css">
 
+      #page_wrapper.sticky_header .content-area h1.page-title:first-child,
+      #page_wrapper.transparent_header .content-area h1.page-title:first-child,
+      #page_wrapper .content-area h1.page-title:first-child,
+      #primary h1.page-title:first-child {
+        font-size: 4rem;
+        margin-bottom: 1.2rem;
+      }
+
       #page_wrapper.sticky_header .content-area,
       #page_wrapper.transparent_header .content-area,
       #page_wrapper .content-area,
