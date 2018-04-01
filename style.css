@@ -1,11 +1,15 @@
 /*
-Theme Name: Wine Space
-Theme URI: http://espace-vin.com/
-Description: Wine Space theme, extented Shopkeeper.
-Author: Pierre Charles
-Author URI: http://www.pierre-charles.com/
-Template: wine-space-shopkeeper
-Version: 1.0.0
+ Theme Name:   Wine Space
+ Theme URI:    http://espace-vin.com/
+ Description:  Shopkeeper Child Theme
+ Author:       Pierre Charles
+ Author URI:   http://www.pierre-charles.com/
+ Template:     wine-space-shopkeeper
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         wine, shopkeeper
+ Text Domain:  wine-space-shopkeeper
 */
 
 @import url('../shopkeeper/style.css');
@@ -776,8 +780,18 @@ header .row .columns .site-tools ul li a span i {
   font-family: 'Lora';
 }
 
-#primary.primary-home .homepage-website-description img {
+#primary.primary-home .homepage-website-description .image-cover {
+  height: 100%;
+  background-image: url('images/home/website-description-background.jpg');
+  background-size: cover;
+  background-position: center left;
+}
+
+#primary.primary-home .homepage-website-description .image-cover img {
   float: right;
+  opacity: 0;
+  height: 100%;
+  max-width: 100%;
 }
 
 /***********************/

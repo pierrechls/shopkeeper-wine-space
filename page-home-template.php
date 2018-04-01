@@ -172,8 +172,8 @@
 								<p class="content-description-title"><?php the_field('description-text-website-title'); ?></p>
 								<p class="content-description-content"><?php the_field('description-text-website-content'); ?></p>
 							</div>
-						  <div class="homepage-website-description-content">
-									<img src="<?php echo get_stylesheet_directory_uri() . '/images/home/website-description-background.jpg' ?>"/>
+						  <div class="homepage-website-description-content image-cover">
+									<img src="<?php echo get_stylesheet_directory_uri() . '/images/home/blank.png' ?>"/>
 							</div>
 						</div>
 
