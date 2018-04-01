@@ -825,6 +825,17 @@ header .row .columns .site-tools ul li a span i {
   background-repeat: no-repeat;
 }
 
+.slider-ev-siema-slide-background:before {
+  content: '';
+  background: rgba(0,0,0,0.3);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .slider-ev-home img {
   margin: 0 auto;
   width: 100%;
