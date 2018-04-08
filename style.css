@@ -1869,3 +1869,16 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
   align-items: center;
   justify-content: center;
 }
+
+/******************************/
+/*     SEARCH HEADER STYLE    */
+/******************************/
+
+.off-canvas.is-transition-overlap.is-open {
+  overflow: scroll;
+}
+
+.search-suggestions-wrapp .products li .product_thumbnail_wrapper img {
+  max-height: 30rem;
+    width: auto;
+}
