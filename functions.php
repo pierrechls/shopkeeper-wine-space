@@ -7,6 +7,9 @@ function replaceDefaultWocommerceString( $translatedText, $text, $domain ) {
     case 'Related Products' :
 			$translatedText = 'Nos vins sélectionnés pour vous !';
 			break;
+		case 'What are you looking for?' :
+			$translatedText = 'Recherchez un vin, un domaine...';
+			break;
 	}
 	return $translatedText;
 }
