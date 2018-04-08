@@ -277,6 +277,15 @@ header .row .columns .site-tools ul li a span i {
   #page_wrapper .top-headers-wrapper.default-ev-header a span, #page_wrapper .top-headers-wrapper header.default-ev-header a span {
     color: #000000 !important;
   }
+
+  #page_wrapper {
+    padding-top: 6rem !important;
+  }
+
+  #page_wrapper .top-headers-wrapper {
+    left: 0;
+    height: 6rem;
+  }
 }
 
 /***********************/
@@ -1531,6 +1540,17 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
     margin: 0rem auto;
     width: 100%;
     color: rgba(0,0,0,0.6);
+}
+
+.ev-single-product-content .ev-single-product-text .ev-product-medailles {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-product-medailles img {
+    height: 10rem;
+    width: auto;
+    margin: 0 1rem 0 0;
 }
 
 .ev-single-product-content .ev-single-product-text .ev-single-product-title-domaine {
