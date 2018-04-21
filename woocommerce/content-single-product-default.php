@@ -195,60 +195,80 @@
               			</div><!--.product_thumbnail-->
                   </div>
                   <div class="ev-single-product-text">
+										<div class="ev-single-product-text-header">
+											<div>
+												<div class="ev-single-product-title-domaine">
+		                      <div class="ev-single-product-title">
+		                        <h1 itemprop="name"><?php the_title(); ?></h1>
+		                      </div>
+													<!-- <div class="ev-single-product-categories">
+			                      <?php do_action( 'woocommerce_single_product_summary_single_meta' ); ?>
+			                    </div> -->
+			                    <?php
+			                      $millesime = types_render_field('product-millesime');
+			                			if ($millesime != '') {
+			              		  ?>
+			                      <div class="ev-single-product-millesime">
+			                          <p>Millésime :</p><?php echo $millesime; ?>
+			                      </div>
+			                    <?php
+			                      }
+			                    ?>
+			                    <div class="ev-single-product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+			                      <p itemprop="price">Prix :</p>
+			                      <?php do_action( 'woocommerce_single_product_summary_single_price' ); ?>
+			                    </div>
+			                    <div class="ev-single-product-add-to-cart">
+			                      <?php if ( (isset($shopkeeper_theme_options['catalog_mode'])) && ($shopkeeper_theme_options['catalog_mode'] == 0) ) : ?>
+			                          <?php if ( !$product->is_in_stock() && !empty($shopkeeper_theme_options['out_of_stock_label']) ) : ?>
+			                                  <div class="out_of_stock_wrapper">
+			                                      <div class="out_of_stock_badge_single <?php if (!$product->is_on_sale()) : ?>first_position<?php endif; ?>"><?php _e( $shopkeeper_theme_options['out_of_stock_label'], 'woocommerce' ); ?>
 
-                    <div class="ev-single-product-title-domaine">
-                      <div class="ev-single-product-title">
-                        <h1 itemprop="name"><?php the_title(); ?></h1>
-                      </div>
-                      <div class="ev-single-product-domaine">
-                        <?php
-              						$parent_id = wpcf_pr_post_get_belongs(get_the_ID(), 'domaine');
-              						if (!empty($parent_id)) {
-              							$parentTitle = get_the_title($parent_id);
-              							$parentURL = get_post_permalink( $parent_id );
-              						}
-              					?>
-                        <?php if($parentTitle != '') { ?>
-                          <?php if($parentURL != '') { ?>
-                            <p><a href="<?php if($categoryID != '') { echo esc_url( add_query_arg( 'cat', $categoryID, $parentURL) ); } else { echo $parentURL; } ?>">Domaine : <?php echo $parentTitle ?><i class="ev-arrow-right"></i></a></p>
-                          <?php } ?>
-                        <?php } ?>
-                      </div>
+			                                      </div>
+			                                  </div>
+			                          <?php endif; ?>
+			                      <?php endif; ?>
 
-                    </div>
-                    <!-- <div class="ev-single-product-categories">
-                      <?php do_action( 'woocommerce_single_product_summary_single_meta' ); ?>
-                    </div> -->
-                    <?php
-                      $millesime = types_render_field('product-millesime');
-                			if ($millesime != '') {
-              		  ?>
-                      <div class="ev-single-product-millesime">
-                          <p>Millésime :</p><?php echo $millesime; ?>
-                      </div>
-                    <?php
-                      }
-                    ?>
-                    <div class="ev-single-product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                      <p itemprop="price">Prix :</p>
-                      <?php do_action( 'woocommerce_single_product_summary_single_price' ); ?>
-                    </div>
-                    <div class="ev-single-product-add-to-cart">
-                      <?php if ( (isset($shopkeeper_theme_options['catalog_mode'])) && ($shopkeeper_theme_options['catalog_mode'] == 0) ) : ?>
-                          <?php if ( !$product->is_in_stock() && !empty($shopkeeper_theme_options['out_of_stock_label']) ) : ?>
-                                  <div class="out_of_stock_wrapper">
-                                      <div class="out_of_stock_badge_single <?php if (!$product->is_on_sale()) : ?>first_position<?php endif; ?>"><?php _e( $shopkeeper_theme_options['out_of_stock_label'], 'woocommerce' ); ?>
-
-                                      </div>
-                                  </div>
-                          <?php endif; ?>
-                      <?php endif; ?>
-
-                       <?php
-                         do_action( 'woocommerce_single_product_summary_single_add_to_cart' );
-                         do_action( 'woocommerce_single_product_summary' );
-                       ?>
-                    </div>
+			                       <?php
+			                         do_action( 'woocommerce_single_product_summary_single_add_to_cart' );
+			                         do_action( 'woocommerce_single_product_summary' );
+			                       ?>
+			                    </div>
+		                    </div>
+											</div>
+											<div>
+												<div class="ev-single-product-title-domaine">
+		                      <div class="ev-single-product-domaine">
+		                        <?php
+		              						$parent_id = wpcf_pr_post_get_belongs(get_the_ID(), 'domaine');
+		              						if (!empty($parent_id)) {
+		              							$parentTitle = get_the_title($parent_id);
+		              							$parentURL = get_post_permalink( $parent_id );
+		              						}
+		              					?>
+		                        <?php if($parentTitle != '') { ?>
+		                          <?php if($parentURL != '') { ?>
+		                            <p><a href="<?php if($categoryID != '') { echo esc_url( add_query_arg( 'cat', $categoryID, $parentURL) ); } else { echo $parentURL; } ?>">Domaine : <?php echo $parentTitle ?><i class="ev-arrow-right"></i></a></p>
+		                          <?php } ?>
+		                        <?php } ?>
+		                      </div>
+													<?php
+														$medailles = get_field('medailles');
+														if( $medailles ):
+													?>
+															<div class="ev-product-medailles">
+																<?php foreach( $medailles as $medaille ): ?>
+																	<?php if( $medaille === 'prix-propiete' ) { ?> <img src="<?php echo get_stylesheet_directory_uri() . '/images/products/medaille-pp.png'; ?>" /> <?php } ?>
+																	<?php if( $medaille === 'bio' ) { ?> <img src="<?php echo get_stylesheet_directory_uri() . '/images/products/medaille-bio.png'; ?>" /> <?php } ?>
+																	<?php if( $medaille === 'biodynamie' ) { ?> <img src="<?php echo get_stylesheet_directory_uri() . '/images/products/medaille-bio.png'; ?>" /> <?php } ?>
+																<?php endforeach; ?>
+															</div>
+													<?php
+														endif;
+													?>
+		                    </div>
+											</div>
+										</div>
 
                     <?php
                       $wineWaiter = get_field('wine-waiter');
@@ -299,20 +319,6 @@
                           <?php if ($productContenance != '') { ?><div class="ev-product-info-element"><p>Contance :</p><?php echo $productContenance; ?></div><?php } ?>
                         </div>
                     </div>
-										<?php
-											$medailles = get_field('medailles');
-											if( $medailles ):
-										?>
-												<div class="ev-product-medailles">
-													<?php foreach( $medailles as $medaille ): ?>
-														<?php if( $medaille === 'prix-propiete' ) { ?> <img src="<?php echo get_stylesheet_directory_uri() . '/images/products/medaille-pp.png'; ?>" /> <?php } ?>
-														<?php if( $medaille === 'bio' ) { ?> <img src="<?php echo get_stylesheet_directory_uri() . '/images/products/medaille-bio.png'; ?>" /> <?php } ?>
-														<?php if( $medaille === 'biodynamie' ) { ?> <img src="<?php echo get_stylesheet_directory_uri() . '/images/products/medaille-bio.png'; ?>" /> <?php } ?>
-													<?php endforeach; ?>
-												</div>
-										<?php
-											endif;
-										?>
                   </div>
                 </div>
   						</div><!-- .row -->
