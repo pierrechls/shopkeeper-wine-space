@@ -58,6 +58,10 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 					padding: 1rem 2rem;
 				}
 
+				.row #button_offcanvas_sidebar_left .filters-text {
+					font-size: 1.2rem;
+				}
+
 				.woocommerce .woocommerce-result-count,
 				.woocommerce-page .woocommerce-result-count,
 				p.woocommerce-result-count,
