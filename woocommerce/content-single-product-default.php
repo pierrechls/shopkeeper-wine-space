@@ -260,6 +260,8 @@
 																<?php foreach( $medailles as $medaille ): ?>
 																	<?php if( $medaille === 'prix-propiete' ) { ?> <img src="<?php echo get_stylesheet_directory_uri() . '/images/products/medaille-pp.png'; ?>" /> <?php } ?>
 																	<?php if( $medaille === 'bio' ) { ?> <img src="<?php echo get_stylesheet_directory_uri() . '/images/products/medaille-bio.png'; ?>" /> <?php } ?>
+																	<?php if( $medaille === 'terra-vitis' ) { ?> <img src="<?php echo get_stylesheet_directory_uri() . '/images/products/medaille-tv.png'; ?>" /> <?php } ?>
+																	<?php if( $medaille === 'agriculture-raisonnee' ) { ?> <img src="<?php echo get_stylesheet_directory_uri() . '/images/products/medaille-ag.png'; ?>" /> <?php } ?>
 																	<?php if( $medaille === 'biodynamie' ) { ?> <img src="<?php echo get_stylesheet_directory_uri() . '/images/products/medaille-bd.png'; ?>" /> <?php } ?>
 																<?php endforeach; ?>
 															</div>
