@@ -69,6 +69,10 @@
 									margin: 0;
 								}
 
+								.slider-ev-home, .slider-ev-siema {
+							    margin-bottom: 3rem;
+								}
+
 								#page_wrapper.sticky_header .content-area, #page_wrapper.transparent_header .content-area {
 									margin: 0;
 								}
