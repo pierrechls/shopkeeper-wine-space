@@ -199,6 +199,11 @@ header .row .columns .site-header-wrapper .ev-menu-left-part a img {
   height: 100%;
 }
 
+header .row .columns .site-header-wrapper .ev-menu-left-part a img.ev-logo-icon {
+  height: 100%;
+  width: auto;
+}
+
 header .row .columns .site-tools ul li {
   margin-left: 2rem !important;
 }
@@ -775,7 +780,7 @@ header .row .columns .site-tools ul li a span i {
   color: #FFFFFF;
 }
 
-#primary.primary-home .homepage-website-description p.content-description-title {
+#primary.primary-home .homepage-website-description h1.content-description-title {
   color: #FFFFFF;
   font-size: 1.7rem;
   font-family: 'Lora';
