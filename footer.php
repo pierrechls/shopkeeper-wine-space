@@ -36,7 +36,7 @@
 														</div>
 													</div>
 													<div class="ev-footer-cave-informations">
-													  <div class="ev-footer-cave-informations-infos" itemscope itemtype="http://schema.org/Person">
+													  <div class="ev-footer-cave-informations-infos" itemscope itemtype="http://schema.org/LocalBusiness">
 															<h6>Découvrez notre cave <span>à <span itemprop="name">Saint Chinian</span></span></h6>
 															<div class="cave-info" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 																<p>Adresse :</p>
