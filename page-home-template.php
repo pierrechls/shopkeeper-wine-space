@@ -169,7 +169,7 @@
 
 						<div class="homepage-website-description">
 						  <div class="homepage-website-description-content">
-								<p class="content-description-title"><?php the_field('description-text-website-title'); ?></p>
+								<h1 class="content-description-title"><?php the_field('description-text-website-title'); ?></h1>
 								<p class="content-description-content"><?php the_field('description-text-website-content'); ?></p>
 							</div>
 						  <div class="homepage-website-description-content image-cover">
