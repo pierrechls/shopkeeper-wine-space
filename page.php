@@ -11,7 +11,7 @@
         // }
 
         $woocommerce_keys = array ('woocommerce_shop_page_id',
-                                   'woocommerce_terms_page_id',
+                                   // 'woocommerce_terms_page_id',
                                    'woocommerce_cart_page_id',
                                    'woocommerce_checkout_page_id',
                                    'woocommerce_pay_page_id',
@@ -63,6 +63,19 @@
 					<?php if (!$isWooCommercePage) { ?>
 
 						<style type="text/css">
+
+						/***********************/
+						/* CONTENT LINKS STYLE */
+						/***********************/
+
+						#st-container #page_wrapper #primary.content-area #content p a,
+						#st-container #page_wrapper #primary.content-area #content p a:link,
+						#st-container #page_wrapper #primary.content-area #content p a:visited,
+						#st-container #page_wrapper #primary.content-area #content p a:hover,
+						#st-container #page_wrapper #primary.content-area #content p a:active {
+							color: #BAA571;
+							text-decoration: underline;
+						}
 
 								#page_wrapper, .content-area {
 									padding: 0;

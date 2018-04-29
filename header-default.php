@@ -13,7 +13,7 @@
   // }
 
   $woocommerce_keys = array ('woocommerce_shop_page_id',
-                             'woocommerce_terms_page_id',
+                             // 'woocommerce_terms_page_id',
                              'woocommerce_cart_page_id',
                              'woocommerce_checkout_page_id',
                              'woocommerce_pay_page_id',
