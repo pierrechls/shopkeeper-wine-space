@@ -10,6 +10,30 @@ function replaceDefaultWocommerceString( $translatedText, $text, $domain ) {
 		case 'What are you looking for?' :
 			$translatedText = 'Recherchez un vin, un domaine...';
 			break;
+		case 'Continue Reading' :
+			$translatedText = 'Lire plus';
+			break;
+		case 'Previous Reading' :
+			$translatedText = 'Article précédent';
+			break;
+		case 'Next Reading' :
+			$translatedText = 'Article suivant';
+			break;
+		case 'All' :
+			$translatedText = 'Tous';
+			break;
+		case 'Category Archives' :
+			$translatedText = 'Archives de catégorie';
+			break;
+		case ' by ' :
+			$translatedText = ' par ';
+			break;
+		case ' on ' :
+			$translatedText = ' le ';
+			break;
+		case ' in ' :
+			$translatedText = ' dans ';
+			break;
 	}
 	return $translatedText;
 }
