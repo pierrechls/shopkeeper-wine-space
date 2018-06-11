@@ -34,6 +34,12 @@ function replaceDefaultWocommerceString( $translatedText, $text, $domain ) {
 		case ' in ' :
 			$translatedText = ' dans ';
 			break;
+		case 'Oops 404 again! That page can\'t be found.' :
+			$translatedText = 'Oops erreur 404 ! La page demandée n\'existe pas.';
+			break;
+		case 'It looks like nothing was found at this location. Maybe try a search?' :
+			$translatedText = 'Il semble que rien n\'existe à cet emplacement. Essayez une rechercher ?';
+			break;
 	}
 	return $translatedText;
 }
