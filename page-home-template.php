@@ -90,8 +90,8 @@
 
 								const siemaWithDots = new SiemaWithDots({
 									selector: '.slider-ev-siema',
-									duration: 200,
-									easing: 'ease-out',
+									duration: 800,
+									easing: 'ease-in-out',
 									perPage: 1,
 									startIndex: 0,
 									draggable: true,
@@ -105,6 +105,10 @@
 										this.updateDots()
 									},
 								});
+
+								 setInterval(function () {
+									 siemaWithDots.next();
+								 }, 5 * 1000);
 
 							</script>
 
