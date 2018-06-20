@@ -670,7 +670,7 @@ header .row .columns .site-tools ul li a span i {
     top: 32px;
   }
   #page_wrapper .top-headers-wrapper {
-    width: calc(100% - 29rem) !important;
+    /* width: calc(100% - 29rem) !important; */
   }
 }
 
@@ -820,6 +820,11 @@ header .row .columns .site-tools ul li a span i {
   height: 10rem;
   position: absolute;
   z-index: 1;
+}
+@media (max-width: 1024px) {
+  .slider-ev-home-header-box-shadow {
+    height: 30rem;
+  }
 }
 
 .slider-ev-home, .slider-ev-siema {
@@ -1701,6 +1706,28 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
   margin-right: 1rem;
 }
 
+@media (max-width: 1024px) {
+  .ev-single-product-content .ev-single-product-text .ev-single-product-add-to-cart form {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .ev-single-product-content .ev-single-product-text .ev-single-product-add-to-cart form > div.quantity.custom {
+    margin: 0 1rem 0 auto !important;
+  }
+}
+
+@media (max-width: 300px) {
+  .ev-single-product-content .ev-single-product-text .ev-single-product-add-to-cart form {
+    display: block !important;
+  }
+
+  .ev-single-product-content .ev-single-product-text .ev-single-product-add-to-cart form > div.quantity.custom {
+    margin: 2rem 0 1rem 0  !important;
+  }
+}
+
 .ev-single-product-content .ev-single-product-text .ev-single-product-informations {
   display: flex;
   align-items: flex-start;
@@ -1864,7 +1891,21 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
 }
 
 .ev-flash-message-actived .top-headers-wrapper {
-  top: 4rem;
+  top: 4rem !important;
+}
+
+.ev-flash-message-actived .top-headers-wrapper.on_page_scroll {
+  top: 0 !important;
+}
+
+@media (min-width: 1024px) {
+  .admin-bar .ev-flash-message-actived .top-headers-wrapper {
+    top: 32px !important;
+  }
+
+  .admin-bar .ev-flash-message-actived .top-headers-wrapper.on_page_scroll {
+    top: 32px !important;
+  }
 }
 
 .top-headers-wrapper.sticky_header {
