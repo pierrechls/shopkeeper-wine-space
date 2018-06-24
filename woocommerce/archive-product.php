@@ -50,6 +50,10 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 					}
 				}
 
+				.ev-flash-message-actived #page_wrapper.sticky_header .content-area, #page_wrapper.transparent_header .content-area {
+				    margin-top: 4rem;
+				}
+
 				#page_wrapper.sticky_header .content-area, #page_wrapper.transparent_header .content-area {
 					margin: 0;
 				}

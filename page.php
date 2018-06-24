@@ -68,6 +68,10 @@
 						/* CONTENT LINKS STYLE */
 						/***********************/
 
+						.ev-flash-message-actived #page_wrapper.sticky_header .content-area, #page_wrapper.transparent_header .content-area {
+						    margin-top: 4rem;
+						}
+
 						#st-container #page_wrapper #primary.content-area #content p a,
 						#st-container #page_wrapper #primary.content-area #content p a:link,
 						#st-container #page_wrapper #primary.content-area #content p a:visited,
@@ -146,6 +150,18 @@
 						</script>
 
 				<?php } else { ?>
+
+					<style type="text/css">
+
+						.top-headers-wrapper header .row .columns .site-tools ul li.ev-facebook-messenger a img.ev-chat-icon-black {
+						  display: block;
+						}
+
+						.top-headers-wrapper header .row .columns .site-tools ul li.ev-facebook-messenger a img.ev-chat-icon-white {
+						  display: none;
+						}
+
+					</style>
 
 					<header class="entry-header <?php if ($page_header_src != "") : ?>with_featured_img<?php endif; ?>" <?php if ($page_header_src != "") : ?>style="background-image:url(<?php echo esc_url($page_header_src); ?>)"<?php endif; ?>>
 

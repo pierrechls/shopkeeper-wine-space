@@ -25,6 +25,10 @@ get_header(); ?>
 		margin-bottom: 3rem;
 	}
 
+	.ev-flash-message-actived #page_wrapper.sticky_header .content-area, #page_wrapper.transparent_header .content-area {
+			margin-top: 4rem;
+	}
+
 	#page_wrapper.sticky_header .content-area, #page_wrapper.transparent_header .content-area {
 		margin: 0;
 	}

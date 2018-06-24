@@ -77,6 +77,10 @@ get_header('shop');
       margin-top: 2rem;
     }
 
+    .ev-flash-message-actived #page_wrapper.sticky_header .content-area, #page_wrapper.transparent_header .content-area {
+        margin-top: 4rem;
+    }
+
 </style>
 
 <div id="primary" class="content-area">
