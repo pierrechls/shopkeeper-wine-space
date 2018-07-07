@@ -85,7 +85,7 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 
    	<div id="primary" class="content-area shop-page<?php echo $shop_has_sidebar ? ' shop-has-sidebar':'';?>">
 
-			<div class="slider-ev-home-header-box-shadow"></div>
+			<!-- <div class="slider-ev-home-header-box-shadow"></div> -->
 			<div class="slider-ev-home">
 				<div class="slider-ev-siema">
 

@@ -33,7 +33,7 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<div class="slider-ev-home-header-box-shadow"></div>
+			<!-- <div class="slider-ev-home-header-box-shadow"></div> -->
 			<div class="slider-ev-home">
 				<div class="slider-ev-siema">
 

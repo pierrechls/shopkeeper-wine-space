@@ -136,7 +136,7 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 
-		<div class="slider-ev-home-header-box-shadow"></div>
+		<!-- <div class="slider-ev-home-header-box-shadow"></div> -->
 		<div class="slider-ev-home">
 			<div class="slider-ev-siema">
 

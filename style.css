@@ -875,6 +875,9 @@ header .row .columns .site-tools ul li a span i {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  -webkit-box-shadow: inset 0px 71px 83px -32px rgba(0,0,0,0.65);
+  -moz-box-shadow: inset 0px 71px 83px -32px rgba(0,0,0,0.65);
+  box-shadow: inset 0px 71px 83px -32px rgba(0,0,0,0.65);
 }
 
 .slider-ev-siema-slide-background:before {
