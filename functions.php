@@ -384,4 +384,10 @@ function custom_breadcrumbs() {
 
 }
 
+add_action( 'woocommerce_checkout_before_terms_and_conditions', 'add_shipping_conditions_link_page' );
+
+function add_shipping_conditions_link_page() {
+	echo '<p><a href="'.get_site_url().'/conditions-de-livraison" style="text-transform: uppercase;font-weight: bold;">Conditions de livraison</a></p>';
+}
+
 ?>
