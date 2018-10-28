@@ -34,6 +34,12 @@ function replaceDefaultWocommerceString( $translatedText, $text, $domain ) {
 		case ' in ' :
 			$translatedText = ' dans ';
 			break;
+		case 'Oops 404 again! That page can\'t be found.' :
+			$translatedText = 'Oops erreur 404 ! La page demandée n\'existe pas.';
+			break;
+		case 'It looks like nothing was found at this location. Maybe try a search?' :
+			$translatedText = 'Il semble que rien n\'existe à cet emplacement. Essayez une rechercher ?';
+			break;
 	}
 	return $translatedText;
 }
@@ -376,6 +382,12 @@ function custom_breadcrumbs() {
 
     }
 
+}
+
+add_action( 'woocommerce_checkout_before_terms_and_conditions', 'add_shipping_conditions_link_page' );
+
+function add_shipping_conditions_link_page() {
+	echo '<p><a href="'.get_site_url().'/conditions-de-livraison" style="text-transform: uppercase;font-weight: bold;">Conditions de livraison</a></p>';
 }
 
 ?>

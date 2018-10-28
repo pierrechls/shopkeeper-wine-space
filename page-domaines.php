@@ -3,6 +3,48 @@ get_header(); ?>
 
 <style>
 
+	/***********************/
+	/* CONTENT LINKS STYLE */
+	/***********************/
+
+	#st-container #page_wrapper #primary.content-area #content p a,
+	#st-container #page_wrapper #primary.content-area #content p a:link,
+	#st-container #page_wrapper #primary.content-area #content p a:visited,
+	#st-container #page_wrapper #primary.content-area #content p a:hover,
+	#st-container #page_wrapper #primary.content-area #content p a:active {
+		color: #BAA571;
+		text-decoration: underline;
+	}
+
+	#page_wrapper, .content-area {
+		padding: 0;
+		margin: 0;
+	}
+
+	.slider-ev-home, .slider-ev-siema {
+		margin-bottom: 3rem;
+	}
+
+	.ev-flash-message-actived #page_wrapper.sticky_header .content-area, #page_wrapper.transparent_header .content-area {
+			margin-top: 4rem;
+	}
+
+	#page_wrapper.sticky_header .content-area, #page_wrapper.transparent_header .content-area {
+		margin: 0;
+	}
+
+	@media only screen and (max-width: 40.063em) {
+		#page_wrapper {
+				padding-top: 50px;
+		}
+	}
+
+	@media only screen and (max-width: 63.9375em) and (min-width: 40.063em) {
+		#page_wrapper {
+				padding-top: 63px;
+		}
+	}
+
 	#primary{
 		background-color: #FFFFFF;
 		padding: 0;
@@ -94,7 +136,7 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 
-		<div class="slider-ev-home-header-box-shadow"></div>
+		<!-- <div class="slider-ev-home-header-box-shadow"></div> -->
 		<div class="slider-ev-home">
 			<div class="slider-ev-siema">
 
