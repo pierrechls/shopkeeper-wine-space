@@ -1281,6 +1281,13 @@ ul.products li .ev-loop-add-to-cart .actions.not-is-stock {
 
 ul.products .out_of_stock_badge_loop {
   font-size: 1rem;
+  background: #cacaca;
+}
+
+.woocommerce #products-grid.products li span.onsale,
+.woocommerce-page #products-grid.products li span.onsale {
+    font-size: 1.3rem;
+    background: #A60311;
 }
 
 ul.products li:hover .ev-loop-add-to-cart .actions.not-is-stock {
