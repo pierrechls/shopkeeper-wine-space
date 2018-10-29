@@ -318,7 +318,7 @@
                           <?php if ($productVinification != '') { ?><div class="ev-product-info-element"><p>Vinification :</p><?php echo $productVinification; ?></div><?php } ?>
                           <?php if ($productService != '') { ?><div class="ev-product-info-element"><p>Service :</p><?php echo $productService; ?></div><?php } ?>
                           <?php if ($productGarde != '') { ?><div class="ev-product-info-element"><p>Garde :</p><?php echo $productGarde; ?></div><?php } ?>
-                          <?php if ($productContenance != '') { ?><div class="ev-product-info-element"><p>Contance :</p><?php echo $productContenance; ?></div><?php } ?>
+                          <?php if ($productContenance != '') { ?><div class="ev-product-info-element"><p>Contenance :</p><?php echo $productContenance; ?></div><?php } ?>
                         </div>
                     </div>
                   </div>
