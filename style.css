@@ -571,7 +571,8 @@ header .row .columns .site-tools ul li a span i {
 }
 
 .ev-menu .main-navigation > ul > li a, .ev-menu .main-navigation > ul > li a i {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
   color: #FFF;
 }
 
