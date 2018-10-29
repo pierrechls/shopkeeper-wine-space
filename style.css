@@ -576,6 +576,18 @@ header .row .columns .site-tools ul li a span i {
   color: #FFF;
 }
 
+.ev-menu .main-navigation > ul > li.ev-menu-product-link-bio a, .ev-menu .main-navigation > ul > li.ev-menu-product-link-bio a i {
+  color: #92E036;
+}
+
+.ev-menu .main-navigation > ul > li.ev-menu-product-link-promo a, .ev-menu .main-navigation > ul > li.ev-menu-product-link-promo a i {
+  color: #FE3636;
+}
+
+.ev-menu .main-navigation > ul > li.ev-menu-product-link-gold a, .ev-menu .main-navigation > ul > li.ev-menu-product-link-gold a i {
+  color: #E5C67A;
+}
+
 .ev-menu .main-navigation:hover > ul > li a, .ev-menu .main-navigation:hover > ul > li a i {
   opacity: 0.6;
 }
