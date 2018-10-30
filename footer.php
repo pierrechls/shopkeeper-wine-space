@@ -23,7 +23,7 @@
 											<div class="ev-footer">
 													<div class="ev-footer-values">
 													  <div class="ev-footer-values-value">
-															<img src="<?php echo get_stylesheet_directory_uri() . '/images/footer/price.png' ?>"/>
+															<img src="<?php echo get_stylesheet_directory_uri() . '/images/footer/price.svg' ?>"/>
 															<p>Prix directs producteurs</p>
 														</div>
 													  <div class="ev-footer-values-value">
