@@ -658,6 +658,7 @@ header .row .columns .site-tools ul li a span i {
 .ev-menu .main-navigation.ev-products-navigation > ul > li a {
   text-transform: uppercase;
   padding: 0.5rem 0;
+  font-weight: 800;
 }
 
 .ev-menu .main-navigation.ev-products-navigation > ul > li:after {
@@ -1293,13 +1294,13 @@ ul.products li .ev-loop-add-to-cart .actions.not-is-stock {
 }
 
 ul.products .out_of_stock_badge_loop {
-  font-size: 1rem;
+  font-size: 0.9rem;
   background: #cacaca;
 }
 
 .woocommerce #products-grid.products li span.onsale,
 .woocommerce-page #products-grid.products li span.onsale {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     background: #A60311;
 }
 
