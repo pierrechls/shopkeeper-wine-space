@@ -996,6 +996,28 @@ header .row .columns .site-tools ul li a span i {
   text-shadow: 0px 0px 1.5rem rgba(0, 0, 0, 1);
 }
 
+.slider-ev-home .direction {
+  clear: both;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  width: 10%;
+}
+
+.slider-ev-home .direction img {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.slider-ev-home .direction.prev {
+  left: 0;
+}
+
+.slider-ev-home .direction.next {
+  right: 0;
+}
+
 .slider-ev-home .pagination {
     clear:both;
     padding:0;
@@ -2039,6 +2061,8 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
 
 .off-canvas.is-transition-overlap.is-open {
   overflow: scroll;
+  height: auto !important;
+  max-height: 100vh;
 }
 
 .off-canvas-wrapper .site-search > .row {
