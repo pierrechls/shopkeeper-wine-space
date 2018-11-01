@@ -141,10 +141,10 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 											<?php endif; ?>
 									</div> <!--catalog-ordering-->
                 </div>
-                <div class="small-12 medium-12 large-6 xlarge-6 columns text-right" style="display: flex;align-items: center;align-content: center;justify-content: flex-end;">
+                <div class="small-12 medium-12 large-6 xlarge-6 columns text-right" style="display: flex;align-items: center;align-content: center;justify-content: flex-end;flex-wrap: wrap;">
 										<?php if (is_active_sidebar( 'catalog-widget-area')) : ?>
 												<div id="button_offcanvas_sidebar_left"  data-toggle="offCanvasLeft1">
-												<span class="filters-text" style="border: 1px solid #000;padding: 0.2rem 1rem 0 1rem;border-radius: 0.5rem;">
+												<span class="filters-text" style="border: 1px solid #000;padding: 0.6rem 1rem 0.4rem 1.2rem;border-radius: 6px;">
 														<i class="spk-icon spk-icon-menu-filters"></i>
 														<?php echo esc_html_e('Filter', 'woocommerce'); ?>
 												</span>
