@@ -128,6 +128,16 @@ function load_toggle_menu() {
 }
 add_action( 'wp_enqueue_scripts', 'load_toggle_menu' );
 
+function load_search_ev_script() {
+    wp_enqueue_script(
+        'search-ev-script',
+        get_stylesheet_directory_uri() . '/inc/js/ev/search.js',
+        array( 'jquery' )
+    );
+}
+add_action( 'wp_enqueue_scripts', 'load_search_ev_script' );
+
+
 class Social_Icons_Walker_Nav_Menu extends Walker_Nav_Menu {
   function start_el ( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
     global $wp_query;
