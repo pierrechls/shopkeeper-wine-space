@@ -1268,6 +1268,10 @@ ul.products li h3 a.ev-loop-product-title-link {
   display: block;
 }
 
+ul.products li .ev-loop-product-description {
+  padding: 0 1rem;
+}
+
 ul.products li .ev-loop-product-domaine-and-cuvee p {
   color: #000000;
   margin: 0 auto;
