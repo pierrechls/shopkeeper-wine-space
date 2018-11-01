@@ -2010,9 +2010,18 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
   overflow: scroll;
 }
 
+.off-canvas-wrapper .site-search > .row {
+  margin-top: 4rem;
+}
+
+.off-canvas-wrapper .site-search > .row .site-search-close {
+  margin: 1rem 0 0 0;
+  padding: 1rem 0;
+}
+
 .search-suggestions-wrapp .products li .product_thumbnail_wrapper img {
-  max-height: 30rem;
-    width: auto;
+  max-height: 15rem;
+  width: auto;
 }
 
 /******************************/
