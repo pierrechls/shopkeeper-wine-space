@@ -1787,6 +1787,10 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
   margin-right: 1rem;
 }
 
+.ev-single-product-content .ev-single-product-text .ev-single-product-add-to-cart form .quantity.hidden {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .ev-single-product-content .ev-single-product-text .ev-single-product-add-to-cart form {
     display: flex !important;
