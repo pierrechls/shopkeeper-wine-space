@@ -640,6 +640,7 @@ header .row .columns .site-tools ul li a span i {
 .ev-menu .main-navigation.ev-legal-navigation > ul > li a {
   text-transform: inherit !important;
   padding: 0.5rem 0;
+  font-size: 0.8rem;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
 }
 .ev-menu .main-navigation.ev-legal-navigation > ul > li::after {
