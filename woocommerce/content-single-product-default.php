@@ -369,7 +369,6 @@
 			img.src = '<?php echo get_stylesheet_directory_uri() . '/images/cart/cart.svg'; ?>';
 
 			buttonAddToCard.prepend(img);
-			console.log(buttonAddToCard);
 		}, false);
 
 	</script>
