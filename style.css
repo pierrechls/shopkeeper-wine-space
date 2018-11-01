@@ -2079,6 +2079,19 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
   width: auto;
 }
 
+.off-canvas-wrapper .site-search > .row .search-wrapp .search-suggestions-wrapp ul li {
+  padding: 2px 2px 10px 2px;
+}
+
+.off-canvas-wrapper .site-search > .row .search-wrapp .search-suggestions-wrapp ul li h3 {
+  padding: 1rem 0 1rem 1rem;
+  font-weight: 800;
+}
+
+.off-canvas-wrapper .site-search > .row .search-wrapp .search-suggestions-wrapp ul li .product_after_shop_loop {
+  padding: 0 0 0 1rem;
+}
+
 /******************************/
 /*       COMMENTS STYLE       */
 /******************************/
