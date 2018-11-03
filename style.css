@@ -727,7 +727,8 @@ header .row .columns .site-tools ul li a span i {
 /***********************/
 
 .products li {
-  padding: 0.5rem 0.5rem 1rem 0.5rem;
+  /* padding: 0.5rem 0.5rem 1rem 0.5rem; */
+  padding: 2px;
   -webkit-transition: all 0.2s ease-out;
   -ms-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
