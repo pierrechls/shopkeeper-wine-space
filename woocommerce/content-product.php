@@ -130,7 +130,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 			<?php
 				}
 			?>
-			<div class="ev-loop-price-add-to-cart">
+			<div class="ev-loop-price-add-to-cart regular">
 				<div class="ev-loop-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 					<p class="ev-price">
 						<?php

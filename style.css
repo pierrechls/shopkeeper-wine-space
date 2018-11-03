@@ -1319,6 +1319,10 @@ ul.products li .ev-loop-price-add-to-cart {
   align-items: flex-end;
 }
 
+ul.products li .ev-loop-price-add-to-cart.regular {
+  margin-bottom: -1rem;
+}
+
 ul.products.minimal-style li .ev-loop-price-add-to-cart {
   display: block;
 }
