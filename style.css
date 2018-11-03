@@ -199,10 +199,26 @@ header .row {
   width: 100% !important;
   max-width: none !important;
   height: 100%;
+  padding: 0 5px;
 }
 
 header .row .columns {
   height: 100%;
+  padding: 0;
+}
+
+@media (max-width: 500px) {
+  #page_wrapper .top-headers-wrapper header.default-ev-header a {
+    margin-left: 1rem;
+  }
+
+  header .row .columns .site-tools ul li {
+    margin-left: 1rem !important;
+  }
+
+  .site-tools.offset {
+    margin-right: 5px;
+  }
 }
 
 header .row .columns .site-header-wrapper {
