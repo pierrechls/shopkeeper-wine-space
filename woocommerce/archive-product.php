@@ -81,6 +81,16 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 					margin-top: 2rem;
 				}
 
+				@media print, screen and (max-width: 40em) {
+					.tob_bar_shop .small-12 {
+						justify-content: space-between !important;
+					}
+
+					.tob_bar_shop .small-12.number-of-product {
+						display: none !important;
+					}
+				}
+
 				#primary > .row, .tob_bar_shop > .row {
 		      display: flex;
 			    align-content: space-between;
@@ -134,7 +144,7 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 
         <div class="tob_bar_shop">
             <div class="row">
-                <div class="small-12 medium-12 large-6 xlarge-6 columns text-left" style="display:flex;align-items:center;">
+                <div class="number-of-product small-12 medium-12 large-6 xlarge-6 columns text-left" style="display:flex;align-items:center;">
 									<div class="catalog-ordering">
 											<?php if ( have_posts() ) : ?>
 													<?php do_action( 'woocommerce_before_shop_loop_result_count' ); ?>
