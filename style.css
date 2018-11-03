@@ -207,20 +207,6 @@ header .row .columns {
   padding: 0;
 }
 
-@media (max-width: 500px) {
-  #page_wrapper .top-headers-wrapper header.default-ev-header a {
-    margin-left: 1rem;
-  }
-
-  header .row .columns .site-tools ul li {
-    margin-left: 1rem !important;
-  }
-
-  .site-tools.offset {
-    margin-right: 5px;
-  }
-}
-
 header .row .columns .site-header-wrapper {
   height: 100%;
 }
@@ -1278,11 +1264,23 @@ header .row .columns .site-tools ul li a span i {
   #primary.primary-home .homepage-website-description-content:nth-child(2) {
       display: none;
   }
-  .ev-footer .ev-footer-values,
+
   .ev-footer .ev-footer-cave-informations,
   .ev-footer-legal-informations {
     display: block;
   }
+
+  .ev-footer .ev-footer-values {
+    padding: 4rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .ev-footer .ev-footer-values-value {
+    width: 50%;
+    flex: auto;
+  }
+
   .ev-footer .ev-footer-cave-informations .ev-footer-cave-informations-infos {
     text-align: center;
     margin-bottom: 3rem;
