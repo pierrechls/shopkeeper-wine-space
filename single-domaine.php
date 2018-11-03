@@ -29,6 +29,16 @@ get_header(); ?>
     padding: 0 !important;
 	}
 
+  #page_wrapper.sticky_header .content-area,
+  #page_wrapper.transparent_header .content-area {
+    margin-top: 0;
+  }
+
+  .ev-flash-message-actived #page_wrapper.sticky_header .content-area,
+  .ev-flash-message-actived #page_wrapper.transparent_header .content-area {
+    margin-top: 4rem;
+  }
+
 </style>
 
 <script type="text/javascript">
