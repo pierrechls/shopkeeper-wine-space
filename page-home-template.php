@@ -57,6 +57,12 @@
 									?>
 
 								</div>
+								<div class="direction prev">
+									<img class="arrow-prev" src="<?php echo get_stylesheet_directory_uri() . '/images/slider/arrow-left.svg' ?>"/>
+								</div>
+								<div class="direction next">
+									<img class="arrow-next" src="<?php echo get_stylesheet_directory_uri() . '/images/slider/arrow-right.svg' ?>"/>
+								</div>
 								<div class="pagination"><ul></ul></div>
 							</div>
 
@@ -106,9 +112,23 @@
 									},
 								});
 
-								 setInterval(function () {
-									 siemaWithDots.next();
-								 }, 5 * 1000);
+								let isPaused;
+								let directionHasChanged;
+
+								document.addEventListener('DOMContentLoaded', function(e) {
+									const selectorElement = document.querySelector('.slider-ev-siema');
+									selectorElement.addEventListener('mouseover', (e) => isPaused = true );
+	        				selectorElement.addEventListener('mouseout', (e) => isPaused = false );
+									document.querySelector('.slider-ev-home .direction.prev').addEventListener('click', () => {siemaWithDots.prev(); directionHasChanged = true;});
+									document.querySelector('.slider-ev-home .direction.next').addEventListener('click', () => {siemaWithDots.next(); directionHasChanged = true;});
+								});
+
+								setInterval(function () {
+									 if (!isPaused && !directionHasChanged) {
+										siemaWithDots.next();
+									 }
+									 directionHasChanged = false;
+								}, 5 * 1000);
 
 							</script>
 

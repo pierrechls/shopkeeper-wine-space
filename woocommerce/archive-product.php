@@ -31,6 +31,35 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 
 ?>
 
+		<script type="text/javascript">
+
+			document.addEventListener('DOMContentLoaded', function(e) {
+			  reformatProductGrid();
+			});
+
+			window.onresize = function(event) {
+				reformatProductGrid();
+			};
+
+			function reformatProductGrid() {
+				productsGrid = document.querySelector('.products');
+				firstProductsElement = productsGrid.querySelector('li');
+				minimalClassName = 'minimal-style';
+				if (productsGrid && firstProductsElement) {
+					if (firstProductsElement.clientWidth < 200) {
+						if (!productsGrid.classList.contains(minimalClassName)) {
+							productsGrid.classList.add(minimalClassName);
+						}
+					} else {
+						if (productsGrid.classList.contains(minimalClassName)) {
+							productsGrid.classList.remove(minimalClassName);
+						}
+					}
+				}
+			}
+
+		</script>
+
 		<style type="text/css">
 
 				#page_wrapper, .content-area {
@@ -81,6 +110,23 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 					margin-top: 2rem;
 				}
 
+				@media print, screen and (max-width: 40em) {
+					.tob_bar_shop .small-12 {
+						justify-content: space-between !important;
+					}
+
+					.tob_bar_shop .small-12.number-of-product {
+						display: none !important;
+					}
+				}
+
+				#primary > .row, .tob_bar_shop > .row {
+		      display: flex;
+			    align-content: space-between;
+			    justify-content: center;
+			    align-items: start;
+		    }
+
 		</style>
 
    	<div id="primary" class="content-area shop-page<?php echo $shop_has_sidebar ? ' shop-has-sidebar':'';?>">
@@ -127,21 +173,25 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 
         <div class="tob_bar_shop">
             <div class="row">
-                <div class="small-12 medium-12 large-6 xlarge-6 columns text-left">
-                    <?php if (is_active_sidebar( 'catalog-widget-area')) : ?>
-                        <div id="button_offcanvas_sidebar_left"  data-toggle="offCanvasLeft1">
-                        <span class="filters-text">
-                            <i class="spk-icon spk-icon-menu-filters"></i>
-                            <?php echo esc_html_e('Filter', 'woocommerce'); ?>
-                        </span>
-                        </div>
-                    <?php endif; ?>
+                <div class="number-of-product small-12 medium-12 large-6 xlarge-6 columns text-left" style="display:flex;align-items:center;">
+									<div class="catalog-ordering">
+											<?php if ( have_posts() ) : ?>
+													<?php do_action( 'woocommerce_before_shop_loop_result_count' ); ?>
+											<?php endif; ?>
+									</div> <!--catalog-ordering-->
                 </div>
-                <div class="small-12 medium-12 large-6 xlarge-6 columns text-right">
+                <div class="small-12 medium-12 large-6 xlarge-6 columns text-right" style="display: flex;align-items: center;align-content: center;justify-content: flex-end;flex-wrap: wrap;">
+										<?php if (is_active_sidebar( 'catalog-widget-area')) : ?>
+												<div id="button_offcanvas_sidebar_left"  data-toggle="offCanvasLeft1" style="z-index:0;">
+												<span class="filters-text" style="border: 1px solid #000;padding: 0.6rem 1rem 0.4rem 1.2rem;border-radius: 6px;">
+														<i class="spk-icon spk-icon-menu-filters"></i>
+														<?php echo esc_html_e('Filter', 'woocommerce'); ?>
+												</span>
+												</div>
+										<?php endif; ?>
                     <div class="catalog-ordering">
                         <?php if ( have_posts() ) : ?>
                             <?php do_action( 'woocommerce_before_shop_loop_catalog_ordering' ); ?>
-                            <?php do_action( 'woocommerce_before_shop_loop_result_count' ); ?>
                         <?php endif; ?>
                     </div> <!--catalog-ordering-->
                 </div>

@@ -116,106 +116,112 @@ if ( empty( $product ) || ! $product->is_visible() ) {
             <?php do_action( 'woocommerce_after_shop_loop_item_title' ); ?>
 
 		</div><!--.product_thumbnail_wrapper-->
-
-		<h3 itemprop="name"><a class="product-title-link ev-loop-product-title-link" itemprop="url" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-		<?php
-			$domaineId = wpcf_pr_post_get_belongs(get_the_ID(), 'domaine');
-			$millesime = types_render_field('product-millesime');
-			if (!empty($domaineId) || $millesime != '') {
-		?>
-			<div class="ev-loop-product-domaine-and-cuvee">
-				<?php if (!empty($domaineId)) { ?> <p><?php echo get_the_title($domaineId); ?></p> <?php } ?>
-				<?php if ($millesime != '') { echo $millesime; } ?>
+		<div class="ev-loop-product-description">
+			<h3 itemprop="name"><a class="product-title-link ev-loop-product-title-link" itemprop="url" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+			<?php
+				$domaineId = wpcf_pr_post_get_belongs(get_the_ID(), 'domaine');
+				$millesime = types_render_field('product-millesime');
+				if (!empty($domaineId) || $millesime != '') {
+			?>
+				<div class="ev-loop-product-domaine-and-cuvee">
+					<?php if (!empty($domaineId)) { ?> <p><?php echo get_the_title($domaineId); ?></p> <?php } ?>
+					<?php if ($millesime != '') { echo $millesime; } ?>
+				</div>
+			<?php
+				}
+			?>
+			<div class="ev-loop-price-add-to-cart regular">
+				<div class="ev-loop-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+					<p class="ev-price">
+						<?php
+							if($product->get_sale_price() > 0 ){
+						?>
+								<span class="regular-price"><?php echo number_format($product->get_regular_price(), 2); ?> €</span>
+						<?php
+							} else {
+						?>
+								<span class="regular-price blank-regular-price">no promo</span>
+						<?php
+							}
+						?>
+					</p>
+				</div>
 			</div>
-		<?php
-			}
-		?>
+			<div class="ev-loop-price-add-to-cart">
+				<div class="ev-loop-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+					<p class="ev-price">
+						<span itemprop="price" class="product-price"><?php echo number_format($product->get_price(), 2); ?> €</span>
+					</p>
+				</div>
+				<div class="ev-loop-add-to-cart">
+					<div class="actions <?php if ( !$product->is_in_stock() ) { echo 'not-is-stock'; } ?>">
+						<div class="add-product p-action">
+							<?php if ( $product->is_in_stock() ) { ?>
+								<div id="ev-add-to-card-product-<?php echo $product->get_id(); ?>" class="ev-loop-add-to-card-product">
+										<?php woocommerce_quantity_input(); ?>
 
-		<div class="ev-loop-price-add-to-cart">
-			<div class="ev-loop-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-				<p class="ev-price">
-					<?php
-						if($product->get_sale_price() > 0 ){
-					?>
-							<span class="regular-price"><?php echo number_format($product->get_regular_price(), 2); ?> €</span>
-							<span itemprop="price" class="product-price"><?php echo number_format($product->get_price(), 2); ?> €</span>
-					<?php
-						} else {
-					?>
-							<span itemprop="price" class="product-price"><?php echo number_format($product->get_price(), 2); ?> €</span>
-					<?php
-						}
-					?>
-				</p>
-			</div>
-			<div class="ev-loop-add-to-cart">
-				<div class="actions <?php if ( !$product->is_in_stock() ) { echo 'not-is-stock'; } ?>">
-					<div class="add-product p-action">
-						<?php if ( $product->is_in_stock() ) { ?>
-							<div id="ev-add-to-card-product-<?php echo $product->get_id(); ?>" class="ev-loop-add-to-card-product">
-									<?php woocommerce_quantity_input(); ?>
+										<?php echo apply_filters( 'woocommerce_loop_add_to_cart_link',
+											sprintf( "<a id=\"ev-a-link-add-cart-%s\" href=\"%s\" rel=\"nofollow\" data-product_id=\"%s\" data-product_sku=\"%s\" data-quantity=\"%s\" class=\"%s ev-link-add-cart product_type_%s %s\"><span class='ev-cart-icon'>%s</span></a>",
+												esc_attr( $product->get_id() ),
+												esc_url( $product->add_to_cart_url() ),
+												esc_attr( $product->get_id() ),
+												esc_attr( $product->get_sku() ),
+												esc_attr( isset( $quantity ) ? $quantity : 1 ),
+												$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
+												esc_attr( $product->product_type ),
+												'ajax_add_to_cart',
+												esc_html('')
+											), $product ); ?>
+								</div>
+								<script type="text/javascript">
 
-									<?php echo apply_filters( 'woocommerce_loop_add_to_cart_link',
-										sprintf( "<a id=\"ev-a-link-add-cart-%s\" href=\"%s\" rel=\"nofollow\" data-product_id=\"%s\" data-product_sku=\"%s\" data-quantity=\"%s\" class=\"%s ev-link-add-cart product_type_%s %s\"><span class='ev-cart-icon'>%s</span></a>",
-											esc_attr( $product->get_id() ),
-											esc_url( $product->add_to_cart_url() ),
-											esc_attr( $product->get_id() ),
-											esc_attr( $product->get_sku() ),
-											esc_attr( isset( $quantity ) ? $quantity : 1 ),
-											$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
-											esc_attr( $product->product_type ),
-											'ajax_add_to_cart',
-											esc_html('')
-										), $product ); ?>
-							</div>
-							<script type="text/javascript">
+										var productForm = document.getElementById('ev-add-to-card-product-<?php echo $product->get_id(); ?>')
+										var linkAddProduct = productForm.querySelector('a.ev-link-add-cart')
+										var inputQuantityProduct = productForm.querySelector('.quantity.custom input.custom-qty')
+										var minButtonProduct = productForm.querySelector('.quantity.custom a.minus-btn')
+										var maxButtonProduct = productForm.querySelector('.quantity.custom a.plus-btn')
 
-									var productForm = document.getElementById('ev-add-to-card-product-<?php echo $product->get_id(); ?>')
-									var linkAddProduct = productForm.querySelector('a.ev-link-add-cart')
-									var inputQuantityProduct = productForm.querySelector('.quantity.custom input.custom-qty')
-									var minButtonProduct = productForm.querySelector('.quantity.custom a.minus-btn')
-									var maxButtonProduct = productForm.querySelector('.quantity.custom a.plus-btn')
+										linkAddProduct.addEventListener('click', function() {
+												setTimeout(function(){
+														var form = document.getElementById('ev-add-to-card-product-<?php echo $product->get_id(); ?>')
+														form.innerHTML = '<div class="ev-spinner-loader"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>';
+														setTimeout(function(){
+																form.innerHTML = '<p class="product-add-see-cart"><a href="<?php echo get_permalink( wc_get_page_id( 'cart' ) ); ?>">Voir panier</a></p>';
+														}, 2 * 1000)
+												}, 0.1 * 1000)
+								    })
 
-									linkAddProduct.addEventListener('click', function() {
-											setTimeout(function(){
-													var form = document.getElementById('ev-add-to-card-product-<?php echo $product->get_id(); ?>')
-													form.innerHTML = '<div class="ev-spinner-loader"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>';
-													setTimeout(function(){
-															form.innerHTML = '<p class="product-add-see-cart"><a href="<?php echo get_permalink( wc_get_page_id( 'cart' ) ); ?>">Voir panier</a></p>';
-													}, 2 * 1000)
-											}, 0.1 * 1000)
-							    })
+										inputQuantityProduct.addEventListener('change', function() {
+											var input = document.querySelector('#ev-add-to-card-product-<?php echo $product->get_id(); ?> .quantity.custom input.custom-qty')
+											var link = document.getElementById('ev-a-link-add-cart-<?php echo $product->get_id(); ?>')
+											var quantity = parseInt(input.value) == 0 || !Number.isInteger(parseInt(input.value)) ? 1 : parseInt(input.value)
+											input.value = quantity
+											link.setAttribute('data-quantity', quantity)
+								    })
 
-									inputQuantityProduct.addEventListener('change', function() {
-										var input = document.querySelector('#ev-add-to-card-product-<?php echo $product->get_id(); ?> .quantity.custom input.custom-qty')
-										var link = document.getElementById('ev-a-link-add-cart-<?php echo $product->get_id(); ?>')
-										var quantity = parseInt(input.value) == 0 || !Number.isInteger(parseInt(input.value)) ? 1 : parseInt(input.value)
-										input.value = quantity
-										link.setAttribute('data-quantity', quantity)
-							    })
+								    minButtonProduct.addEventListener('click', function() {
+											var input = document.querySelector('#ev-add-to-card-product-<?php echo $product->get_id(); ?> .quantity.custom input.custom-qty')
+											var link = document.getElementById('ev-a-link-add-cart-<?php echo $product->get_id(); ?>')
+											var quantity = parseInt(input.value) > 1 ? parseInt(input.value) - 1 : parseInt(input.value)
+											link.setAttribute('data-quantity', quantity)
+								    })
 
-							    minButtonProduct.addEventListener('click', function() {
-										var input = document.querySelector('#ev-add-to-card-product-<?php echo $product->get_id(); ?> .quantity.custom input.custom-qty')
-										var link = document.getElementById('ev-a-link-add-cart-<?php echo $product->get_id(); ?>')
-										var quantity = parseInt(input.value) > 1 ? parseInt(input.value) - 1 : parseInt(input.value)
-										link.setAttribute('data-quantity', quantity)
-							    })
+								    maxButtonProduct.addEventListener('click', function() {
+											var input = document.querySelector('#ev-add-to-card-product-<?php echo $product->get_id(); ?> .quantity.custom input.custom-qty')
+											var link = document.getElementById('ev-a-link-add-cart-<?php echo $product->get_id(); ?>')
+											var quantity = parseInt(input.value) + 1
+											link.setAttribute('data-quantity', quantity)
+								    })
 
-							    maxButtonProduct.addEventListener('click', function() {
-										var input = document.querySelector('#ev-add-to-card-product-<?php echo $product->get_id(); ?> .quantity.custom input.custom-qty')
-										var link = document.getElementById('ev-a-link-add-cart-<?php echo $product->get_id(); ?>')
-										var quantity = parseInt(input.value) + 1
-										link.setAttribute('data-quantity', quantity)
-							    })
-
-							</script>
-						<?php } else { ?>
-							<p class="product-not-in-stock-see-text">
-								<a class="product-not-in-stock-see-link" href="<?php echo esc_url( add_query_arg( 'cat', $term->term_id, get_permalink( $products->post->ID )) ); ?>">
-									Voir
-								</a>
-							</p>
-						<?php }?>
+								</script>
+							<?php } else { ?>
+								<p class="product-not-in-stock-see-text">
+									<a class="product-not-in-stock-see-link" href="<?php echo esc_url( add_query_arg( 'cat', $term->term_id, get_permalink( $products->post->ID )) ); ?>">
+										<span class='ev-see-icon'></span>
+									</a>
+								</p>
+							<?php }?>
+						</div>
 					</div>
 				</div>
 			</div>
