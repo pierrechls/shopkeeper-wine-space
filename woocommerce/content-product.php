@@ -130,7 +130,6 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 			<?php
 				}
 			?>
-
 			<div class="ev-loop-price-add-to-cart">
 				<div class="ev-loop-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 					<p class="ev-price">
@@ -138,15 +137,20 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 							if($product->get_sale_price() > 0 ){
 						?>
 								<span class="regular-price"><?php echo number_format($product->get_regular_price(), 2); ?> €</span>
-								<span itemprop="price" class="product-price"><?php echo number_format($product->get_price(), 2); ?> €</span>
 						<?php
 							} else {
 						?>
-								<span class="blank-regular-price"></span>
-								<span itemprop="price" class="product-price"><?php echo number_format($product->get_price(), 2); ?> €</span>
+								<span class="regular-price blank-regular-price">no promo</span>
 						<?php
 							}
 						?>
+					</p>
+				</div>
+			</div>
+			<div class="ev-loop-price-add-to-cart">
+				<div class="ev-loop-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+					<p class="ev-price">
+						<span itemprop="price" class="product-price"><?php echo number_format($product->get_price(), 2); ?> €</span>
 					</p>
 				</div>
 				<div class="ev-loop-add-to-cart">

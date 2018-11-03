@@ -31,6 +31,35 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 
 ?>
 
+		<script type="text/javascript">
+
+			document.addEventListener('DOMContentLoaded', function(e) {
+			  reformatProductGrid();
+			});
+
+			window.onresize = function(event) {
+				reformatProductGrid();
+			};
+
+			function reformatProductGrid() {
+				productsGrid = document.querySelector('.products');
+				firstProductsElement = productsGrid.querySelector('li');
+				minimalClassName = 'minimal-style';
+				if (productsGrid && firstProductsElement) {
+					if (firstProductsElement.clientWidth < 200) {
+						if (!productsGrid.classList.contains(minimalClassName)) {
+							productsGrid.classList.add(minimalClassName);
+						}
+					} else {
+						if (productsGrid.classList.contains(minimalClassName)) {
+							productsGrid.classList.remove(minimalClassName);
+						}
+					}
+				}
+			}
+
+		</script>
+
 		<style type="text/css">
 
 				#page_wrapper, .content-area {
