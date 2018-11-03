@@ -57,7 +57,7 @@
 
 ### Init content
 
-:wip: TODO
+:construction: WIP
 
 ## 📕 Prior installation
 
