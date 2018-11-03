@@ -1008,14 +1008,27 @@ header .row .columns .site-tools ul li a span i {
 .slider-ev-home .direction img {
   opacity: 1;
   cursor: pointer;
+  width: 20rem;
+  height: 20rem;
+  top: 50%;
+  margin: 5rem 0 0 0;
+  transition: margin 0.3s ease-in-out;
 }
 
 .slider-ev-home .direction.prev {
   left: 0;
 }
 
+.slider-ev-home .direction.prev:hover img {
+  margin-left: -1rem;
+}
+
 .slider-ev-home .direction.next {
   right: 0;
+}
+
+.slider-ev-home .direction.next:hover img {
+  margin-right: -1rem;
 }
 
 .slider-ev-home .pagination {
