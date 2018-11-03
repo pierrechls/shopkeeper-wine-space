@@ -328,6 +328,20 @@ header .row .columns .site-tools ul li a span i {
   }
 }
 
+@media (max-width: 500px) {
+  #page_wrapper .top-headers-wrapper header.default-ev-header a {
+    margin-left: 1rem !important;
+  }
+
+  header .row .columns .site-tools ul li {
+    margin-left: 1rem !important;
+  }
+
+  .site-tools.offset {
+    margin-right: 5px;
+  }
+}
+
 /***********************/
 /*    FACEBOOK STYLE   */
 /***********************/
