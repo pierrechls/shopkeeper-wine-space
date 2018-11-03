@@ -2,7 +2,7 @@
 
 # Wine Space 🍇
 
-![preview](https://rawgit.com/pierrechls/wine-space-shopkeeper/master/wine-space/images/preview.png)
+![preview](https://raw.githubusercontent.com/pierrechls/wine-space-shopkeeper/master/preview.png)
 
 > Wine Space is a Shopkeeper child theme for WordPress using WooCommerce e-commerce plugin
 
