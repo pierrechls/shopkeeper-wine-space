@@ -204,7 +204,12 @@ header .row {
 
 header .row .columns {
   height: 100%;
-  padding: 0;
+}
+
+@media (max-width: 577px) {
+  header .row .columns {
+    padding: 0;
+  }
 }
 
 header .row .columns .site-header-wrapper {
@@ -328,17 +333,25 @@ header .row .columns .site-tools ul li a span i {
   }
 }
 
+header .row .columns .site-tools ul {
+  padding: 0 2rem;
+}
+
 @media (max-width: 500px) {
   #page_wrapper .top-headers-wrapper header.default-ev-header a {
     margin-left: 1rem !important;
   }
 
   header .row .columns .site-tools ul li {
-    margin-left: 1rem !important;
+    margin-left: 0.5rem !important;
   }
 
   .site-tools.offset {
     margin-right: 5px;
+  }
+
+  header .row .columns .site-tools ul {
+    padding: 0;
   }
 }
 
