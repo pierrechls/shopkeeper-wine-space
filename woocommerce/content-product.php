@@ -142,6 +142,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 						<?php
 							} else {
 						?>
+								<span class="blank-regular-price"></span>
 								<span itemprop="price" class="product-price"><?php echo number_format($product->get_price(), 2); ?> €</span>
 						<?php
 							}
@@ -212,7 +213,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 							<?php } else { ?>
 								<p class="product-not-in-stock-see-text">
 									<a class="product-not-in-stock-see-link" href="<?php echo esc_url( add_query_arg( 'cat', $term->term_id, get_permalink( $products->post->ID )) ); ?>">
-										Voir
+										<span class='ev-see-icon'></span>
 									</a>
 								</p>
 							<?php }?>

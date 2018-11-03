@@ -1315,10 +1315,8 @@ ul.products li .ev-loop-product-domaine-and-cuvee p {
 }
 
 ul.products li .ev-loop-price-add-to-cart {
-  display: block;
-  /* align-items: center;
-  justify-content: center;
-  flex-wrap:wrap; */
+  display: flex;
+  align-items: flex-end;
 }
 
 ul.products li .ev-loop-price-add-to-cart .ev-loop-price,
@@ -1365,7 +1363,7 @@ ul.products li:hover .ev-loop-add-to-cart .actions.not-is-stock {
 }
 
 ul.products li .ev-loop-price-add-to-cart .ev-loop-price {
-  margin: 1rem auto 0 auto;
+  /* margin: 1rem auto 0 auto; */
 }
 
 ul.products li .ev-loop-price-add-to-cart .ev-loop-price p {
@@ -1376,6 +1374,7 @@ ul.products li .ev-loop-price-add-to-cart .ev-loop-price p {
 
 ul.products li .ev-loop-price-add-to-cart .ev-loop-price p.ev-price{
   color: #000000;
+  margin: 0;
 }
 
 ul.products li:hover .ev-loop-product-domaine-and-cuvee p,
@@ -1388,6 +1387,17 @@ ul.products li .ev-loop-price-add-to-cart .ev-loop-price p.ev-price span.regular
   text-decoration: line-through;
   font-weight: 100;
   opacity: 0.6;
+  display: block;
+}
+
+ul.products li .ev-loop-price-add-to-cart .ev-loop-price p.ev-price span.product-price {
+  margin: 0 0 0.5rem 0;
+  display: block;
+}
+ul.products li .ev-loop-price-add-to-cart .ev-loop-price p.ev-price span.blank-regular-price {
+  height: 1.5rem;
+  display: block;
+  padding: 1rem 0;
 }
 
 ul.products li .ev-loop-add-to-card-product {
@@ -1475,6 +1485,28 @@ ul.products li .ev-loop-add-to-card-product a.ev-link-add-cart {
   border-radius: 50%;
   padding: 0.7rem;
   margin-top: -0.5rem;
+}
+
+ul.products li .product-not-in-stock-see-text .product-not-in-stock-see-link {
+  display: none;
+  float: right;
+  background: #FFFFFF;
+  border-radius: 50%;
+  padding: 0.7rem;
+  margin-top: -0.5rem;
+}
+
+ul.products li:hover .product-not-in-stock-see-text .product-not-in-stock-see-link {
+  display: inline-block;
+}
+
+ul.products li .product-not-in-stock-see-text .product-not-in-stock-see-link span.ev-see-icon {
+  display: block;
+  background: url('images/cart/eye-black.svg');
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_cart span.ev-cart-icon {
