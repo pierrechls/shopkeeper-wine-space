@@ -1707,6 +1707,15 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
   display: block;
 }
 
+@media (max-width: 500px) {
+  .woocommerce table.cart .product-thumbnail img,
+  .woocommerce #content table.cart .product-thumbnail img,
+  .woocommerce-page table.cart .product-thumbnail img,
+  .woocommerce-page #content table.cart .product-thumbnail img {
+    max-height: 10rem;
+  }
+}
+
 /******************************/
 /*          MINI CART         */
 /******************************/
