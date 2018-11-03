@@ -150,7 +150,7 @@ get_header(); ?>
 						<img src="<?php echo get_stylesheet_directory_uri() . '/images/products/slider-image.png'; ?>" alt="espace-vin-slider-image" />
 						<div class="slider-ev-siema-slide-content">
 							<div class="slider-ev-siema-slide-content-center">
-								<h1 class="title-content-page-slider"><?php the_title(); ?></h1>
+								<h1 class="title-content-page-slider"><?php echo post_type_archive_title( '', false ); ?></h1>
 								<!--<div class="description-content-page-slider"> HERE THE PAGE DESCRIPTION </div>-->
 							</div>
 						</div>
