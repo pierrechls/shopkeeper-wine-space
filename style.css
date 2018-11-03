@@ -769,6 +769,12 @@ header .row .columns .site-tools ul li a span i {
   padding: 1rem 0;
 }
 
+@media (max-width: 500px) {
+  .products li img {
+    max-height: 200px;
+  }
+}
+
 .products div span.price {
   color: #000;
 }
