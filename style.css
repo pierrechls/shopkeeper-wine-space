@@ -1316,7 +1316,7 @@ ul.products li .ev-loop-product-domaine-and-cuvee p {
 
 ul.products li .ev-loop-price-add-to-cart {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 }
 
 ul.products li .ev-loop-price-add-to-cart.regular {
@@ -1409,7 +1409,7 @@ ul.products li .ev-loop-price-add-to-cart .ev-loop-price p.ev-price span.regular
 }
 
 ul.products li .ev-loop-price-add-to-cart .ev-loop-price p.ev-price span.product-price {
-  margin: 0 0 0.5rem 0;
+  margin: 0;
   display: block;
 }
 ul.products li .ev-loop-price-add-to-cart .ev-loop-price p.ev-price span.blank-regular-price {
