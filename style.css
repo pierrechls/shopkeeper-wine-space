@@ -2115,6 +2115,7 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
 
 .ev-flash-message-actived #page_wrapper.sticky_header .top-headers-wrapper.on_page_scroll {
     top: 4rem;
+    box-shadow: #000000 0px 0px 20px;
 }
 
 @media (max-width: 1024px) {
