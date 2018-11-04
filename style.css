@@ -2124,9 +2124,9 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
 /*     SEARCH HEADER STYLE    */
 /******************************/
 
-.off-canvas.is-transition-overlap.is-open {
-  overflow: scroll;
+.off-canvas.site-search.is-transition-overlap.is-open {
   height: auto !important;
+  overflow: scroll;
   max-height: 100vh;
 }
 
