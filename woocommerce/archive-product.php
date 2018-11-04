@@ -46,7 +46,7 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 				firstProductsElement = productsGrid.querySelector('li');
 				minimalClassName = 'minimal-style';
 				if (productsGrid && firstProductsElement) {
-					if (firstProductsElement.clientWidth < 200) {
+					if (firstProductsElement.clientWidth < 220) {
 						if (!productsGrid.classList.contains(minimalClassName)) {
 							productsGrid.classList.add(minimalClassName);
 						}
