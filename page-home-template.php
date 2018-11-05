@@ -23,6 +23,43 @@
 
 <?php get_header(); ?>
 
+	<style type="text/css">
+
+		ul.products li .ev-loop-product-description {
+		    padding: 1rem !important;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+
+		document.addEventListener('DOMContentLoaded', function(e) {
+			reformatProductGrid();
+		});
+
+		window.onresize = function(event) {
+			reformatProductGrid();
+		};
+
+		function reformatProductGrid() {
+			productsGrid = document.querySelector('.products');
+			firstProductsElement = productsGrid.querySelector('li');
+			minimalClassName = 'minimal-style';
+			if (productsGrid && firstProductsElement) {
+				if (firstProductsElement.clientWidth < 220) {
+					if (!productsGrid.classList.contains(minimalClassName)) {
+						productsGrid.classList.add(minimalClassName);
+					}
+				} else {
+					if (productsGrid.classList.contains(minimalClassName)) {
+						productsGrid.classList.remove(minimalClassName);
+					}
+				}
+			}
+		}
+
+	</script>
+
 	<div id="primary" class="primary-home content-area">
 
         <div id="content" class="site-content" role="main">
