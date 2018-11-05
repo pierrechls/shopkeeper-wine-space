@@ -57,7 +57,7 @@
 			firstProductsElement = productsGrid.querySelector('li');
 			minimalClassName = 'minimal-style';
 			if (productsGrid && firstProductsElement) {
-				if (firstProductsElement.clientWidth < 220) {
+				if (firstProductsElement.clientWidth < 225) {
 					if (!productsGrid.classList.contains(minimalClassName)) {
 						productsGrid.classList.add(minimalClassName);
 					}
