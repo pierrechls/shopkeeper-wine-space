@@ -25,8 +25,8 @@
 
 	<style type="text/css">
 
-		ul.products li .ev-loop-product-description {
-		    padding: 1rem !important;
+		ul.products li {
+		    padding-bottom: 1rem;
 		}
 
 	</style>
