@@ -21,15 +21,26 @@
 
 ?>
 
-<?php get_header(); ?>
+<?php
 
-	<style type="text/css">
+	get_header();
 
-		ul.products li {
-			padding-bottom: 1rem !important;
-		}
+	global $shopkeeper_theme_options;
 
-	</style>
+	//woocommerce_before_main_content
+	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+	remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+
+	add_action( 'woocommerce_before_main_content_breadcrumb', 'woocommerce_breadcrumb', 20 );
+
+	//woocommerce_before_shop_loop
+	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+
+	add_action( 'woocommerce_before_shop_loop_result_count', 'woocommerce_result_count', 20 );
+	add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalog_ordering', 30 );
+
+?>
 
 	<script type="text/javascript">
 
@@ -59,6 +70,14 @@
 		}
 
 	</script>
+
+	<style type="text/css">
+
+		ul.products li {
+			padding-bottom: 1rem !important;
+		}
+
+	</style>
 
 	<div id="primary" class="primary-home content-area">
 
