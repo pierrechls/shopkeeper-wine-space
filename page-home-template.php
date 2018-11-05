@@ -26,7 +26,7 @@
 	<style type="text/css">
 
 		ul.products li {
-		    padding-bottom: 1rem;
+			padding-bottom: 1rem !important;
 		}
 
 	</style>
