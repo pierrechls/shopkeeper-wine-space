@@ -1320,7 +1320,7 @@ ul.products li .ev-loop-price-add-to-cart {
 }
 
 ul.products li .ev-loop-price-add-to-cart.regular {
-  margin-bottom: -1rem;
+  margin-bottom: -1.5rem;
 }
 
 ul.products.minimal-style li .ev-loop-price-add-to-cart {
@@ -1381,7 +1381,7 @@ ul.products li:hover .ev-loop-add-to-cart .actions.not-is-stock {
 }
 
 ul.products li .ev-loop-price-add-to-cart .ev-loop-price {
-  /* margin: 1rem auto 0 auto; */
+  margin: 0rem auto 0.5rem auto;
 }
 
 ul.products li .ev-loop-price-add-to-cart .ev-loop-price p {
