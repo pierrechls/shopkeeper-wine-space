@@ -980,6 +980,25 @@ header .row .columns .site-tools ul {
   text-shadow: 0px 0px 1.5rem rgba(0, 0, 0, 1);
 }
 
+@media screen and (max-width: 500px) {
+  .slider-ev-home .ev-breadcrumb nav {
+    width: 100%;
+  }
+
+  .slider-ev-home .ev-breadcrumb nav a {
+    padding: 0;
+  }
+
+  .slider-ev-home .ev-breadcrumb nav .breadcrump_sep {
+    padding: 0;
+  }
+
+  .slider-ev-home h1.title-content-page-slider {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+}
+
 .slider-ev-home .slider-ev-siema-slide-content .description-content-page-slider {
   font-family: 'OpenSans';
   font-size: 1.2rem;
