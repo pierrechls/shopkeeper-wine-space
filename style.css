@@ -1346,6 +1346,10 @@ ul.products li .ev-loop-price-add-to-cart .ev-loop-add-to-cart .actions {
   /* float: right; */
 }
 
+ul.products.minimal-style li .ev-loop-price-add-to-cart .ev-loop-add-to-cart .actions {
+  float: right;
+}
+
 ul.products li .ev-loop-price-add-to-cart .ev-loop-add-to-cart .actions .add-product.p-action {
   /* padding-bottom: calc(2.8rem - 20px); */
 }
@@ -1461,6 +1465,10 @@ ul.products li .ev-loop-add-to-card-product .quantity.custom {
   float: left;
   margin: 0 1rem 0 0.5rem;
   display: inline-block;
+}
+
+ul.products.minimal-style li .ev-loop-add-to-card-product .quantity.custom {
+  margin-right: 1rem;
 }
 
 ul.products li .ev-loop-add-to-card-product .quantity.custom a.minus-btn,

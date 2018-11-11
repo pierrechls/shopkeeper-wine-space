@@ -21,11 +21,51 @@ get_header(); ?>
 		list-style: none;
 	}
 
+  .domaine-products-list ul li.column {
+      padding-bottom: 1rem;
+  }
+
 	#primary .row {
     padding: 0 !important;
 	}
 
 </style>
+
+<script type="text/javascript">
+
+  document.addEventListener('DOMContentLoaded', function(e) {
+    reformatProductGrid();
+  });
+
+  window.onresize = function(event) {
+    reformatProductGrid();
+  };
+
+  function reformatProductGrid() {
+    productsGrid = document.querySelector('.products');
+    firstProductsElement = productsGrid.querySelector('li');
+    minimalClassName = 'minimal-style';
+    if (productsGrid && firstProductsElement) {
+      const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      if (windowWidth < 1200 || windowWidth >= 2100) {
+        if (firstProductsElement.clientWidth < 210) {
+          if (!productsGrid.classList.contains(minimalClassName)) {
+            productsGrid.classList.add(minimalClassName);
+          }
+        } else {
+          if (productsGrid.classList.contains(minimalClassName)) {
+            productsGrid.classList.remove(minimalClassName);
+          }
+        }
+      } else {
+        if (!productsGrid.classList.contains(minimalClassName)) {
+          productsGrid.classList.add(minimalClassName);
+        }
+      }
+    }
+  }
+
+</script>
 
 <div id="primary" class="content-area">
 
