@@ -747,6 +747,7 @@ header .row .columns .site-tools ul li a span i {
 .products li img {
   width: auto;
   height: 100%;
+  max-height: 300px;
   display: block;
   margin: 0 auto;
   padding: 1rem 0;

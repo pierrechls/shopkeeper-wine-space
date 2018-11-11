@@ -89,7 +89,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 					<span class="product_thumbnail_background" style="<?php echo $style; ?>"></span>
 					<?php
 						if ( has_post_thumbnail( $product->get_id() ) ) {
-							echo get_the_post_thumbnail( $product->get_id(), 'medium', array( 'itemprop' => 'image' ));
+							echo get_the_post_thumbnail( $product->get_id(), array( 100, 300), array( 'itemprop' => 'image' ));
 						} else {
 							?>
 								<img  itemprop="image" width="104" height="300" src="<?php echo get_stylesheet_directory_uri() . '/images/products/default-bottle.svg'; ?>" class="attachment-medium size-medium wp-post-image"  alt="default-bottle-image" srcset="<?php echo get_stylesheet_directory_uri() . '/images/products/default-bottle.svg'; ?>" sizes="(max-width: 104px) 100vw, 104px" style="opacity: 1;" />
