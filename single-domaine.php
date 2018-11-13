@@ -83,7 +83,7 @@ get_header(); ?>
 
 						if($queryCat != 0){
 							$thumbnail_id = get_woocommerce_term_meta( $queryCat, 'thumbnail_id', true );
-							$categoryImage = wp_get_attachment_url( $thumbnail_id );
+							$categoryImage = wp_get_attachment_image_src( $thumbnail_id, 'large')[0];
 						}
 					?>
 

@@ -145,7 +145,7 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 					<?php
 						$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 						$thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
-						$categoryImage = wp_get_attachment_url( $thumbnail_id );
+						$categoryImage = wp_get_attachment_image_src( $thumbnail_id, 'large')[0];
 					?>
 
 					<div class="slider-ev-siema-slide-background" style="background-image: url('<?php if( $categoryImage != '' ) { echo $categoryImage; } else { echo get_stylesheet_directory_uri() . '/images/products/products-background.png'; } ?>');">
@@ -281,7 +281,7 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 
                                             <?php
                                                 $thumbnail_id = get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true );
-                                                $image = wp_get_attachment_url( $thumbnail_id );
+                                                $image = wp_get_attachment_image_src( $thumbnail_id, 'large')[0];
                                                 $cat_class = "";
                                             ?>
 

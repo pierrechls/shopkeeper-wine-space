@@ -132,7 +132,7 @@
       }
 
       $thumbnail_id = get_woocommerce_term_meta( $categoryID, 'thumbnail_id', true );
-      $categoryImage = wp_get_attachment_url( $thumbnail_id );
+			$categoryImage = wp_get_attachment_image_src( $thumbnail_id, 'large')[0];
 
     }
   ?>
