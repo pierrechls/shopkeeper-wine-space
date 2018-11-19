@@ -57,13 +57,20 @@
 			firstProductsElement = productsGrid.querySelector('li');
 			minimalClassName = 'minimal-style';
 			if (productsGrid && firstProductsElement) {
-				if (firstProductsElement.clientWidth < 220) {
-					if (!productsGrid.classList.contains(minimalClassName)) {
-						productsGrid.classList.add(minimalClassName);
+				const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+				if (windowWidth < 1200 || windowWidth >= 2100) {
+					if (firstProductsElement.clientWidth < 210) {
+						if (!productsGrid.classList.contains(minimalClassName)) {
+							productsGrid.classList.add(minimalClassName);
+						}
+					} else {
+						if (productsGrid.classList.contains(minimalClassName)) {
+							productsGrid.classList.remove(minimalClassName);
+						}
 					}
 				} else {
-					if (productsGrid.classList.contains(minimalClassName)) {
-						productsGrid.classList.remove(minimalClassName);
+					if (!productsGrid.classList.contains(minimalClassName)) {
+						productsGrid.classList.add(minimalClassName);
 					}
 				}
 			}

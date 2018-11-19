@@ -747,6 +747,7 @@ header .row .columns .site-tools ul li a span i {
 .products li img {
   width: auto;
   height: 100%;
+  max-height: 300px;
   display: block;
   margin: 0 auto;
   padding: 1rem 0;
@@ -1320,7 +1321,7 @@ ul.products li .ev-loop-price-add-to-cart {
 }
 
 ul.products li .ev-loop-price-add-to-cart.regular {
-  margin-bottom: -1rem;
+  margin-bottom: -1.5rem;
 }
 
 ul.products.minimal-style li .ev-loop-price-add-to-cart {
@@ -1344,6 +1345,10 @@ ul.products li .ev-loop-price-add-to-cart .ev-loop-add-to-cart {
 
 ul.products li .ev-loop-price-add-to-cart .ev-loop-add-to-cart .actions {
   /* float: right; */
+}
+
+ul.products.minimal-style li .ev-loop-price-add-to-cart .ev-loop-add-to-cart .actions {
+  float: right;
 }
 
 ul.products li .ev-loop-price-add-to-cart .ev-loop-add-to-cart .actions .add-product.p-action {
@@ -1381,7 +1386,7 @@ ul.products li:hover .ev-loop-add-to-cart .actions.not-is-stock {
 }
 
 ul.products li .ev-loop-price-add-to-cart .ev-loop-price {
-  /* margin: 1rem auto 0 auto; */
+  margin: 0rem auto 0.5rem auto;
 }
 
 ul.products li .ev-loop-price-add-to-cart .ev-loop-price p {
@@ -1461,6 +1466,10 @@ ul.products li .ev-loop-add-to-card-product .quantity.custom {
   float: left;
   margin: 0 1rem 0 0.5rem;
   display: inline-block;
+}
+
+ul.products.minimal-style li .ev-loop-add-to-card-product .quantity.custom {
+  margin-right: 1rem;
 }
 
 ul.products li .ev-loop-add-to-card-product .quantity.custom a.minus-btn,
