@@ -102,7 +102,7 @@ get_header(); ?>
 							<div class="slider-ev-siema-slide-content">
 								<div class="slider-ev-siema-slide-content-center">
 									<h1 class="title-content-page-slider"><?php the_title(); ?></h1>
-									<div class="description-content-page-slider">Domaine</div>
+									<!-- <div class="description-content-page-slider">Domaine</div> -->
 								</div>
 							</div>
 					</div>
