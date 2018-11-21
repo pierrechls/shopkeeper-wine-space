@@ -107,7 +107,7 @@ get_header(); ?>
 							</div>
 					</div>
 				</div>
-				<div class="ev-breadcrumb"><?php do_action('woocommerce_before_main_content_breadcrumb'); ?></div>
+				<div class="ev-breadcrumb"><?php custom_breadcrumbs(); ?></div>
 			</div>
 
 			<script type="text/javascript">
