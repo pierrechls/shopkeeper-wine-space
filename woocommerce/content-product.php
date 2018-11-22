@@ -131,7 +131,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 				}
 			?>
 			<div class="ev-loop-price-add-to-cart regular">
-				<div class="ev-loop-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+				<div class="ev-loop-price">
 					<p class="ev-price">
 						<?php
 							if($product->get_sale_price() > 0 ){
@@ -150,7 +150,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 			<div class="ev-loop-price-add-to-cart">
 				<div class="ev-loop-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 					<p class="ev-price">
-						<span itemprop="price" class="product-price"><?php echo number_format($product->get_price(), 2); ?> €</span>
+						<span itemprop="price" content="<?php echo number_format($product->get_price(), 2); ?>" class="product-price"><?php echo number_format($product->get_price(), 2); ?></span> <span itemprop="priceCurrency" content="EUR" class="product-price">€</span>
 					</p>
 				</div>
 				<div class="ev-loop-add-to-cart">
