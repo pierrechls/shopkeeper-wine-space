@@ -1738,6 +1738,26 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
 }
 
 /******************************/
+/*       CART PAGE STYLE      */
+/******************************/
+
+.woocommerce form.woocommerce-cart-form table tr td.actions input#coupon_code {
+  border-width: 2px;
+  border-color: rgba(84,84,84,0.3) !important;
+  font-size: 16px;
+}
+
+.woocommerce form.woocommerce-cart-form table tr td.actions button[name=apply_coupon] {
+  width: 70px !important;
+  overflow: overlay;
+  font-size: 1px !important;
+  overflow-wrap: break-word;
+  height: 50px;
+  opacity: 0;
+  z-index: 1;
+}
+
+/******************************/
 /*          MINI CART         */
 /******************************/
 
