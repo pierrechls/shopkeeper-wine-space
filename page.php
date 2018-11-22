@@ -106,6 +106,19 @@
 									}
 								}
 
+								@media screen and (max-width: 500px) {
+									.slider-ev-home,
+									.slider-ev-siema,
+									.slider-ev-home img {
+								    height: 15rem;
+									}
+
+									.slider-ev-home h1.title-content-page-slider {
+										font-size: 2rem;
+    								padding: 0 2rem;
+									}
+								}
+
 						</style>
 
 						<!-- <div class="slider-ev-home-header-box-shadow"></div> -->

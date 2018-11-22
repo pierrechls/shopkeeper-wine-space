@@ -200,6 +200,16 @@
 				$page_id = get_option( 'woocommerce_shop_page_id' );
 			}
 
+		?>
+
+			<div style="display:none;">
+				<p itemprop="author"><?php echo get_the_author(); ?></p>
+				<p itemprop="updated"><?php echo get_the_modified_date(); ?></p>
+				<p itemprop="headline"><?php the_title(); ?></p>
+			</div>
+
+		<?php
+
 			if ( (get_post_meta($page_id, 'page_header_transparency', true)) && (get_post_meta($page_id, 'page_header_transparency', true) != "inherit") ) {
 				$header_transparency_class = "transparent_header";
 				$transparency_scheme = get_post_meta( $page_id, 'page_header_transparency', true );

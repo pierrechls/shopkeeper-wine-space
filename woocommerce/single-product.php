@@ -81,6 +81,12 @@ get_header('shop');
         margin-top: 4rem;
     }
 
+    @media screen and (max-width: 500px) {
+      .slider-ev-siema {
+        display: none;
+      }
+    }
+
 </style>
 
 <div id="primary" class="content-area">

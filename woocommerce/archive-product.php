@@ -134,6 +134,18 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 			    align-items: start;
 		    }
 
+				@media screen and (max-width: 500px) {
+					.slider-ev-home,
+					.slider-ev-siema,
+					.slider-ev-home img {
+						height: 20rem;
+					}
+
+				  .slider-ev-home .slider-ev-siema-slide-content .description-content-page-slider {
+				    display: none;
+				  }
+				}
+
 		</style>
 
    	<div id="primary" class="content-area shop-page<?php echo $shop_has_sidebar ? ' shop-has-sidebar':'';?>">

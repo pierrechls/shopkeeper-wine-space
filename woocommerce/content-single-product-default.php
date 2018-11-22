@@ -91,6 +91,22 @@
     margin-bottom: 0;
   }
 
+	@media screen and (max-width: 500px) {
+	  .slider-ev-home {
+      height: auto;
+	  }
+		.slider-ev-home .ev-breadcrumb {
+			position: relative;
+		}
+		.slider-ev-home .ev-breadcrumb nav,
+		.slider-ev-home .ev-breadcrumb nav a,
+		.slider-ev-home .ev-breadcrumb nav a:hover,
+		.slider-ev-home .ev-breadcrumb nav .breadcrump_sep {
+		  color: rgba(0,0,0,0.8);
+		  text-shadow: none;
+		}
+	}
+
 </style>
 
 <div class="product_layout_classic ev-single-product-container">
