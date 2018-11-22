@@ -29,6 +29,16 @@ get_header(); ?>
     padding: 0 !important;
 	}
 
+  #page_wrapper.sticky_header .content-area,
+  #page_wrapper.transparent_header .content-area {
+    margin-top: 0;
+  }
+
+  .ev-flash-message-actived #page_wrapper.sticky_header .content-area,
+  .ev-flash-message-actived #page_wrapper.transparent_header .content-area {
+    margin-top: 4rem;
+  }
+
 </style>
 
 <script type="text/javascript">
@@ -67,7 +77,7 @@ get_header(); ?>
 
 </script>
 
-<div id="primary" class="content-area">
+<div id="primary" class="content-area woocommerce">
 
     <div id="content" class="site-content" role="main">
 
@@ -92,12 +102,12 @@ get_header(); ?>
 							<div class="slider-ev-siema-slide-content">
 								<div class="slider-ev-siema-slide-content-center">
 									<h1 class="title-content-page-slider"><?php the_title(); ?></h1>
-									<div class="description-content-page-slider">Domaine</div>
+									<!-- <div class="description-content-page-slider">Domaine</div> -->
 								</div>
 							</div>
 					</div>
 				</div>
-				<div class="ev-breadcrumb"><?php do_action('woocommerce_before_main_content_breadcrumb'); ?></div>
+				<div class="ev-breadcrumb"><?php custom_breadcrumbs(); ?></div>
 			</div>
 
 			<script type="text/javascript">

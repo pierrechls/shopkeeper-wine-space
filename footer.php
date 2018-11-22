@@ -42,6 +42,7 @@
 													<div class="ev-footer-cave-informations">
 													  <div class="ev-footer-cave-informations-infos" itemscope itemtype="http://schema.org/LocalBusiness">
 															<h6>Découvrez notre cave <span>à <span itemprop="name">Saint Chinian</span></span></h6>
+															<img style="display:none;" itemprop="image" src="<?php bloginfo('stylesheet_directory'); ?>/images/header/logo.png" alt="Logo <?php echo str_replace(' ', '-', strtolower(bloginfo('name'))); ?>" /></a>
 															<div class="cave-info" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 																<p>Adresse :</p>
 																<p class="address">

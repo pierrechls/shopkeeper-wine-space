@@ -142,12 +142,12 @@
 
                 <div class="site-tools <?php echo esc_html($site_tools_padding_class); ?> <?php if ( (isset($header_alignment)) ) echo esc_html($header_alignment); ?>">
                     <ul>
-                        <li class="ev-facebook-messenger">
+                        <!-- <li class="ev-facebook-messenger">
                           <a href="#fb-messenger">
                             <img class="ev-chat-icon-white" src="<?php bloginfo('stylesheet_directory'); ?>/images/chat/chat-white.svg">
                             <img class="ev-chat-icon-black" src="<?php bloginfo('stylesheet_directory'); ?>/images/chat/chat-black.svg">
                           </a>
-                        </li>
+                        </li> -->
                         <?php if (class_exists('YITH_WCWL')) : ?>
                         <?php if ( (isset($shopkeeper_theme_options['main_header_wishlist'])) && ($shopkeeper_theme_options['main_header_wishlist'] == "1") ) : ?>
                         <li class="wishlist-button">
