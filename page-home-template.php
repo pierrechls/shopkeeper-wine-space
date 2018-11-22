@@ -109,7 +109,13 @@
 														<div class="description-content-page-slider">
 															<p class="title-content-slider">
 																<?php the_sub_field('content'); ?></br>
-																<a href="<?php the_sub_field('link-url'); ?>"><?php the_sub_field('link-text'); ?></a>
+																<?php
+																	$linkUrl  = get_sub_field('link-url');
+																	$linkText = get_sub_field('link-text');
+																	if ($linkUrl && $linkText) { ?>
+																		<a href="<?php the_sub_field('link-url'); ?>"><?php the_sub_field('link-text'); ?></a>
+																	<?php }
+																?>
 															</p>
 														</div>
 													</div>
