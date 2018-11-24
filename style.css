@@ -1894,6 +1894,11 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
   color: #BAA571;
 }
 
+.ev-single-product-content .ev-single-product-text .ev-single-product-price p span.regular-price {
+  color: #d0d0d0;
+  text-decoration: line-through;
+}
+
 .ev-single-product-content .ev-single-product-text .ev-single-product-add-to-cart {
   font-family: 'OpenSans';
   font-weight: 800;

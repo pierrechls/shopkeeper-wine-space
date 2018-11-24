@@ -231,9 +231,16 @@
 			                      }
 			                    ?>
 			                    <div class="ev-single-product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-			                      <p itemprop="price">Prix :</p>
-			                      <?php do_action( 'woocommerce_single_product_summary_single_price' ); ?>
-			                    </div>
+			                      <p>Prix :
+															<?php
+																if($product->get_sale_price() > 0 ){
+															?>
+																	<span class="regular-price"><?php echo number_format($product->get_regular_price(), 2); ?> €</span>
+															<?php
+																}
+															?>
+															<span itemprop="price" content="<?php echo number_format($product->get_price(), 2); ?>" class="product-price"><?php echo number_format($product->get_price(), 2); ?></span> <span itemprop="priceCurrency" content="EUR" class="product-price">€</span></p>
+													</div>
 			                    <div class="ev-single-product-add-to-cart">
 			                      <?php if ( (isset($shopkeeper_theme_options['catalog_mode'])) && ($shopkeeper_theme_options['catalog_mode'] == 0) ) : ?>
 			                          <?php if ( !$product->is_in_stock() && !empty($shopkeeper_theme_options['out_of_stock_label']) ) : ?>
