@@ -107,6 +107,13 @@
 		}
 	}
 
+	.woocommerce div.product .out-of-stock,
+	.woocommerce div.product p.out-of-stock {
+		color: #D0D0D0;
+    font-size: 1.5rem;
+
+	}
+
 </style>
 
 <div class="product_layout_classic ev-single-product-container">
@@ -242,7 +249,7 @@
 															<span itemprop="price" content="<?php echo number_format($product->get_price(), 2); ?>" class="product-price"><?php echo number_format($product->get_price(), 2); ?></span> <span itemprop="priceCurrency" content="EUR" class="product-price">€</span></p>
 													</div>
 			                    <div class="ev-single-product-add-to-cart">
-			                      <?php if ( (isset($shopkeeper_theme_options['catalog_mode'])) && ($shopkeeper_theme_options['catalog_mode'] == 0) ) : ?>
+			                      <!-- <?php if ( (isset($shopkeeper_theme_options['catalog_mode'])) && ($shopkeeper_theme_options['catalog_mode'] == 0) ) : ?>
 			                          <?php if ( !$product->is_in_stock() && !empty($shopkeeper_theme_options['out_of_stock_label']) ) : ?>
 			                                  <div class="out_of_stock_wrapper">
 			                                      <div class="out_of_stock_badge_single <?php if (!$product->is_on_sale()) : ?>first_position<?php endif; ?>"><?php _e( $shopkeeper_theme_options['out_of_stock_label'], 'woocommerce' ); ?>
@@ -250,7 +257,7 @@
 			                                      </div>
 			                                  </div>
 			                          <?php endif; ?>
-			                      <?php endif; ?>
+			                      <?php endif; ?> -->
 
 			                       <?php
 			                         do_action( 'woocommerce_single_product_summary_single_add_to_cart' );
