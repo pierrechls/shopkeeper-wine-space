@@ -186,6 +186,21 @@ function wpex_add_custom_fonts() {
 }
 
 // Breadcrumbs
+function custom_breadcrumbs_for_ev_custom_woocommerce_pages() {
+	echo '<nav class="woocommerce-breadcrumb">';
+	echo '<a href="';
+	echo get_site_url();
+	echo '">Accueil</a> <span class="breadcrump_sep">/</span>';
+	echo '<a href="';
+	echo get_permalink(woocommerce_get_page_id('shop'));
+	echo '">';
+	echo get_the_title(woocommerce_get_page_id('shop'));
+	echo '</a> <span class="breadcrump_sep">/</span> ';
+	echo woocommerce_page_title();
+	echo '</nav>';
+}
+
+// Breadcrumbs
 function custom_breadcrumbs() {
 
     // Settings

@@ -148,6 +148,11 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 
 		</style>
 
+		<?php
+			$pageId = get_queried_object_id();
+			$isEvCustomWooCommercePage = get_field('is-ev-custom-woocommerce-page', $pageId);
+		?>
+
    	<div id="primary" class="content-area shop-page<?php echo $shop_has_sidebar ? ' shop-has-sidebar':'';?>">
 
 			<!-- <div class="slider-ev-home-header-box-shadow"></div> -->
@@ -160,20 +165,67 @@ add_action( 'woocommerce_before_shop_loop_catalog_ordering', 'woocommerce_catalo
 						$categoryImage = wp_get_attachment_image_src( $thumbnail_id, 'large')[0];
 					?>
 
+					<?php $archivePagedescription = ''; ?>
+
+					<?php if ($isEvCustomWooCommercePage) { ?>
+							<?php
+								$specialWooCommercePageDescription = get_field('ev-custom-woocommerce-page-description', $pageId);
+								if ($specialWooCommercePageDescription) {
+									$archivePagedescription = '<p>' . $specialWooCommercePageDescription . '</p>';
+								}
+							?>
+					<?php } else { ?>
+						<?php $archivePagedescription = $term->description; ?>
+					<?php } ?>
+
 					<div class="slider-ev-siema-slide-background" style="background-image: url('<?php if( $categoryImage != '' ) { echo $categoryImage; } else { echo get_stylesheet_directory_uri() . '/images/products/products-background.png'; } ?>');">
 							<img src="<?php echo get_stylesheet_directory_uri() . '/images/products/slider-image.png'; ?>" alt="espace-vin-slider-image" />
 							<div class="slider-ev-siema-slide-content">
 								<div class="slider-ev-siema-slide-content-center">
 									<h1 class="title-content-page-slider"><?php woocommerce_page_title(); ?></h1>
-									<div class="description-content-page-slider"><?php echo $term->description; ?></div>
+									<div class="description-content-page-slider"><?php echo $archivePagedescription ?></div>
 								</div>
 							</div>
 					</div>
 				</div>
-				<div class="ev-breadcrumb"><?php do_action('woocommerce_before_main_content_breadcrumb'); ?></div>
+				<div class="ev-breadcrumb">
+					<?php
+						if ( $isEvCustomWooCommercePage ) {
+							custom_breadcrumbs_for_ev_custom_woocommerce_pages();
+						} else {
+							do_action('woocommerce_before_main_content_breadcrumb');
+						}
+					?>
+				</div>
 			</div>
 
 			<script type="text/javascript">
+
+				<?php if( $isEvCustomWooCommercePage ): ?>
+
+					document.addEventListener('DOMContentLoaded', function(e) {
+						changeRedirectFilters();
+					});
+
+					function changeRedirectFilters() {
+						var links = document.querySelectorAll('.off-canvas-wrapper .off-canvas.shop-has-sidebar a');
+						for (i = 0; i < links.length; i++) {
+							links[i].addEventListener('click', function(event) {
+								if (this) {
+									var urlGlobal = this.href.split('?');
+									var baseUrl = urlGlobal[0];
+									var endUrl = urlGlobal.length > 0 ? urlGlobal[1] : '';
+									endUrl = endUrl.startsWith('?') ? endUrl : ('?' + endUrl);
+									var slugs = window.location.href.split('/');
+									var slug = slugs[slugs.length - 1].startsWith('?') ? slugs[slugs.length - 2] : slugs[slugs.length - 2];
+									var finalUrl = baseUrl + '/' + slug + '/' + endUrl;
+									this.href = finalUrl;
+								}
+							});
+						}
+					}
+
+				<?php endif; ?>
 
 				const siemaSlider = new Siema({
 					selector: '.slider-ev-siema',
