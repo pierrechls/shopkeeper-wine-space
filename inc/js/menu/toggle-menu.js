@@ -1,18 +1,29 @@
 document.addEventListener('DOMContentLoaded', function(e) {
-  var acc = document.querySelectorAll('.ev-accordion li');
+  var clickedOnLink = false;
+  var acc      = document.querySelectorAll('.ev-accordion li');
+  var accLinks = document.querySelectorAll('.ev-accordion li a');
   var i;
 
   for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener('click', function() {
-      this.classList.toggle('active');
-      var panel = this.nextElementSibling;
-      if (panel) {
-        if (panel.style.maxHeight){
-          panel.style.maxHeight = null;
-        } else {
-          panel.style.maxHeight = panel.scrollHeight + 'px';
+      if (!clickedOnLink) {
+        this.classList.toggle('active');
+        var panel = this.nextElementSibling;
+        if (panel) {
+          if (panel.style.maxHeight){
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + 'px';
+          }
         }
       }
+      clickedOnLink = false;
+    });
+  }
+
+  for (i = 0; i < accLinks.length; i++) {
+    accLinks[i].addEventListener('click', function(event) {
+      clickedOnLink = true;
     });
   }
 
