@@ -145,8 +145,6 @@ Template Post Type: page
 
 						</script>
 
-						<?php var_dump(have_posts()); ?>
-
 						<div class="tob_bar_shop">
 		            <div class="row">
 		                <div class="number-of-product small-12 medium-12 large-6 xlarge-6 columns text-left" style="display:flex;align-items:center;">
