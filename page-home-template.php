@@ -86,7 +86,7 @@
 
 	</style>
 
-	<div id="primary" class="primary-home content-area woocoomerce">
+	<div id="primary" class="primary-home content-area woocommerce">
 
         <div id="content" class="site-content" role="main">
 
