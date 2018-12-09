@@ -1753,6 +1753,15 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
 /*       CART PAGE STYLE      */
 /******************************/
 
+.woocommerce table.cart,
+.woocommerce table.cart thead,
+.woocommerce table.cart thead th,
+.woocommerce table.cart tbody,
+.woocommerce table.cart tbody tr {
+  width: 100%;
+  display: block;
+}
+
 .woocommerce form.woocommerce-cart-form table tr td.actions input#coupon_code {
   border-width: 2px;
   border-color: rgba(84,84,84,0.3) !important;
