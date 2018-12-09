@@ -253,9 +253,9 @@
 															<?php $stockNumber = number_format($product->stock, 0, '', ''); ?>
 															<?php
 																if ($stockNumber < 3 ) { // if stock is low
-																	echo '<p>Plus que <strong>' . $stockNumber . '</strong> en stock</p>';
+																	echo '<p>Plus que <strong>' . $stockNumber . '</strong> en stock !</p>';
 																} else {
-																	echo '<p><strong>' . $stockNumber . '</strong> en stock !</p>';
+																	echo '<p><strong>' . $stockNumber . '</strong> en stock</p>';
 																}
 															?>
 														</div>
