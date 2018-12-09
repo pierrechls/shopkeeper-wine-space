@@ -252,11 +252,7 @@
 														<div class="ev-single-product-stock-remaining">
 															<?php $stockNumber = number_format($product->stock, 0, '', ''); ?>
 															<?php
-																if ($stockNumber < 3 ) { // if stock is low
-																	echo '<p>Plus que <strong>' . $stockNumber . '</strong> en stock !</p>';
-																} else {
-																	echo '<p><strong>' . $stockNumber . '</strong> en stock</p>';
-																}
+																echo '<p>Stock disponible : <strong>' . $stockNumber . '</strong></p>';
 															?>
 														</div>
 													<?php } ?>
