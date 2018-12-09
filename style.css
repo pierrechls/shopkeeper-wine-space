@@ -1762,6 +1762,15 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
   z-index: 1;
 }
 
+.woocommerce table.cart .product-name, .woocommerce #content table.cart .product-name {
+  font-size: 0.9rem;
+}
+
+.woocommerce table.cart .product-name a, .woocommerce #content table.cart .product-name a {
+  font-size: 1.3rem;
+  padding-bottom: 0.5rem;
+}
+
 /******************************/
 /*          MINI CART         */
 /******************************/
