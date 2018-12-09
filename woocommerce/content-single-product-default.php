@@ -248,6 +248,14 @@
 															?>
 															<span itemprop="price" content="<?php echo number_format($product->get_price(), 2); ?>" class="product-price"><?php echo number_format($product->get_price(), 2); ?></span> <span itemprop="priceCurrency" content="EUR" class="product-price">€</span></p>
 													</div>
+													<?php if ($product->stock && $product->is_in_stock()) { ?>
+														<div class="ev-single-product-stock-remaining">
+															<?php $stockNumber = number_format($product->stock, 0, '', ''); ?>
+															<?php
+																echo '<p>Stock disponible : <strong>' . $stockNumber . '</strong></p>';
+															?>
+														</div>
+													<?php } ?>
 			                    <div class="ev-single-product-add-to-cart">
 			                      <!-- <?php if ( (isset($shopkeeper_theme_options['catalog_mode'])) && ($shopkeeper_theme_options['catalog_mode'] == 0) ) : ?>
 			                          <?php if ( !$product->is_in_stock() && !empty($shopkeeper_theme_options['out_of_stock_label']) ) : ?>
