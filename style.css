@@ -534,16 +534,23 @@ header .row .columns .site-tools ul {
 #ev-menu-toggle .ev-accordion > li > ul {
     background-color: white;
     max-height: 0;
+    display: none;
     overflow: hidden;
+    position: relative;
     transition: max-height 0.2s ease-out;
 }
 
 #ev-menu-toggle .ev-accordion > li.active > ul {
     max-height: inherit;
+    display: block;
+}
+
+#ev-menu-toggle .ev-accordion > li > ul > li {
+    position: relative;
 }
 
 #ev-menu-toggle .ev-accordion > li > ul > li > a:after {
-  content: '';
+  content: '' !important;
 }
 
 .st-content {
