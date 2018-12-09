@@ -18,6 +18,20 @@ document.addEventListener('DOMContentLoaded', function(e) {
       outOfStock[i].innerHTML = 'Bientôt disponible';
     }
 
+    // ADD BUTTON SEE ALL
+    var woocommerceContainer = element.querySelector('.woocommerce');
+    var buttonSeeAll = document.createElement('BUTTON');
+    var buttonSeeAllText = document.createTextNode('Voir tous les résultats');
+    buttonSeeAll.appendChild(buttonSeeAllText);
+    buttonSeeAll.setAttribute('style', "background: #BAA571; padding: 1.5rem 2rem; color: #FFFFFF; text-transform: uppercase; font-size: 1.3rem; margin: 1rem auto; display: inline-block; font-family: 'OpenSans'; font-weight: 800; border-radius: 0.5rem; outline: none; cursor: pointer;");
+    buttonSeeAll.onclick = function() {
+      var form = document.querySelector('.site-search .search-wrapp form');
+      if (form) {
+        form.submit();
+      }
+    };
+    woocommerceContainer.appendChild(buttonSeeAll);
+
   });
   observer.observe(element, {childList: true});
 });
