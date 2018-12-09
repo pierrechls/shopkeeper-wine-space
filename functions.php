@@ -440,8 +440,11 @@ function add_shipping_conditions_link_page() {
 * WooCommerce: show all product attributes listed below each item on Cart page
 */
 function ev_woo_cart_attributes( $cart_item, $cart_item_key ) {
+    if (!is_cart()) {
+			return $cart_item;
+		}
 
-    $item_data = $cart_item_key['data'];
+		$item_data = $cart_item_key['data'];
     $attributes = $item_data->get_attributes();
 
 		$displayed_attributes = ['pa_domaine'];
@@ -450,7 +453,7 @@ function ev_woo_cart_attributes( $cart_item, $cart_item_key ) {
         return $cart_item;
     }
 
-    $out = $cart_item . '<br />';
+    $out = $cart_item;
 
     foreach ( $attributes as $attribute ) {
         // skip variations
@@ -480,7 +483,6 @@ function ev_woo_cart_attributes( $cart_item, $cart_item_key ) {
 	                            $tax_label = substr( $tax_label, strlen( $label_prefix ) );
 	                        }
 	                    }
-	                    $out .= $tax_label . ' : ';
 	                    $tax_terms = array();
 	                    foreach ( $terms as $term ) {
 	                        $single_term = esc_html( $term->name );
@@ -491,7 +493,6 @@ function ev_woo_cart_attributes( $cart_item, $cart_item_key ) {
 	                }
 	            }
 	        } else { // not a taxonomy
-	            $out .= $name . ' : ';
 	            $out .= esc_html( implode( ', ', $attribute->get_options() ) ) . '<br />';
 	        }
 				}
@@ -500,7 +501,6 @@ function ev_woo_cart_attributes( $cart_item, $cart_item_key ) {
 		// Displaying Toolset attributes
 		$millesime = types_render_field('product-millesime', array('post_id' => $item_data->get_id()));
 		if ($millesime) {
-			$out .= 'Millésime : ';
 			$out .= strip_tags($millesime) . '<br />';
 		}
 
