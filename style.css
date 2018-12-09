@@ -2307,6 +2307,48 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
 }
 
 /******************************/
+/*     ALERT STOCK STYLE      */
+/******************************/
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-text-header .alert_container {
+  margin-top: 2rem;
+}
+.ev-single-product-content .ev-single-product-text .ev-single-product-text-header .alert_container p {
+ color: #FE3636;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-text-header .alert_container h6 {
+  display: none;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-text-header .alert_container input[type="text"],
+.ev-single-product-content .ev-single-product-text .ev-single-product-text-header .alert_container input[type="email"] {
+  border: none;
+  border-bottom: 2px solid #DDD;
+  font-size: 1.2rem;
+  font-family: 'OpenSans';
+  font-weight: 600;
+  color: #BAA571;
+}
+
+.ev-single-product-content .ev-single-product-text .ev-single-product-text-header .alert_container button {
+  background: #BAA571;
+  padding: 1.5rem 1.5rem;
+  color: #FFFFFF !important;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  margin: 0.5rem auto;
+  display: inline-block;
+  font-family: 'OpenSans';
+  font-weight: 600;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  outline: none;
+}
+
+
+/******************************/
 /*       COMMENTS STYLE       */
 /******************************/
 
