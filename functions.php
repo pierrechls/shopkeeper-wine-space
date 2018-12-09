@@ -436,4 +436,77 @@ function add_shipping_conditions_link_page() {
 	echo '<p><a href="'.get_site_url().'/conditions-de-livraison" style="text-transform: uppercase;font-weight: bold;">Conditions de livraison</a></p>';
 }
 
+/**
+* WooCommerce: show all product attributes listed below each item on Cart page
+*/
+function ev_woo_cart_attributes( $cart_item, $cart_item_key ) {
+    if (!is_cart()) {
+			return $cart_item;
+		}
+
+		$item_data = $cart_item_key['data'];
+    $attributes = $item_data->get_attributes();
+
+		$displayed_attributes = ['pa_domaine'];
+
+    if ( ! $attributes ) {
+        return $cart_item;
+    }
+
+    $out = $cart_item;
+
+    foreach ( $attributes as $attribute ) {
+        // skip variations
+        if ( $attribute->get_variation() ) {
+            continue;
+        }
+
+        $name = $attribute->get_name();
+				if (in_array($name, $displayed_attributes)) {
+	        if ( $attribute->is_taxonomy() ) {
+	            $product_id = $item_data->get_id();
+	            $terms = wp_get_post_terms( $product_id, $name, 'all' );
+	            if ( ! empty( $terms ) ) {
+	                if ( ! is_wp_error( $terms ) ) {
+	                    // get the taxonomy
+	                    $tax = $terms[0]->taxonomy;
+	                    // get the tax object
+	                    $tax_object = get_taxonomy($tax);
+	                    // get tax label
+	                    if ( isset ( $tax_object->labels->singular_name ) ) {
+	                        $tax_label = $tax_object->labels->singular_name;
+	                    } elseif ( isset( $tax_object->label ) ) {
+	                        $tax_label = $tax_object->label;
+	                        // Trim label prefix since WC 3.0
+	                        $label_prefix = 'Product ';
+	                        if ( 0 === strpos( $tax_label,  $label_prefix ) ) {
+	                            $tax_label = substr( $tax_label, strlen( $label_prefix ) );
+	                        }
+	                    }
+	                    $tax_terms = array();
+	                    foreach ( $terms as $term ) {
+	                        $single_term = esc_html( $term->name );
+	                        array_push( $tax_terms, $single_term );
+	                    }
+	                    $out .= implode(', ', $tax_terms). '<br />';
+
+	                }
+	            }
+	        } else { // not a taxonomy
+	            $out .= esc_html( implode( ', ', $attribute->get_options() ) ) . '<br />';
+	        }
+				}
+    }
+
+		// Displaying Toolset attributes
+		$millesime = types_render_field('product-millesime', array('post_id' => $item_data->get_id()));
+		if ($millesime) {
+			$out .= strip_tags($millesime) . '<br />';
+		}
+
+    echo $out;
+}
+
+add_filter( 'woocommerce_cart_item_name', ev_woo_cart_attributes, 10, 2 );
+
 ?>
