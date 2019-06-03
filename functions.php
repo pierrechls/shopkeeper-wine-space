@@ -21,6 +21,12 @@
 function replaceDefaultWocommerceString( $translatedText, $text, $domain ) {
 
 	switch ( $translatedText ) {
+		case 'Détails de facturation' :
+			$translatedText = 'Informations Client';
+			break;
+		case 'Adresse de messagerie' :
+			$translatedText = 'Adresse email';
+			break;
 		case 'Rupture de stock' :
 			$translatedText = 'Bientôt disponible';
 			break;
