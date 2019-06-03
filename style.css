@@ -2227,11 +2227,11 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
 
 @media (min-width: 1024px) {
   .admin-bar .ev-flash-message-actived .top-headers-wrapper {
-    top: 32px !important;
+    top: 0 !important;
   }
 
   .admin-bar .ev-flash-message-actived .top-headers-wrapper.on_page_scroll {
-    top: 32px !important;
+    top: 64px !important;
   }
 }
 
@@ -2257,6 +2257,10 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.admin-bar .ev-website-flash-message-info-alert {
+  top: 32px !important;
 }
 
 @media (max-width: 1024px) {
