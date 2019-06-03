@@ -214,6 +214,7 @@ header .row .columns {
 
 header .row .columns .site-header-wrapper {
   height: 100%;
+  max-width: 100% !important;
 }
 
 header .row .columns .site-header-wrapper .ev-menu-left-part {
