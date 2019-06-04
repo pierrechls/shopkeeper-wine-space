@@ -2236,6 +2236,21 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
   }
 }
 
+@media (min-width: 2000px) {
+  .top-headers-wrapper.on_page_scroll header .row .columns .site-header-wrapper {
+    padding: 15px 0 25px 0;
+  }
+
+  .admin-bar .ev-flash-message-actived .top-headers-wrapper.on_page_scroll {
+    top: 100px !important;
+  }
+
+  #page_wrapper .top-headers-wrapper.on_page_scroll a i,
+  #page_wrapper .top-headers-wrapper.on_page_scroll header a i {
+    margin-top: 0;
+  }
+}
+
 .top-headers-wrapper.sticky_header {
   position: fixed !important;
 }
