@@ -252,7 +252,11 @@
 														<div class="ev-single-product-stock-remaining">
 															<?php $stockNumber = number_format($product->stock, 0, '', ''); ?>
 															<?php
-																echo '<p>Stock disponible : <strong>' . $stockNumber . '</strong></p>';
+																if ($stockNumber > 12) {
+																	echo '<p>Bouteilles en stock</p>';
+																} else {
+																	echo '<p>Plus que <strong>' . $stockNumber . '</strong> bouteilles en stock</p>';
+																}
 															?>
 														</div>
 													<?php } ?>
