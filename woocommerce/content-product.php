@@ -100,7 +100,19 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 			</div><!--.product_thumbnail-->
 
 			<?php if ( (isset($shopkeeper_theme_options['catalog_mode'])) && ($shopkeeper_theme_options['catalog_mode'] == 0) ) : ?>
-				<?php wc_get_template( 'loop/sale-flash.php' ); ?>
+				<?php if ( $product->is_on_sale() ) : ?>
+
+					<?php
+						$regular_price = (float) $product->get_regular_price(); // Regular price
+						$sale_price = (float) $product->get_price(); // Active price (the "Sale price" when on-sale)
+
+						$precision = 1; // Max number of decimals
+						$saving_percentage = round( 100 - ( $sale_price / $regular_price * 100 ), 1 ) . '%';
+
+						echo sprintf( '<span class="onsale">-%s</span>', $saving_percentage );
+					?>
+
+				<?php endif; ?>
             <?php endif; ?>
 
 			<?php if ( (isset($shopkeeper_theme_options['catalog_mode'])) && ($shopkeeper_theme_options['catalog_mode'] == 0) ) : ?>

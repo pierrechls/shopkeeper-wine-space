@@ -7,6 +7,106 @@
 //     return '<span class="onsale">PUT YOUR TEXT</span>';
 // }
 
+/**
+ * Show sale prices in the cart.
+ */
+function my_custom_show_sale_price_at_cart( $old_display, $cart_item, $cart_item_key ) {
+
+	/** @var WC_Product $product */
+	$product = $cart_item['data'];
+
+	if ( $product ) {
+		return $product->get_price_html();
+	}
+
+	return $old_display;
+
+}
+add_filter( 'woocommerce_cart_item_price', 'my_custom_show_sale_price_at_cart', 10, 3 );
+
+/**
+ * Show sale prices at the checkout.
+ */
+function my_custom_show_sale_price_at_checkout( $subtotal, $cart_item, $cart_item_key ) {
+
+	/** @var WC_Product $product */
+	$product = $cart_item['data'];
+	$quantity = $cart_item['quantity'];
+
+	if ( ! $product ) {
+		return $subtotal;
+	}
+
+	$regular_price = $sale_price = $suffix = '';
+
+	if ( $product->is_taxable() ) {
+
+		if ( 'excl' === WC()->cart->tax_display_cart ) {
+
+			$regular_price = wc_get_price_excluding_tax( $product, array( 'price' => $product->get_regular_price(), 'qty' => $quantity ) );
+			$sale_price    = wc_get_price_excluding_tax( $product, array( 'price' => $product->get_sale_price(), 'qty' => $quantity ) );
+
+			if ( WC()->cart->prices_include_tax && WC()->cart->tax_total > 0 ) {
+				$suffix .= ' <small class="tax_label">' . WC()->countries->ex_tax_or_vat() . '</small>';
+			}
+		} else {
+
+			$regular_price = wc_get_price_including_tax( $product, array( 'price' => $product->get_regular_price(), 'qty' => $quantity ) );
+			$sale_price = wc_get_price_including_tax( $product, array( 'price' => $product->get_sale_price(), 'qty' => $quantity ) );
+
+			if ( ! WC()->cart->prices_include_tax && WC()->cart->tax_total > 0 ) {
+				$suffix .= ' <small class="tax_label">' . WC()->countries->inc_tax_or_vat() . '</small>';
+			}
+		}
+	} else {
+		$regular_price    = $product->get_price() * $quantity;
+		$sale_price       = $product->get_sale_price() * $quantity;
+	}
+
+	if ( $product->is_on_sale() && ! empty( $sale_price ) ) {
+		$price = wc_format_sale_price(
+			         wc_get_price_to_display( $product, array( 'price' => $product->get_regular_price(), 'qty' => $quantity ) ),
+			         wc_get_price_to_display( $product, array( 'qty' => $quantity ) )
+		         ) . $product->get_price_suffix();
+	} else {
+		$price = wc_price( $regular_price ) . $product->get_price_suffix();
+	}
+
+	// VAT suffix
+	$price = $price . $suffix;
+
+	return $price;
+
+}
+add_filter( 'woocommerce_cart_item_subtotal', 'my_custom_show_sale_price_at_checkout', 10, 3 );
+
+
+/**
+ * Show savings at the cart.
+ */
+function my_custom_buy_now_save_x_cart() {
+
+	$savings = 0;
+
+	foreach ( WC()->cart->get_cart() as $key => $cart_item ) {
+		/** @var WC_Product $product */
+		$product = $cart_item['data'];
+
+		if ( $product->is_on_sale() ) {
+			$savings += ( $product->get_regular_price() - $product->get_sale_price() ) * $cart_item['quantity'];
+		}
+	}
+
+	if ( ! empty( $savings ) ) {
+		?><tr class="order-savings">
+			<th><?php _e( 'Your savings' ); ?></th>
+			<td data-title="<?php _e( 'Your savings' ); ?>"><?php echo sprintf( __( 'Buy now and save %s!' ), wc_price( $savings ) ); ?></td>
+		</tr><?php
+	}
+
+}
+add_action( 'woocommerce_cart_totals_before_order_total', 'my_custom_buy_now_save_x_cart' );
+
 // CUSTOMIZE SOLD OUT
 // add_action( 'woocommerce_before_shop_loop_item_title', 'ev_display_sold_out_loop_woocommerce' );
 // function ev_display_sold_out_loop_woocommerce() {

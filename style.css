@@ -1454,6 +1454,17 @@ ul.products .out_of_stock_badge_loop {
 .woocommerce-page #products-grid.products li span.onsale {
     font-size: 1.1rem;
     background: #A60311;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    vertical-align: middle;
+    padding-top: 2.4rem;
+    font-weight: bold;
+}
+
+/* on sale product on cart / checkout page */
+.entry-content ins {
+  background: none;
 }
 
 ul.products li:hover .ev-loop-add-to-cart .actions.not-is-stock {
