@@ -1,6 +1,6 @@
 /*
  Theme Name:   Wine Space
- Theme URI:    http://espace-vin.com/
+ Theme URI:    https://pierrechls.github.io/
  Description:  Shopkeeper Child Theme
  Author:       Pierre Charles
  Author URI:   http://www.pierre-charles.com/
@@ -10,6 +10,7 @@
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  Tags:         wine, shopkeeper
  Text Domain:  wine-space-shopkeeper
+ Domain Path:  /languages/
 */
 
 @import url('../shopkeeper/style.css');
@@ -242,7 +243,6 @@ header .row .columns .site-tools ul li {
 
 header .row .columns .site-tools ul li a span.shopping_bag_items_number {
     font-size: 1.3rem;
-    padding-left: 0.5rem;
 }
 
 header .row .columns .site-tools ul li.ev-facebook-messenger {
@@ -421,6 +421,83 @@ header .row .columns .site-tools ul {
 
 .ev-breadcrumb .woocommerce-breadcrumb br {
   display: none;
+}
+
+/**************************/
+/*  MENU MINI CART STYLE  */
+/**************************/
+
+a.tools_button span.tools_button_icon {
+  z-index: 1;
+  margin: 0 0 0 0;
+  position: relative;
+}
+
+a.tools_button span.shopping_bag_items_number {
+  background: #A50312;
+  color: #FFF !important;
+  border-radius: 50%;
+  z-index: 2;
+  position: relative;
+  bottom: 4px;
+  vertical-align: middle;
+  width: 2.3rem;
+  height: 2.3rem;
+  padding: 0;
+  margin: 0 0 0 -5px;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-weight: normal;
+}
+
+@media (min-width: 1440px) {
+  a.tools_button span.shopping_bag_items_number {
+    margin: 0 0 0 5px;
+  }
+}
+
+
+#page_wrapper .top-headers-wrapper.on_page_scroll a span.shopping_bag_items_number,
+#page_wrapper .top-headers-wrapper.on_page_scroll header a span.shopping_bag_items_number {
+  color: #FFFFFF !important;
+}
+
+
+/***********************/
+/*    INSTAGRAM WALL   */
+/***********************/
+
+#instagram-social-wall {
+  margin: 2rem auto;
+}
+
+#instagram-social-wall .instagram-social-wall-header {
+  margin: 1rem auto;
+}
+
+#instagram-social-wall .instagram-social-wall-header p {
+  vertical-align: middle;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+  color: #000;
+  font-weight: bold;
+}
+
+#instagram-social-wall .instagram-social-wall-header p i {
+  vertical-align: middle;
+  font-size: 2rem;
+  color: #FFF;
+  margin-right: 1rem;
+  width: 5rem;
+  height: 5rem;
+  padding-top: 1.5rem;
+  text-align: center;
+  border-radius: 50%;
+  background: #333333;
 }
 
 /***********************/
@@ -1761,7 +1838,7 @@ ul.products li .ev-loop-add-to-card-product a.add_to_cart_button.ajax_add_to_car
 .woocommerce #content table.cart .product-thumbnail img:not(:first-child),
 .woocommerce-page table.cart .product-thumbnail img:not(:first-child),
 .woocommerce-page #content table.cart .product-thumbnail img:not(:first-child) {
-  display: none;
+  display: block !important;
 }
 
 @media (max-width: 500px) {
