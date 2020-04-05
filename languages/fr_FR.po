@@ -1,0 +1,189 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: Espace Vin\n"
+"Language: fr\n"
+
+#. @ shopkeeper
+#: footer.php:224
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: functions.php:102 functions.php:103
+msgid "Your discount"
+msgstr "Votre remise"
+
+#: functions.php:103
+msgid "Buy now and save %s!"
+msgstr "Achetez maintenant et économisez %s !"
+
+#: functions.php:520
+msgid "Page"
+msgstr "Page"
+
+#: 
+msgid "Phone"
+msgstr "Téléphone"
+
+#: 
+msgid "Opening time"
+msgstr "Horaires d'ouverture"
+
+#: 
+msgid "Address"
+msgstr "Adresse"
+
+#: 
+msgid "Monday to Sunday 9 a.m. to 12:15 p.m. and 2 p.m. to 7 p.m."
+msgstr "Du lundi au dimanche de 9h à 12h15 et de 14h à 19h"
+
+#: 
+msgid "Ban on the sale of alcoholic beverages to minors under 18 years of age."
+msgstr "Interdiction de vente de boissons alcoolisées aux mineurs de moins de 18 ans."
+
+#: 
+msgid "Proof of the majority of the buyer is required at the time of online sale. Alcohol abuse is dangerous for health. To consume with moderation."
+msgstr "La preuve de la majorité de l'acheteur est exigée au moment de la vente en ligne. L’abus d’alcool est dangereux pour la santé. A consommer avec modération."
+
+#: 
+msgid "Discover our cellar"
+msgstr "Découvrez notre cave"
+
+#: 
+#, fuzzy
+msgctxt "ev-in-city"
+msgid "in"
+msgstr "à"
+
+#: 
+msgid "Secure payments"
+msgstr "Paiements sécurisés"
+
+#: 
+msgid "Fast delivery and protected bottles"
+msgstr "Livraison rapide et bouteilles protégées"
+
+#: 
+msgid "Wine selection and advice"
+msgstr "Sélection de vins et conseils"
+
+#: 
+msgid "Direct producer prices"
+msgstr "Prix directs producteurs"
+
+#: 
+msgid "Oops 404 again! That page can't be found."
+msgstr "Oops erreur 404 ! La page demandée n'existe pas."
+
+#: 
+#, fuzzy
+msgid "Terms of delivery"
+msgstr "Conditions de livraison"
+
+#: 
+#, fuzzy
+msgid "Sorry, the site %s doesn't have domains yet."
+msgstr "Désolé, le site %s n'a pas encore de domaine."
+
+#: 
+msgid "Home"
+msgstr "Accueil"
+
+#: 
+msgctxt "wine"
+msgid "Vintage"
+msgstr "Millésime"
+
+#: 
+msgid "Price"
+msgstr "Prix"
+
+#: 
+msgid "Bottles in stock"
+msgstr "Bouteilles en stock"
+
+#: 
+#, fuzzy
+msgid "<p>Only <strong>%s</strong> bottles left</p>"
+msgstr "<p>Plus que <strong>%s</strong> bouteilles en stock</p>"
+
+#: 
+msgid "Domain"
+msgstr "Domaine"
+
+#: 
+msgctxt "wine"
+msgid "Appellation"
+msgstr "Appellation"
+
+#: 
+msgctxt "wine"
+msgid "Maturation"
+msgstr "Élevage"
+
+#: 
+msgctxt "wine"
+msgid "Grape varieties"
+msgstr "Cépages"
+
+#: 
+#, fuzzy
+msgctxt "wine"
+msgid "Winemaking"
+msgstr "Vinification"
+
+#: 
+#, fuzzy
+msgctxt "wine"
+msgid "Serving"
+msgstr "Service"
+
+#: 
+msgctxt "wine"
+msgid "Aging"
+msgstr "Garde"
+
+#: 
+msgctxt "wine"
+msgid "Capacity"
+msgstr "Contenance"
+
+#: 
+msgid "Hello, you have successfully subscribed to a product. We will notify you when the product becomes available again."
+msgstr "Bonjour, vous avez souscrit avec succès à un produit. Nous vous informerons lorsque le produit sera de nouveau disponible."
+
+#: 
+msgid "Product"
+msgstr "Produit"
+
+#: 
+msgid "Product details"
+msgstr "Détails du produit"
+
+#: 
+msgid "Here is the product link"
+msgstr "Voici le lien du produit"
+
+#: 
+msgid "Your informations"
+msgstr "Vos informations"
+
+#: 
+msgid "Email"
+msgstr "Adresse mail"
+
+#: 
+msgid "Customer details"
+msgstr "Détails du client"
+
+#: 
+msgid "A customer has subscribed to a product on your store."
+msgstr "Un client s'est abonné à un produit sur votre boutique."
+
+#: 
+msgid "Hello, you have subscribed to a product and we will inform you that it is available again."
+msgstr "Bonjour, vous avez souscrit à un produit et nous vous informerons qu'il est de nouveau disponible."
+
