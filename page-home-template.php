@@ -260,6 +260,13 @@
 
 						?>
 
+						<div id="instagram-social-wall">
+							<div class="instagram-social-wall-header">
+								<p><i class="fa fa-instagram spk-icon-instagram" aria-hidden="true"></i>espace_vin</p>
+							</div>
+							<?php echo do_shortcode('[instagram-feed]'); ?>
+						</div>
+
 						<div class="homepage-website-description">
 						  <div class="homepage-website-description-content">
 								<h1 class="content-description-title"><?php the_field('description-text-website-title'); ?></h1>
