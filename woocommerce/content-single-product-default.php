@@ -248,6 +248,88 @@
 															?>
 															<span itemprop="price" content="<?php echo number_format($product->get_price(), 2); ?>" class="product-price"><?php echo number_format($product->get_price(), 2); ?></span> <span itemprop="priceCurrency" content="EUR" class="product-price">€</span></p>
 													</div>
+													
+													<!-- NUMBER OF INTERESTED PERSON AND DOWNLOAD LIST TO CSV FILE -->
+													<?php
+														$user = wp_get_current_user();
+														$allowed_roles = array('editor', 'administrator', 'author');
+														if (array_intersect($allowed_roles, $user->roles ) && !$product->is_in_stock()) {
+															$product_subscriber = get_post_meta($post->ID, '_product_subscriber', true);
+															if (!empty($product_subscriber)) {
+																$no_of_subscriber = count($product_subscriber);
+																?>
+																<style type="text/css">
+																	.ev-number-of-interested-person p {
+																		display: inline-block;
+																		margin-right: 1rem;
+																		font-size: 1.5rem;
+																		font-weight: 800;
+																		color: #000000;
+																		font-family: 'OpenSans';
+																		display: inline-flex;
+																		align-items: center;
+																		vertical-align: middle;
+																		align-content: center;
+																	}
+																	.ev-number-of-interested-person p span {
+																		margin-right: 0.5rem;
+																		color: #A50611;
+																	}
+																	.ev-number-of-interested-person p svg {
+																		width: 2rem;
+																		height: auto;
+																		margin-left: 0.5rem;
+																		cursor: pointer;
+																	}
+																</style>
+																<div class="ev-number-of-interested-person">
+																	<p onclick="downloadCsvFile()" class="ev-form-field ev-stock_field ev-number-of-interested-person-text">
+																		<?php echo sprintf( __( '<span>%s</span> persons are interested', 'wine-space-shopkeeper'), $no_of_subscriber); ?>
+																		<svg class="svg-icon" viewBox="0 0 20 20">
+																			<path fill="#A50611" d="M17.222,5.041l-4.443-4.414c-0.152-0.151-0.356-0.235-0.571-0.235h-8.86c-0.444,0-0.807,0.361-0.807,0.808v17.602c0,0.448,0.363,0.808,0.807,0.808h13.303c0.448,0,0.808-0.36,0.808-0.808V5.615C17.459,5.399,17.373,5.192,17.222,5.041zM15.843,17.993H4.157V2.007h7.72l3.966,3.942V17.993z"></path>
+																			<path fill="#A50611" d="M5.112,7.3c0,0.446,0.363,0.808,0.808,0.808h8.077c0.445,0,0.808-0.361,0.808-0.808c0-0.447-0.363-0.808-0.808-0.808H5.92C5.475,6.492,5.112,6.853,5.112,7.3z"></path>
+																			<path fill="#A50611" d="M5.92,5.331h4.342c0.445,0,0.808-0.361,0.808-0.808c0-0.446-0.363-0.808-0.808-0.808H5.92c-0.444,0-0.808,0.361-0.808,0.808C5.112,4.97,5.475,5.331,5.92,5.331z"></path>
+																			<path fill="#A50611" d="M13.997,9.218H5.92c-0.444,0-0.808,0.361-0.808,0.808c0,0.446,0.363,0.808,0.808,0.808h8.077c0.445,0,0.808-0.361,0.808-0.808C14.805,9.58,14.442,9.218,13.997,9.218z"></path>
+																			<path fill="#A50611" d="M13.997,11.944H5.92c-0.444,0-0.808,0.361-0.808,0.808c0,0.446,0.363,0.808,0.808,0.808h8.077c0.445,0,0.808-0.361,0.808-0.808C14.805,12.306,14.442,11.944,13.997,11.944z"></path>
+																			<path fill="#A50611" d="M13.997,14.67H5.92c-0.444,0-0.808,0.361-0.808,0.808c0,0.447,0.363,0.808,0.808,0.808h8.077c0.445,0,0.808-0.361,0.808-0.808C14.805,15.032,14.442,14.67,13.997,14.67z"></path>
+																		</svg>
+																	</p>
+																<div>
+																<script type="text/javascript">
+																	function downloadCsvFile() {
+																		var rows = [];
+																		<?php 
+																			foreach($product_subscriber as $subscriber){?>
+																				rows.push('<?php echo $subscriber; ?>');
+																				<?php
+																			}
+																		?>
+
+																		let csvContent = rows.join("\n");
+
+																		var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+																		if (navigator.msSaveBlob) { // IE 10+
+																			navigator.msSaveBlob(blob, filename);
+																		} else {
+																			var link = document.createElement("a");
+																			if (link.download !== undefined) { // feature detection
+																				// Browsers that support HTML5 download attribute
+																				var url = URL.createObjectURL(blob);
+																				link.setAttribute("href", url);
+																				link.setAttribute("download", 'interested-people-product-<?php echo get_the_ID(); ?>');
+																				link.style.visibility = 'hidden';
+																				document.body.appendChild(link);
+																				link.click();
+																				document.body.removeChild(link);
+																			}
+																		}
+																	}
+																</script>
+																<?php
+															}
+														}
+													?>
+													
 													<?php if ($product->stock && $product->is_in_stock()) { ?>
 														<div class="ev-single-product-stock-remaining">
 															<?php $stockNumber = number_format($product->stock, 0, '', ''); ?>
