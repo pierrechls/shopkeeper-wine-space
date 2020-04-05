@@ -187,3 +187,8 @@ msgstr "Un client s'est abonné à un produit sur votre boutique."
 msgid "Hello, you have subscribed to a product and we will inform you that it is available again."
 msgstr "Bonjour, vous avez souscrit à un produit et nous vous informerons qu'il est de nouveau disponible."
 
+#: 
+#, fuzzy
+msgid "<span>%s</span> persons are interested"
+msgstr "<span>%s</span> personnes sont intéressées"
+
