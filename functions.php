@@ -1,5 +1,12 @@
 <?php
 
+add_action( 'after_setup_theme', 'ev_lang_setup' );
+function ev_lang_setup() {
+	$lang = apply_filters('wine-space-shopkeeper', get_template_directory()  . '/languages');
+	load_theme_textdomain('shopkeeper', $lang);
+	load_child_theme_textdomain( 'wine-space-shopkeeper', get_stylesheet_directory() . '/languages' );
+}
+
 // CUSTOMIZE ON SALE TEXT
 // add_filter('woocommerce_sale_flash', 'ev_display_on_sale_loop_woocommerce', 10, 3);
 // function ev_display_on_sale_loop_woocommerce($text, $post, $_product)
@@ -99,8 +106,8 @@ function my_custom_buy_now_save_x_cart() {
 
 	if ( ! empty( $savings ) ) {
 		?><tr class="order-savings">
-			<th><?php _e( 'Your savings' ); ?></th>
-			<td data-title="<?php _e( 'Your savings' ); ?>"><?php echo sprintf( __( 'Buy now and save %s!' ), wc_price( $savings ) ); ?></td>
+			<th><?php _e('Your discount', 'wine-space-shopkeeper'); ?></th>
+			<td data-title="<?php _e('Your discount', 'wine-space-shopkeeper'); ?>"><?php echo sprintf( __( 'Buy now and save %s!', 'wine-space-shopkeeper'), wc_price( $savings ) ); ?></td>
 		</tr><?php
 	}
 
@@ -119,53 +126,9 @@ add_action( 'woocommerce_cart_totals_before_order_total', 'my_custom_buy_now_sav
 // }
 
 function replaceDefaultWocommerceString( $translatedText, $text, $domain ) {
-
 	switch ( $translatedText ) {
-		case 'Détails de facturation' :
-			$translatedText = 'Informations Client';
-			break;
-		case 'Adresse de messagerie' :
-			$translatedText = 'Adresse email';
-			break;
-		case 'Rupture de stock' :
-			$translatedText = 'Bientôt disponible';
-			break;
-		case 'Produits apparentés' :
-    case 'Related Products' :
-			$translatedText = 'Nos vins sélectionnés pour vous !';
-			break;
-		case 'What are you looking for?' :
-			$translatedText = 'Recherchez un vin, un domaine...';
-			break;
-		case 'Continue Reading' :
-			$translatedText = 'Lire plus';
-			break;
-		case 'Previous Reading' :
-			$translatedText = 'Article précédent';
-			break;
-		case 'Next Reading' :
-			$translatedText = 'Article suivant';
-			break;
-		case 'All' :
-			$translatedText = 'Tous';
-			break;
-		case 'Category Archives' :
-			$translatedText = 'Archives de catégorie';
-			break;
-		case ' by ' :
-			$translatedText = ' par ';
-			break;
-		case ' on ' :
-			$translatedText = ' le ';
-			break;
-		case ' in ' :
-			$translatedText = ' dans ';
-			break;
-		case 'Oops 404 again! That page can\'t be found.' :
-			$translatedText = 'Oops erreur 404 ! La page demandée n\'existe pas.';
-			break;
-		case 'It looks like nothing was found at this location. Maybe try a search?' :
-			$translatedText = 'Il semble que rien n\'existe à cet emplacement. Essayez une rechercher ?';
+		case '<MY_TEXT_TO_TEST>' :
+			$translatedText = $translatedText . " (Domain : '" . $domain ."' - Text : '" . $text ."'";
 			break;
 	}
 	return $translatedText;
@@ -296,7 +259,7 @@ function custom_breadcrumbs_for_ev_custom_woocommerce_pages() {
 	echo '<nav class="woocommerce-breadcrumb">';
 	echo '<a href="';
 	echo get_site_url();
-	echo '">Accueil</a> <span class="breadcrump_sep">/</span>';
+	echo '">'. _e('Home', 'wine-space-shopkeeper') .'</a> <span class="breadcrump_sep">/</span>';
 	echo '<a href="';
 	echo get_permalink(woocommerce_get_page_id('shop'));
 	echo '">';
@@ -313,7 +276,7 @@ function custom_breadcrumbs() {
     $separator          = '/';
     $breadcrums_id      = 'breadcrumbs';
     $breadcrums_class   = 'breadcrumbs woocommerce-breadcrumb';
-    $home_title         = 'Accueil';
+    $home_title         = _e('Home', 'wine-space-shopkeeper');;
 
     // If you have any custom post types with custom taxonomies, put the taxonomy name below (e.g. product_cat)
     $custom_taxonomy    = 'product_cat';
@@ -539,7 +502,7 @@ function custom_breadcrumbs() {
 add_action( 'woocommerce_checkout_before_terms_and_conditions', 'add_shipping_conditions_link_page' );
 
 function add_shipping_conditions_link_page() {
-	echo '<p><a href="'.get_site_url().'/conditions-de-livraison" style="text-transform: uppercase;font-weight: bold;">Conditions de livraison</a></p>';
+	echo '<p><a href="'.get_site_url().'/conditions-de-livraison" style="text-transform: uppercase;font-weight: bold;">'. __('Terms of delivery', 'wine-space-shopkeeper') .'</a></p>';
 }
 
 /**

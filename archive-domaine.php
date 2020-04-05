@@ -256,7 +256,7 @@ get_header(); ?>
 
 			?>
 
-					<p class="no-actu">Désolé, le site <?php echo get_bloginfo('name' ); ?> n'a pas encore de domaines.</p>
+					<p class="no-actu"><?php printf( _e( 'We deleted %d spam messages.', 'wine-space-shopkeeper' ), get_bloginfo('name' ) ); ?></p>
 
 			<?php
 

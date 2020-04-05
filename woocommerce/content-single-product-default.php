@@ -232,13 +232,13 @@
 			                			if ($millesime != '') {
 			              		  ?>
 			                      <div class="ev-single-product-millesime">
-			                          <p>Millésime :</p><?php echo $millesime; ?>
+			                          <p><?php echo _x( 'Vintage', 'wine', 'wine-space-shopkeeper'); ?> :</p><?php echo $millesime; ?>
 			                      </div>
 			                    <?php
 			                      }
 			                    ?>
 			                    <div class="ev-single-product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-			                      <p>Prix :
+			                      <p><?php echo _e( 'Price', 'wine-space-shopkeeper'); ?> :
 															<?php
 																if($product->get_sale_price() > 0 ){
 															?>
@@ -253,9 +253,9 @@
 															<?php $stockNumber = number_format($product->stock, 0, '', ''); ?>
 															<?php
 																if ($stockNumber > 12) {
-																	echo '<p>Bouteilles en stock</p>';
+																	echo '<p>'. __('Bottles in stock', 'wine-space-shopkeeper') . '</p>';
 																} else {
-																	echo '<p>Plus que <strong>' . $stockNumber . '</strong> bouteilles en stock</p>';
+																	echo sprintf(__('<p>Only <strong>%s</strong> bottles left</p>', 'wine-space-shopkeeper'), $stockNumber);
 																}
 															?>
 														</div>
@@ -290,7 +290,7 @@
 		              					?>
 		                        <?php if($parentTitle != '') { ?>
 		                          <?php if($parentURL != '') { ?>
-		                            <p><a href="<?php if($categoryID != '') { echo esc_url( add_query_arg( 'cat', $categoryID, $parentURL) ); } else { echo $parentURL; } ?>">Domaine : <?php echo $parentTitle ?><i class="ev-arrow-right"></i></a></p>
+		                            <p><a href="<?php if($categoryID != '') { echo esc_url( add_query_arg( 'cat', $categoryID, $parentURL) ); } else { echo $parentURL; } ?>"><?php echo _e('Domain', 'wine-space-shopkeeper'); ?> : <?php echo $parentTitle ?><i class="ev-arrow-right"></i></a></p>
 		                          <?php } ?>
 		                        <?php } ?>
 		                      </div>
@@ -352,15 +352,15 @@
                           $productCommentairesDegustations = types_render_field('product-commentaires-degustations');
                         ?>
                         <div class="ev-product-info-block">
-                          <?php if ($productAppellation != '') { ?><div class="ev-product-info-element"><p>Appellation :</p><?php echo $productAppellation; ?></div><?php } ?>
-                          <?php if ($productElevage != '') { ?><div class="ev-product-info-element"><p>Élevage :</p><?php echo $productElevage; ?></div><?php } ?>
-                          <?php if ($productCepages != '') { ?><div class="ev-product-info-element"><p>Cépages :</p><?php echo $productCepages; ?></div><?php } ?>
+                          <?php if ($productAppellation != '') { ?><div class="ev-product-info-element"><p><?php echo _x('Appellation', 'wine', 'wine-space-shopkeeper'); ?> :</p><?php echo $productAppellation; ?></div><?php } ?>
+                          <?php if ($productElevage != '') { ?><div class="ev-product-info-element"><p><?php echo _x('Maturation', 'wine', 'wine-space-shopkeeper'); ?> :</p><?php echo $productElevage; ?></div><?php } ?>
+                          <?php if ($productCepages != '') { ?><div class="ev-product-info-element"><p><?php echo _x('Grape varieties', 'wine', 'wine-space-shopkeeper'); ?> :</p><?php echo $productCepages; ?></div><?php } ?>
                         </div>
                         <div class="ev-product-info-block">
-                          <?php if ($productVinification != '') { ?><div class="ev-product-info-element"><p>Vinification :</p><?php echo $productVinification; ?></div><?php } ?>
-                          <?php if ($productService != '') { ?><div class="ev-product-info-element"><p>Service :</p><?php echo $productService; ?></div><?php } ?>
-                          <?php if ($productGarde != '') { ?><div class="ev-product-info-element"><p>Garde :</p><?php echo $productGarde; ?></div><?php } ?>
-                          <?php if ($productContenance != '') { ?><div class="ev-product-info-element"><p>Contenance :</p><?php echo $productContenance; ?></div><?php } ?>
+                          <?php if ($productVinification != '') { ?><div class="ev-product-info-element"><p><?php echo _x('Winemaking', 'wine', 'wine-space-shopkeeper'); ?> :</p><?php echo $productVinification; ?></div><?php } ?>
+                          <?php if ($productService != '') { ?><div class="ev-product-info-element"><p><?php echo _x('Serving', 'wine', 'wine-space-shopkeeper'); ?> :</p><?php echo $productService; ?></div><?php } ?>
+                          <?php if ($productGarde != '') { ?><div class="ev-product-info-element"><p><?php echo _x('Aging', 'wine', 'wine-space-shopkeeper'); ?> :</p><?php echo $productGarde; ?></div><?php } ?>
+                          <?php if ($productContenance != '') { ?><div class="ev-product-info-element"><p><?php echo _x('Capacity', 'wine', 'wine-space-shopkeeper'); ?> :</p><?php echo $productContenance; ?></div><?php } ?>
                         </div>
                     </div>
                   </div>

@@ -19,7 +19,6 @@
 					<?php if ( $page_footer_option == "on" ) : ?>
 
                     <footer id="site-footer" class="ev" role="contentinfo">
-
 											<div class="ev-footer">
 													<div class="ev-footer-values">
 													  <div class="ev-footer-values-value">
@@ -69,8 +68,8 @@
 															<img src="<?php echo get_stylesheet_directory_uri() . '/images/footer/marianne-logo.png' ?>"/>
 														</div>
 														<div class="ev-footer-legal-info-text">
-															<p>Interdiction de vente de boissons alcooliques aux mineurs de moins de 18 ans.</p>
-															<p>La preuve de la majorité de l'acheteur est exigée au moment de la vente en ligne. L’abus d’alcool est dangereux pour la santé. A consommer avec modération.</p>
+															<p><?php _e('Ban on the sale of alcoholic beverages to minors under 18 years of age.', 'wine-space-shopkeeper');?></p>
+															<p><?php _e('Proof of the majority of the buyer is required at the time of online sale. Alcohol abuse is dangerous for health. To consume with moderation.', 'wine-space-shopkeeper'); ?></p>
 														</div>
 													</div>
 											</div>
