@@ -3,27 +3,30 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: POEditor.com\n"
+"X-Generator: Poedit 2.3\n"
 "Project-Id-Version: Woocommerce\n"
 "Language: en\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
 
-#: 
 msgid "Billing details"
 msgstr "Billing details"
 
-#: 
 msgid "Related products"
 msgstr "Related products"
 
-#: 
 msgid "Out of Stock"
 msgstr "Out of Stock"
 
-#: 
 msgid "Email address."
-msgstr "Adresse de messagerie"
+msgstr "Email address."
 
-#: 
 msgid "Email address"
-msgstr "Adresse de messagerie"
+msgstr "Email address"
 
+#: templates/emails/customer-completed-order.php:28
+#: templates/emails/plain/customer-completed-order.php:25
+msgid "Hi there. Your recent order on %s has been completed. Your order details are shown below for your reference:"
+msgstr "Hi there. Your recent order on %s has been completed. Your order details are shown below for your reference:"
