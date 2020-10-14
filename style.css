@@ -517,6 +517,18 @@ a.tools_button span.shopping_bag_items_number {
 /*      MENU STYLE     */
 /***********************/
 
+div.lang-switcher {
+  display: inline-block;
+}
+
+header .row .columns .site-tools div.lang-switcher div ul {
+  padding-left: 0.5rem;
+}
+
+header .row .columns .site-tools div.lang-switcher div > ul > li {
+  margin-left: 0 !important;
+}
+
 #ev-menu-toggle {
   position: absolute;
   min-height: 100vh;
