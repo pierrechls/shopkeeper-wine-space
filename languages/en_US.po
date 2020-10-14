@@ -3,9 +3,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: POEditor.com\n"
+"X-Generator: Poedit 2.3\n"
 "Project-Id-Version: Espace Vin\n"
 "Language: en\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
 
 #. @ shopkeeper
 #: footer.php:224
@@ -24,170 +28,152 @@ msgstr "Buy now and save %s!"
 msgid "Page"
 msgstr "Page"
 
-#: 
 msgid "Phone"
 msgstr "Phone"
 
-#: 
+msgid "Getting there"
+msgstr "Getting there"
+
+msgid "(+33) 4 67 38 23 18"
+msgstr "(+33) 4 67 38 23 18"
+
 msgid "Opening time"
 msgstr "Opening time"
 
-#: 
 msgid "Address"
 msgstr "Address"
 
-#: 
 msgid "Monday to Sunday 9 a.m. to 12:15 p.m. and 2 p.m. to 7 p.m."
 msgstr "Monday to Sunday 9 a.m. to 12:15 p.m. and 2 p.m. to 7 p.m."
 
-#: 
 msgid "Ban on the sale of alcoholic beverages to minors under 18 years of age."
 msgstr "Ban on the sale of alcoholic beverages to minors under 18 years of age."
 
-#: 
 msgid "Proof of the majority of the buyer is required at the time of online sale. Alcohol abuse is dangerous for health. To consume with moderation."
 msgstr "Proof of the majority of the buyer is required at the time of online sale. Alcohol abuse is dangerous for health. To consume with moderation."
 
-#: 
 msgid "Discover our cellar"
 msgstr "Discover our cellar"
 
-#: 
+msgid "Saint Chinian (South of France)"
+msgstr "Saint Chinian (South of France)"
+
+msgctxt "location"
+msgid "Saint-Chinian, France"
+msgstr "Saint-Chinian, France"
+
 #, fuzzy
 msgctxt "ev-in-city"
 msgid "in"
 msgstr "in"
 
-#: 
 msgid "Secure payments"
 msgstr "Secure payments"
 
-#: 
 msgid "Fast delivery and protected bottles"
 msgstr "Fast delivery and protected bottles"
 
-#: 
-msgid "Wine selection and advice"
-msgstr "Wine selection and advice"
+msgid "Selection of wines and advice"
+msgstr "Selection of wines and advice"
 
-#: 
 msgid "Direct producer prices"
 msgstr "Direct producer prices"
 
-#: 
 msgid "Oops 404 again! That page can't be found."
 msgstr "Oops 404 again! That page can't be found."
 
-#: 
 msgid "Terms of delivery"
 msgstr "Terms of delivery"
 
-#: 
 #, fuzzy
 msgid "Sorry, the site %s doesn't have domains yet."
 msgstr "Sorry, the site %s doesn't have domain yet."
 
-#: 
 msgid "Home"
 msgstr "Home"
 
-#: 
 msgctxt "wine"
 msgid "Vintage"
 msgstr "Vintage"
 
-#: 
 msgid "Price"
 msgstr "Price"
 
-#: 
 msgid "Bottles in stock"
 msgstr "Bottles in stock"
 
-#: 
 #, fuzzy
 msgid "<p>Only <strong>%s</strong> bottles left</p>"
 msgstr "<p>Only <strong>%s</strong> bottles left</p>"
 
-#: 
 msgid "Domain"
 msgstr "Domain"
 
-#: 
+msgctxt "location"
+msgid "8 Avenue de Béziers"
+msgstr "8 Avenue de Béziers"
+
+msgctxt "location"
+msgid "34600"
+msgstr "34600"
+
 msgctxt "wine"
 msgid "Appellation"
 msgstr "Appellation"
 
-#: 
 msgctxt "wine"
 msgid "Maturation"
 msgstr "Maturation"
 
-#: 
 msgctxt "wine"
 msgid "Grape varieties"
 msgstr "Grape varieties"
 
-#: 
 #, fuzzy
 msgctxt "wine"
 msgid "Winemaking"
 msgstr "Winemaking"
 
-#: 
 #, fuzzy
 msgctxt "wine"
 msgid "Serving"
 msgstr "Serving"
 
-#: 
 msgctxt "wine"
 msgid "Aging"
 msgstr "Aging"
 
-#: 
 msgctxt "wine"
 msgid "Capacity"
 msgstr "Capacity"
 
-#: 
 msgid "Hello, you have successfully subscribed to a product. We will notify you when the product becomes available again."
 msgstr "Hello, you have successfully subscribed to a product. We will notify you when the product becomes available again."
 
-#: 
 msgid "Product"
 msgstr "Product"
 
-#: 
 msgid "Product details"
 msgstr "Product details"
 
-#: 
 msgid "Here is the product link"
 msgstr "Here is the product link"
 
-#: 
 msgid "Your informations"
 msgstr "Your informations"
 
-#: 
 msgid "Email"
 msgstr "Email"
 
-#: 
 msgid "Customer details"
 msgstr "Customer details"
 
-#: 
 msgid "A customer has subscribed to a product on your store."
 msgstr "A customer has subscribed to a product on your store."
 
-#: 
 msgid "Hello, you have subscribed to a product and we will inform you that it is available again."
 msgstr "Hello, you have subscribed to a product and we will inform you that it is available again."
 
-#: 
 #, fuzzy
 msgid "<span>%s</span> persons are interested"
 msgstr "<span>%s</span> persons are interested"
-

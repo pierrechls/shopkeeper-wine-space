@@ -23,39 +23,39 @@
 													<div class="ev-footer-values">
 													  <div class="ev-footer-values-value">
 															<img src="<?php echo get_stylesheet_directory_uri() . '/images/footer/price.svg' ?>"/>
-															<p>Prix directs producteurs</p>
+															<p><?php _e('Direct producer prices', 'wine-space-shopkeeper');?></p>
 														</div>
 													  <div class="ev-footer-values-value">
 															<img src="<?php echo get_stylesheet_directory_uri() . '/images/footer/advice.svg' ?>"/>
-															<p>Sélection de vins et conseils</p>
+															<p><?php _e('Selection of wines and advice', 'wine-space-shopkeeper');?></p>
 														</div>
 														<div class="ev-footer-values-value">
 															<img src="<?php echo get_stylesheet_directory_uri() . '/images/footer/delivery.svg' ?>"/>
-															<p>Livraison rapide et bouteilles protégées</p>
+															<p><?php _e('Fast delivery and protected bottles', 'wine-space-shopkeeper');?></p>
 														</div>
 														<div class="ev-footer-values-value">
 															<img src="<?php echo get_stylesheet_directory_uri() . '/images/footer/payment.svg' ?>"/>
-															<p>Paiements sécurisés</p>
+															<p><?php _e('Secure payments', 'wine-space-shopkeeper');?></p>
 														</div>
 													</div>
 													<div class="ev-footer-cave-informations">
 													  <div class="ev-footer-cave-informations-infos" itemscope itemtype="http://schema.org/LocalBusiness">
-															<h6>Découvrez notre cave <span>à <span itemprop="name">Saint Chinian</span></span></h6>
+															<h6><?php _e('Discover our cellar', 'wine-space-shopkeeper');?> <span><?php echo _x('in', 'ev-in-city', 'wine-space-shopkeeper');?> <span itemprop="name"><?php _e('Saint Chinian (South of France)', 'wine-space-shopkeeper');?></span></span></h6>
 															<img style="display:none;" itemprop="image" src="<?php bloginfo('stylesheet_directory'); ?>/images/header/logo.png" alt="Logo <?php echo str_replace(' ', '-', strtolower(bloginfo('name'))); ?>" /></a>
 															<div class="cave-info" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-																<p>Adresse :</p>
+																<p><?php _e('Address', 'wine-space-shopkeeper');?> :</p>
 																<p class="address">
-																	<span itemprop="streetAddress">8 Avenue de Béziers</span><br>
-																	<span itemprop="postalCode">34600</span>, <span itemprop="addressLocality">Saint-Chinian</span>
+																	<span itemprop="streetAddress"><?php echo _x('8 Avenue de Béziers', 'location', 'wine-space-shopkeeper');?></span><br>
+																	<span itemprop="postalCode"><?php echo _x('34600', 'location', 'wine-space-shopkeeper');?></span>, <span itemprop="addressLocality"><?php echo _x('Saint-Chinian, France', 'location', 'wine-space-shopkeeper');?></span></span>
 																</address>
-																<p><a class="address-link"target="_blank" href="https://www.google.com/maps/dir//ESPACE+VIN+DE+SAINT+CHINIAN,+8+Avenue+de+B%C3%A9ziers,+34600+Saint-Chinian,+France/@43.420462,2.9459483,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x12b1a2c59320f399:0xd606b10b6439f9d0!2m2!1d2.948137!2d43.420462?hl=fr-FR">Itinéraire</a></p>
+																<p><a class="address-link"target="_blank" href="https://www.google.com/maps/dir//ESPACE+VIN+DE+SAINT+CHINIAN,+8+Avenue+de+B%C3%A9ziers,+34600+Saint-Chinian,+France/@43.420462,2.9459483,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x12b1a2c59320f399:0xd606b10b6439f9d0!2m2!1d2.948137!2d43.420462?hl=fr-FR"><?php _e('Phone', 'wine-space-shopkeeper');?></a></p>
 															</div>
 															<div class="cave-info">
-																<p>Horaires d'ouverture :</p>
-																<p>Du lundi au dimanche de 9h à 12h15 et de 14h à 19h</p>
+																<p><?php _e('Opening time', 'wine-space-shopkeeper');?> :</p>
+																<p><?php _e('Monday to Sunday 9 a.m. to 12:15 p.m. and 2 p.m. to 7 p.m.', 'wine-space-shopkeeper');?></p>
 															</div>
 															<div class="cave-info">
-																<p>Téléphone :</p>
+																<p><?php _e('Phone', 'wine-space-shopkeeper');?> :</p>
 																<p><span itemprop="telephone"><a href="tel:+33467382318">04 67 38 23 18</a></span></p>
 															</div>
 														</div>
