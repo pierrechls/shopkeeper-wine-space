@@ -214,15 +214,9 @@
                         </li>
                         <?php endif; ?>
                     </ul>
-                    <?php 
-                      $user = wp_get_current_user();
-                      $allowed_roles = array('editor', 'administrator', 'author');
-                      if (array_intersect($allowed_roles, $user->roles )) {
-                    ?>
                       <div class="lang-switcher"">
                         <?php wp_nav_menu(array('menu' => 'lang-switcher')) ?>
                       </div>
-                    <?php } ?>
                 </div>
 
             </div><!--.site-header-wrapper-->
