@@ -1,0 +1,195 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: Shopkeeper\n"
+"Language: fr\n"
+
+#: 404.php:14
+msgid "Oops 404 again! That page can't be found."
+msgstr "Oops erreur 404 ! La page demandée n'existe pas."
+
+#. @ shopkeeper
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "Il semble que rien n'existe à cet emplacement. Essayez une rechercher ?"
+
+#. @ shopkeeper
+#: comments.php:29 comments.php:49
+msgid "&larr; Older Comments"
+msgstr "&larr; Anciens commentaires"
+
+#. @ shopkeeper
+#: comments.php:30 comments.php:50
+msgid "Newer Comments &rarr;"
+msgstr "Nouveaux commentaires &rarr;"
+
+#. @ shopkeeper
+#: comments.php:60
+msgid "Comments are closed."
+msgstr "Les commentaires sont fermés."
+
+#. @ shopkeeper
+#: comments.php:72
+msgid "Leave a Reply"
+msgstr "Laissez un commentaire"
+
+#. @ shopkeeper
+#. @ woocommerce
+#: comments.php:76
+msgid "Name"
+msgstr "Nom"
+
+#. @ shopkeeper
+#: comments.php:78
+msgid "Email Address"
+msgstr "Adresse email"
+
+#. @ shopkeeper
+#: comments.php:80
+msgid "Website"
+msgstr "Site web"
+
+#. @ shopkeeper
+#: comments.php:86
+msgid "Message"
+msgstr "Message"
+
+#: content-none.php:10
+msgid "Nothing Found"
+msgstr "Aucun résultat"
+
+#: content-none.php:17
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Désolé, mais rien ne correspond à vos termes de recherche. Veuillez réessayer avec d'autres mots-clés."
+
+#: content-none.php:20
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Il semble que nous ne trouvions pas ce que vous cherchez. Peut-être que la recherche peut aider."
+
+#: content-page.php:7 content.php:79
+msgid "Continue Reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Lire plus <span class=\"meta-nav\">&rarr;</span>"
+
+#. @ shopkeeper
+#: content-page.php:8 content.php:80
+msgid "Pages:"
+msgstr "Pages :"
+
+#. @ shopkeeper
+#: footer.php:203 header-topbar.php:39
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: footer.php:252
+msgid "What are you looking for?"
+msgstr "Recherchez un vin, un domaine..."
+
+#: functions.php:424
+msgid "Load More Items"
+msgstr "Charger plus de produits"
+
+#: functions.php:425
+msgid "Loading"
+msgstr "Chargement"
+
+#: functions.php:985
+msgid "Continue shopping"
+msgstr "Continuer les achats"
+
+#: image.php:42
+msgid "Previous"
+msgstr "Précédent"
+
+#: image.php:46
+msgid "Next"
+msgstr "Suivant"
+
+#. @ shopkeeper
+#: inc/shortcodes/portfolio.php:71
+msgid "Show all"
+msgstr "Voir tous"
+
+#. @ shopkeeper
+#: inc/templates/post-meta.php:12 inc/templates/post-meta.php:40
+msgid " by "
+msgstr " par "
+
+#. @ shopkeeper
+#: inc/templates/post-meta.php:14 inc/templates/post-meta.php:42
+msgid "View all posts by %s"
+msgstr "Voir tous les articles par %s"
+
+#. @ shopkeeper
+#: inc/templates/post-meta.php:25
+msgid " in "
+msgstr " dans "
+
+#. @ shopkeeper
+#: inc/templates/post-meta.php:68 inc/templates/post-meta.php:89
+msgctxt "1: post format name. 2: date"
+msgid "%1$s on %2$s"
+msgstr "%1$s sur %2$s"
+
+#: inc/templates/post-meta.php:72
+msgid " on "
+msgstr " le "
+
+#. @ shopkeeper
+#: inc/templates/template-tags.php:66
+msgid "Previous Reading"
+msgstr "Article précédent"
+
+#. @ shopkeeper
+#: inc/templates/template-tags.php:70
+#, fuzzy
+msgid "Next Reading"
+msgstr "Article suivant"
+
+#. @ shopkeeper
+#: inc/templates/template-tags.php:166
+msgid "%1$s at %2$s"
+msgstr "%1$s à %2$s"
+
+#. @ shopkeeper
+#: inc/widgets/social-media.php:118
+msgid "Title:"
+msgstr "Titre :"
+
+#: index-layout-1.php:117 index-layout-2.php:122 index-layout-3.php:122
+msgid "All"
+msgstr "Tous"
+
+#. @ shopkeeper
+#: index-layout-1.php:162 index-layout-1.php:166 index-layout-1.php:169
+#: index-layout-2.php:188 index-layout-3.php:187
+#, fuzzy
+msgid "Continue Reading"
+msgstr "Lire plus"
+
+#: search.php:10
+msgid "Search Results for %s"
+msgstr "Résultats pour %s"
+
+#. @ shopkeeper
+#: searchform.php:2
+msgid "Search for:"
+msgstr "Recherche pour :"
+
+#. @ shopkeeper
+#: searchform.php:3
+msgid "Search &hellip;"
+msgstr "Recherche &hellip;"
+
+#. @ shopkeeper
+#: searchform.php:4
+#, fuzzy
+msgid "Search"
+msgstr "Rechercher"
+
+#: 
+msgid "Category Archives"
+msgstr "Archives de catégorie"
+
