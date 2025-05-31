@@ -288,8 +288,10 @@
 			}
 
 			a.menu-link.menu-list-link:hover {
-				color: #baa571;
-				background: none;
+				color: #BAA571;
+				background: #FFFFFF !important;
+				opacity: 1;
+				cursor: pointer;
 			}
 			.mega-menu-header {
 				font-size: 1rem;
