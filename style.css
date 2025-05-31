@@ -24,9 +24,9 @@ ul li a div.product_thumbnail {
 }
 
 ul li a div.product_thumbnail img {
-	height: 90%;
-	width: auto !important;
+    width: auto !important;
     max-height: 280px;
+	height: 100% !important;
 	margin: 0 auto !important;
 }
 
@@ -98,6 +98,11 @@ ul li a div.product_thumbnail img {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.single-product .ev-single-product-header .ev-single-product-slide-content h1 {
+    text-align: center;
+    color: #FFF;
 }
 
 .single-product #content .product .row div.large-6.medium-12 {
@@ -195,6 +200,14 @@ ul li a div.product_thumbnail img {
 
 .single-product #content .product .row div.large-6.medium-12 .product-images-wrapper a:focus {
     opacity: 1 !important;
+}
+
+.single-product #content .product button.stock-manager-button {
+    background: #BAA571;
+    color: #FFF;
+    border: 1px solid #BAA571;
+    padding: 1em;
+    margin: 1em 0 3em 0;
 }
 
 /*** Info medailles ***/
