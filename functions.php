@@ -182,6 +182,31 @@ function add_product_medailles() {
                         <div class="ev-medaille-text">Biodynamie</div>
                     </div></div>';
                 }
+                if( $medaille === 'haute-valeur-environnementale' ) { echo '<div class="ev-product-medaille"><img src="' . get_stylesheet_directory_uri() . '/images/products/product-icon-haute-valeur-environnementale.png' . '"/>
+                    <div class="ev-medaille-text-area">
+                        <div class="ev-medaille-text">HVE</div>
+                    </div></div>';
+                }
+                if( $medaille === 'vin-nature' ) { echo '<div class="ev-product-medaille"><img src="' . get_stylesheet_directory_uri() . '/images/products/product-icon-vin-nature.png' . '"/>
+                    <div class="ev-medaille-text-area">
+                        <div class="ev-medaille-text">Nature</div>
+                    </div></div>';
+                }
+                if( $medaille === 'conversion-agriculture-biologique' ) { echo '<div class="ev-product-medaille"><img src="' . get_stylesheet_directory_uri() . '/images/products/product-icon-conversion-agriculture-biologique.png' . '"/>
+                    <div class="ev-medaille-text-area">
+                        <div class="ev-medaille-text">Conversion Agriculture Biologique</div>
+                    </div></div>';
+                }
+                if( $medaille === 'elevage-amphore' ) { echo '<div class="ev-product-medaille"><img src="' . get_stylesheet_directory_uri() . '/images/products/product-icon-elevage-amphore.png' . '"/>
+                    <div class="ev-medaille-text-area">
+                        <div class="ev-medaille-text">Élevage Amphore</div>
+                    </div></div>';
+                }
+                if( $medaille === 'sans-sulfite-ajoute' ) { echo '<div class="ev-product-medaille"><img src="' . get_stylesheet_directory_uri() . '/images/products/product-icon-sans-sulfite-ajoute.png' . '"/>
+                    <div class="ev-medaille-text-area">
+                        <div class="ev-medaille-text">Sans Sulfite Ajouté</div>
+                    </div></div>';
+                }
             }
         echo '</div>';
     }
@@ -291,6 +316,62 @@ function new_loop_shop_per_page( $cols ) {
 /****************************************************************/
 /****************************************************************/
 
+
+function woocommerce_category_product_header() {
+
+    if ( is_product_category() || is_shop() ) {
+        $title =  get_the_title( get_option( 'woocommerce_shop_page_id' ));
+        $description = '';
+        $categoryImage = '';
+        if (is_product_category()) {
+            global $wp_query;
+            $cat = $wp_query->get_queried_object();
+            $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
+            $categoryImage = wp_get_attachment_url( $thumbnail_id );
+            $title = $cat->name;
+            $description = $cat->description;
+        }
+
+        echo '<div class="single-product" id="category-header-background">';
+        echo '<div class="ev-single-product-header">
+            <div class="slider-ev-siema">
+                <div class="ev-single-product-background" style="background-image: url('. "'" . ($categoryImage != '' ? ($categoryImage) : (get_stylesheet_directory_uri() . '/images/products/products-background.jpg')) . "'" . ')">
+                    <img src="'. get_stylesheet_directory_uri() . '/images/products/slider-image.png" alt="espace-vin-slider-image" />
+                    <div class="ev-single-product-slide-content">
+                        <div class="ev-single-product-slide-content-center">
+                            <h1 class="title-content-page-slider" style="color: #FFF; text">'. $title .'</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>';
+
+        echo '<div class="woocommerce large-12 xlarge-10 xxlarge-9 large-centered columns">';
+        woocommerce_breadcrumb();
+        echo '</div>';
+        echo '</div>';
+        echo '<div class="archive-product-description">
+            <div style="margin: 2em 0 4em 0;">
+                <h6 style="font-weight: 100; color: #797979; text-align: center;">'. $description .'</h6>
+            </div>
+        </div>';
+
+        echo '<script>
+            const container = document.querySelector(\'div#primary.shop-page\');
+            const element = document.querySelector(\'#category-header-background\');
+            container.insertAdjacentElement("afterbegin", element);
+
+            const oldHeader = document.querySelector(\'.woocommerce-products-header.shop_header\');
+            if (oldHeader) { oldHeader.remove() }
+        </script>';
+        echo '<style>
+            #primary.shop-page {
+                padding-top: 0;
+            }
+        </style>';
+    }
+}
+add_action( 'woocommerce_before_main_content', 'woocommerce_category_product_header', 2 );
 
 
 /****************************************************************/
